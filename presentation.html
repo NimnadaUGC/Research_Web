@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Presentation | AI-Enhanced BA Research</title>
+    <link rel="icon" href="data:,">
+    <meta name="description" content="Interactive presentation slides with gallery view and full-screen viewer for AI-enhanced business analysis research.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/presentation.css">
+
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
+
+    <nav class="navbar at-top" id="top">
+        <div class="nav-container container">
+            <div class="logo" aria-label="Website logo">
+                <h2><i class="fa-solid fa-brain"></i> AI-BA<span>Research</span></h2>
+                <p class="tagline">Adaptive • Hybrid Intelligence</p>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Problem</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="presentation.html" class="active">Presentation</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li class="mobile-only">
+                    <a href="beta.html">Apply for Beta</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="beta.html" class="btn btn-primary">
+                    <i class="fa-solid fa-flask-vial"></i> Apply for Beta
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero hero-short">
+        <div class="hero-content container reveal">
+            <div class="hero-text">
+                <p class="kicker"><i class="fa-solid fa-slideshow"></i> Presentation</p>
+                <h1>Research Proposal Presentation</h1>
+                <p class="subtitle">13-slide overview of the research problem, objectives, methodology, and expected impact</p>
+            </div>
+            
+            <div class="hero-graphic">
+                <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Rounded Rectangle Base -->
+                    <rect x="20" y="20" width="200" height="200" rx="40" fill="url(#grad1)" opacity="0.08"/>
+                    
+                    <!-- Monitor / Presentation Screen Base -->
+                    <g class="svg-float">
+                        <!-- Stand base fades in first (0.0s) -->
+                        <line x1="90" y1="180" x2="150" y2="180" stroke="#0f5ad4" stroke-width="6" stroke-linecap="round" class="svg-fade-in" style="transform-origin: 120px 180px; animation-delay: 0.0s;"/>
+                        <!-- Monitor pole traces upwards (0.3s) -->
+                        <line x1="120" y1="180" x2="120" y2="150" stroke="#00b2ff" stroke-width="6" stroke-linecap="round" class="svg-draw" pathLength="100" style="animation-delay: 0.3s;" opacity="0.8"/>
+                        
+                        <!-- Screen background fades in (0.6s) -->
+                        <rect x="50" y="55" width="140" height="95" rx="10" fill="url(#grad2)" opacity="0.75" class="svg-fade-in" style="transform-origin: 120px 102px; animation-delay: 0.6s;"/>
+                        <!-- Traced screen border (0.6s) -->
+                        <rect x="50" y="55" width="140" height="95" rx="10" stroke="#00b2ff" stroke-width="3" fill="none" class="svg-draw" pathLength="100" style="animation-delay: 0.6s;"/>
+                    </g>
+                    
+                    <!-- Dynamic Data Projections overlaying the screen -->
+                    <g class="svg-float">
+                        <!-- Bar Chart components rising up (1.0s to 1.1s) -->
+                        <rect x="145" y="110" width="14" height="20" rx="6" fill="#fff" opacity="0.4" class="svg-fade-in" style="transform-origin: 152px 130px; animation-delay: 1.0s;"/>
+                        <rect x="165" y="90" width="14" height="40" rx="6" fill="#fff" opacity="0.9" class="svg-fade-in" style="transform-origin: 172px 130px; animation-delay: 1.1s;"/>
+                        
+                        <!-- Line Chart tracing left to right (1.2s) -->
+                        <path d="M65 130 L85 110 L105 120 L130 90" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" class="svg-draw" pathLength="100" style="animation-delay: 1.2s;"/>
+                        <circle cx="130" cy="90" r="4" fill="#00b2ff" class="svg-fade-in" style="transform-origin: 130px 90px; animation-delay: 1.5s;"/>
+                        
+                        <!-- Main Interactive Play Button popping in (1.6s) -->
+                        <circle cx="120" cy="105" r="22" fill="#0f5ad4" opacity="0.9" class="svg-fade-in" style="transform-origin: 120px 105px; animation-delay: 1.6s;"/>
+                        <path d="M115 95 L132 105 L115 115 Z" fill="#fff" class="svg-fade-in" style="transform-origin: 120px 105px; animation-delay: 1.8s;"/>
+                        <!-- Outer pulse ring repeats infinitely -->
+                        <circle cx="120" cy="105" r="22" stroke="#00b2ff" stroke-width="3" fill="none" class="svg-pulse" style="animation-delay: 2.5s;"/>
+                    </g>
+
+                    <defs>
+                        <linearGradient id="grad1" x1="0" y1="0" x2="240" y2="240">
+                            <stop stop-color="#0f5ad4"/><stop offset="1" stop-color="#00b2ff"/>
+                        </linearGradient>
+                        <linearGradient id="grad2" x1="50" y1="55" x2="190" y2="150">
+                            <stop stop-color="#0f5ad4"/><stop offset="1" stop-color="#0645b7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <section class="section bg-gradient-overlay">
+        <div class="container reveal">
+            <h2 class="section-title">Presentation Preview</h2>
+            <div class="presentation-stage">
+                <div class="stage-preview">
+                    <img id="stageImage" class="stage-image" src="assets/Initial Research Presntation/Slide1.jpeg" alt="Presentation preview slide">
+                </div>
+                <div class="stage-controls">
+                    <button class="stage-nav" onclick="previousSlide()" title="Previous slide" aria-label="Previous slide">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="stage-center">
+                        <span class="stage-counter"><span id="stageCurrentSlide">1</span> / <span id="stageTotalSlides">13</span></span>
+                        <button class="btn btn-primary" onclick="openPresentMode()">
+                            <i class="fa-solid fa-expand"></i> Present Mode
+                        </button>
+                    </div>
+                    <button class="stage-nav" onclick="nextSlide()" title="Next slide" aria-label="Next slide">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Slide Gallery</h2>
+            <p class="text-center text-soft mb-12">Click any slide below to view it in full-screen. Use arrow keys or buttons to navigate.</p>
+
+            <div class="slide-gallery" id="slideGallery">
+                <!-- Slides will be dynamically inserted here -->
+                <div class="slide-thumb" data-slide="1">
+                    <img src="assets/Initial Research Presntation/Slide1.jpeg" alt="Slide 1">
+                    <div class="slide-thumb-label">Slide 1</div>
+                </div>
+                <div class="slide-thumb" data-slide="2">
+                    <img src="assets/Initial Research Presntation/Slide2.jpeg" alt="Slide 2">
+                    <div class="slide-thumb-label">Slide 2</div>
+                </div>
+                <div class="slide-thumb" data-slide="3">
+                    <img src="assets/Initial Research Presntation/Slide3.jpeg" alt="Slide 3">
+                    <div class="slide-thumb-label">Slide 3</div>
+                </div>
+                <div class="slide-thumb" data-slide="4">
+                    <img src="assets/Initial Research Presntation/Slide4.jpeg" alt="Slide 4">
+                    <div class="slide-thumb-label">Slide 4</div>
+                </div>
+                <div class="slide-thumb" data-slide="5">
+                    <img src="assets/Initial Research Presntation/Slide5.jpeg" alt="Slide 5">
+                    <div class="slide-thumb-label">Slide 5</div>
+                </div>
+                <div class="slide-thumb" data-slide="6">
+                    <img src="assets/Initial Research Presntation/Slide6.jpeg" alt="Slide 6">
+                    <div class="slide-thumb-label">Slide 6</div>
+                </div>
+                <div class="slide-thumb" data-slide="7">
+                    <img src="assets/Initial Research Presntation/Slide7.jpeg" alt="Slide 7">
+                    <div class="slide-thumb-label">Slide 7</div>
+                </div>
+                <div class="slide-thumb" data-slide="8">
+                    <img src="assets/Initial Research Presntation/Slide8.jpeg" alt="Slide 8">
+                    <div class="slide-thumb-label">Slide 8</div>
+                </div>
+                <div class="slide-thumb" data-slide="9">
+                    <img src="assets/Initial Research Presntation/Slide9.jpeg" alt="Slide 9">
+                    <div class="slide-thumb-label">Slide 9</div>
+                </div>
+                <div class="slide-thumb" data-slide="10">
+                    <img src="assets/Initial Research Presntation/Slide10.jpeg" alt="Slide 10">
+                    <div class="slide-thumb-label">Slide 10</div>
+                </div>
+                <div class="slide-thumb" data-slide="11">
+                    <img src="assets/Initial Research Presntation/Slide11.jpeg" alt="Slide 11">
+                    <div class="slide-thumb-label">Slide 11</div>
+                </div>
+                <div class="slide-thumb" data-slide="12">
+                    <img src="assets/Initial Research Presntation/Slide12.jpeg" alt="Slide 12">
+                    <div class="slide-thumb-label">Slide 12</div>
+                </div>
+                <div class="slide-thumb" data-slide="13">
+                    <img src="assets/Initial Research Presntation/Slide13.jpeg" alt="Slide 13">
+                    <div class="slide-thumb-label">Slide 13</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full-Screen Slide Viewer -->
+    <div class="slide-viewer" id="slideViewer">
+        <div class="slide-viewer-content">
+            <button class="close-viewer" onclick="closeSlideViewer()" aria-label="Close viewer">×</button>
+
+            <div class="slide-viewer-header">
+                <div class="slide-viewer-controls">
+                    <button onclick="previousSlide()" title="Previous slide" aria-label="Previous slide">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <span class="slide-counter">
+                        <span id="currentSlide">1</span> / <span id="totalSlides">13</span>
+                    </span>
+                    <button onclick="nextSlide()" title="Next slide" aria-label="Next slide">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="slide-viewer-image-container">
+                <img class="slide-viewer-image" id="slideImage" src="" alt="Presentation slide">
+            </div>
+
+            <div class="slide-viewer-footer">
+                <p>Use arrow keys to navigate or click the buttons above</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="present-mode" id="presentMode">
+        <button class="present-close" onclick="closePresentMode()" aria-label="Close present mode">×</button>
+        <div class="present-content">
+            <div class="present-image-wrap">
+                <img id="presentImage" class="present-image" src="assets/Initial Research Presntation/Slide1.jpeg" alt="Presentation slide in present mode">
+            </div>
+            <div class="present-controls">
+                <button onclick="previousSlide()" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+                <span><span id="presentCurrentSlide">1</span> / <span id="presentTotalSlides">13</span></span>
+                <button onclick="nextSlide()" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Presentation Info -->
+    <section class="section bg-gradient-overlay">
+        <div class="container reveal">
+            <h2 class="section-title">Presentation Overview</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4><i class="fa-solid fa-info-circle"></i> About This Presentation</h4>
+                    <ul>
+                        <li><strong>Total Slides:</strong> 13</li>
+                        <li><strong>Duration:</strong> ~20–25 minutes (with discussion)</li>
+                        <li><strong>Format:</strong> Problem → Approach → Impact → Q&A</li>
+                        <li><strong>Audience:</strong> Academic panel + university stakeholders</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4><i class="fa-solid fa-download"></i> Downloads</h4>
+                    <p class="mb-4">Download the full presentation in various formats:</p>
+                    <div class="flex-col">
+                        <a href="assets/Initial Research Presntation/Final Year Research _ Presentation.pptx" class="btn btn-secondary btn-sm" target="_blank">
+                            <i class="fa-solid fa-file-powerpoint"></i> PowerPoint (PPTX)
+                        </a>
+                        <button class="btn btn-ghost btn-sm" onclick="downloadSlideshow()">
+                            <i class="fa-solid fa-images"></i> All Slides (ZIP)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container reveal text-center">
+            <h2 class="section-title">Next Steps</h2>
+            <p class="mb-12">Explore our research references, download the full proposal, or check out the project timeline and progress.</p>
+            
+            <div class="flex-center flex-wrap section-actions">
+                <a href="resources.html" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-book"></i> Resources
+                </a>
+                <a href="progress.html" class="btn btn-secondary btn-lg">
+                    <i class="fa-solid fa-chart-line"></i> Progress & Timeline
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-brain"></i> AI-BA Research</h3>
+                    <p>Exploring AI-enhanced methodologies for Business Analysis in Software Development at the University of Ruhuna.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="problem.html">Problem & Motivation</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                        <li><a href="presentation.html">Presentation</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="progress.html">Progress & Timeline</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Proposal v1</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Proposal v2</a></li>
+                        <li><a href="resources.html">Research References</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><strong>Student:</strong> A.P.N.K. Abeysekara</li>
+                        <li><strong>ID:</strong> SC/2021/12375</li>
+                        <li><strong>Email:</strong> <a href="mailto:nimnadakavishwarank.ugc@gmail.com">nimnadakavishwarank.ugc@gmail.com</a></li>
+                        <li><strong>University:</strong> University of Ruhuna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> A.P.N.K. Abeysekara • BSc (Hons) Computer Science, University of Ruhuna</p>
+                <div class="footer-socials">
+                    <a href="#top" title="Back to top" aria-label="Back to top">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/pages/presentation.js" defer></script>
+</body>
+</html>

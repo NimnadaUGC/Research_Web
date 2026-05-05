@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem & Motivation | AI-Enhanced BA Research</title>
+    <link rel="icon" href="data:,">
+    <meta name="description" content="Problem definition, literature gaps, and challenges in Business Analysis for AI-enhanced software development.">
+    
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Modular CSS System -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- Main Application Script -->
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar at-top" id="top">
+        <div class="nav-container container">
+            <div class="logo" aria-label="Website logo">
+                <h2><i class="fa-solid fa-brain"></i> AI-BA<span>Research</span></h2>
+                <p class="tagline">Adaptive • Hybrid Intelligence</p>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html" class="active">Problem</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li class="mobile-only">
+                    <a href="beta.html">Apply for Beta</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="beta.html" class="btn btn-primary">
+                    <i class="fa-solid fa-flask-vial"></i> Apply for Beta
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero hero-short">
+        <div class="hero-content container reveal">
+            <div class="hero-text">
+                <p class="kicker"><i class="fa-solid fa-fire"></i> Phase 02</p>
+                <h1>Problem Definition & Motivation</h1>
+                <p class="subtitle">Understanding the gaps in Business Analysis support and the constraints of resource-limited SMEs</p>
+            </div>
+            
+            <div class="hero-graphic">
+                <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Rounded Rectangle Base -->
+                    <rect x="20" y="20" width="200" height="200" rx="40" fill="url(#grad1)" opacity="0.08"/>
+                    
+                    <!-- Decorative background grid dots -->
+                    <circle cx="60" cy="50" r="2" fill="#00b2ff" opacity="0.4" class="svg-fade-in"/>
+                    <circle cx="180" cy="180" r="2" fill="#00b2ff" opacity="0.4" class="svg-fade-in-delayed-2"/>
+                    <circle cx="190" cy="90" r="2" fill="#00b2ff" opacity="0.4" class="svg-fade-in-delayed"/>
+                    
+                    <!-- Code/Data blocks (Solid ones) -->
+                    <rect x="60" y="55" width="120" height="24" rx="8" fill="url(#grad2)" opacity="0.9" class="svg-fade-in" style="transform-origin: 120px 67px; animation-delay: 0s;"/>
+                    <rect x="60" y="90" width="70" height="24" rx="8" fill="url(#grad2)" opacity="0.9" class="svg-fade-in-delayed" style="transform-origin: 95px 102px; animation-delay: 0.3s;"/>
+                    
+                    <!-- Problem Block (The issue) inside the scan -->
+                    <g style="transform-origin: 161px 108px;">
+                        <rect x="142" y="90" width="38" height="24" rx="8" fill="#ff3366" opacity="0.9" class="svg-pulse"/>
+                        <!-- Horizontal Dashed scanning line through the block -->
+                        <line x1="135" y1="102" x2="187" y2="102" stroke="#00b2ff" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round" class="svg-pulse" opacity="0.8"/>
+                        
+                        <!-- Floating Warning Badge attached to the problem -->
+                        <rect x="165" y="75" width="20" height="12" rx="4" fill="#ff3366" class="svg-fade-in-delayed-2" style="animation-delay: 1.0s;"/>
+                        <line x1="175" y1="78" x2="175" y2="82" stroke="#fff" stroke-width="2" stroke-linecap="round" class="svg-fade-in-delayed-2" style="animation-delay: 1.1s;"/>
+                        <circle cx="175" cy="84" r="1.5" fill="#fff" class="svg-fade-in-delayed-2" style="animation-delay: 1.1s;"/>
+                    </g>
+                    
+                    <rect x="60" y="125" width="100" height="24" rx="8" fill="url(#grad2)" opacity="0.9" class="svg-fade-in-delayed-2" style="transform-origin: 110px 137px; animation-delay: 0.6s;"/>
+
+                    <!-- 4th Block to fill the bottom negative space (Solid) -->
+                    <rect x="60" y="160" width="120" height="24" rx="8" fill="url(#grad2)" opacity="0.9" class="svg-fade-in-delayed-2" style="transform-origin: 120px 172px; animation-delay: 0.9s;"/>
+
+                    <!-- Scanner / Magnifying Glass (Circular structure fixed for cross-browser pathLength support) -->
+                    <g class="svg-float" style="animation-duration: 4s;">
+                        <!-- The Glass Ring seamlessly mimicking a true circle -->
+                        <rect x="135" y="76" width="52" height="52" rx="26" stroke="#00b2ff" stroke-width="3" fill="none" class="svg-draw" pathLength="100" style="animation-delay: 0.5s;"/>
+                        <!-- The Handle -->
+                        <line x1="179" y1="120" x2="200" y2="141" stroke="#00b2ff" stroke-width="4" stroke-linecap="round" class="svg-draw-delayed" pathLength="100" style="animation-delay: 0.8s;"/>
+                    </g>
+
+                    <defs>
+                        <linearGradient id="grad1" x1="0" y1="0" x2="240" y2="240">
+                            <stop stop-color="#0f5ad4"/><stop offset="1" stop-color="#00b2ff"/>
+                        </linearGradient>
+                        <linearGradient id="grad2" x1="60" y1="60" x2="180" y2="180">
+                            <stop stop-color="#0f5ad4"/><stop offset="1" stop-color="#0645b7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container reveal">
+            <h2 class="section-title">The Business Analysis Challenge</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3><i class="fa-solid fa-users"></i> Business Analysts in SDLC</h3>
+                    <p>BAs sit at the critical intersection of stakeholder needs and development, translating ambiguous business requirements into clear, executable specifications. In Agile and traditional environments alike, they play an essential intermediary role.</p>
+                    <p class="text-soft text-sm">But they face pressure: ambiguous language, tight budgets, competing stakeholder priorities, and limited AI tools tailored to BA workflows.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-lightbulb"></i> The AI Opportunity</h3>
+                    <p>Generative AI offers powerful capabilities for automating documentation, suggesting clarifications, and surfacing risks. However, most AI tools are developer-centric, lacking BA-specific workflows, ethical safeguards, and transparency mechanisms.</p>
+                    <p class="text-soft text-sm">The opportunity: Design AI-enhanced methodologies that augment (not replace) BAs while maintaining human oversight and ethical accountability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Areas -->
+    <section class="section bg-gradient-overlay">
+        <div class="container reveal">
+            <h2 class="section-title">Three Core Problems</h2>
+            <div class="grid-3">
+                <div class="card hover-lift">
+                    <div class="feature-icon text-primary">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+                    <h3>Ambiguous Requirements</h3>
+                    <p>Requirements elicitation often results in vague or incomplete specifications. Generic AI tools fail to ask targeted clarification questions specific to BA context—missing critical details about business rules, edge cases, and constraints.</p>
+                </div>
+
+                <div class="card hover-lift">
+                    <div class="feature-icon text-warning">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Ethical Risk & Low Transparency</h3>
+                    <p>AI-generated artifacts can embed bias in language, prioritization, and assumptions. Teams lack trust without explicit transparency—which stakeholders were considered, what compromises were made, and where assumptions lurk.</p>
+                </div>
+
+                <div class="card hover-lift">
+                    <div class="feature-icon text-danger">
+                        <i class="fa-solid fa-link-slash"></i>
+                    </div>
+                    <h3>Alignment & Handover Friction</h3>
+                    <p>Communication gaps between stakeholders, BAs, and developers lead to rework, delays, and misaligned deliverables. SME teams with tight budgets and limited AI skills face compounded friction—they need low-cost, reproducible solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Literature Gaps -->
+    <section class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Literature Gaps</h2>
+            <p class="text-center text-soft mb-12">Across 40+ peer-reviewed sources and recent SLRs (2023–2026), we identified three critical gaps:</p>
+            
+            <div class="grid-2">
+                <div class="box">
+                    <h4><i class="fa-solid fa-code"></i> Developer-Centric AI</h4>
+                    <p>Most generative AI literature targets coding assistants. Scant research on <strong>BA-focused adaptive prompting</strong> or iterative elicitation workflows that reduce ambiguity in artifacts like user stories and SRS documents.</p>
+                </div>
+
+                <div class="box">
+                    <h4><i class="fa-solid fa-scale-balanced"></i> Ethics at Artifact Level</h4>
+                    <p>AI ethics literature focuses on model training and fairness. Few lightweight, artifact-level ethics rubrics exist for checking bias in BA outputs—user stories, acceptance criteria, and requirements specifications are rarely audited for hidden assumptions or fairness concerns.</p>
+                </div>
+
+                <div class="box">
+                    <h4><i class="fa-solid fa-location-dot"></i> SME Context Missing</h4>
+                    <p>Limited end-to-end hybrid workflows designed for resource-constrained Sri Lankan SMEs. Existing AI-BA solutions assume corporate budgets for enterprise tools—not the low-cost, reproducible toolkits needed in emerging economies.</p>
+                </div>
+
+                <div class="box">
+                    <h4><i class="fa-solid fa-arrows-alt"></i> Gap Summary</h4>
+                    <p>There is <strong>no published first hybrid BA agent framework</strong> combining adaptive prompting + ethics + human-in-the-loop workflows validated in SME settings. This research addresses that gap.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Questions -->
+    <section class="section bg-gradient-overlay">
+        <div class="container reveal">
+            <h2 class="section-title">Research Questions & Objectives</h2>
+            
+            <div class="callout">
+                <h4>Main Research Question (MRQ)</h4>
+                <p><strong>How can AI-enhanced methodologies and hybrid agents improve Business Analysis work while ensuring ethical safeguards and preserving the BA's crucial human role?</strong></p>
+            </div>
+
+            <div class="grid">
+                <div class="card accent-top-primary">
+                    <h4><i class="fa-solid fa-list-ol text-primary"></i> SQ1: Elicitation</h4>
+                    <p><strong>How well do adaptive prompt workflows reduce ambiguity and improve clarity and completeness in requirements artifacts?</strong></p>
+                    <p class="text-sm text-soft">Target: 20–40% improvement in clarity rubric scores (measured against manual baseline).</p>
+                </div>
+
+                <div class="card accent-top-warning">
+                    <h4><i class="fa-solid fa-scale-balanced text-warning"></i> SQ2: Ethics</h4>
+                    <p><strong>Can ethical prompting plus bias checks improve transparency and stakeholder fairness in BA output?</strong></p>
+                    <p class="text-sm text-soft">Target: 15–30% reduction in bias flags + improved stakeholder satisfaction (via survey).</p>
+                </div>
+
+                <div class="card accent-top-danger">
+                    <h4><i class="fa-solid fa-users-gear text-danger"></i> SQ3: Hybrid Agents</h4>
+                    <p><strong>Do human-in-the-loop hybrid agents boost BA efficiency and developer alignment in Agile SME contexts?</strong></p>
+                    <p class="text-sm text-soft">Target: 30–50% efficiency gain + improved BA–developer alignment (measured by task completion time & defect counts).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SME Constraints -->
+    <section class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Specific Context: Sri Lankan SMEs</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4><i class="fa-solid fa-chart-line"></i> Constraints</h4>
+                    <ul>
+                        <li>Limited AI skills / training budget</li>
+                        <li>Low capital for expensive enterprise tools</li>
+                        <li>High velocity but frequent requirements churn</li>
+                        <li>Resource-constrained teams (often 3–10 developers + 1 BA)</li>
+                        <li>Pressure to deliver quickly with minimal risk</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4><i class="fa-solid fa-bullseye"></i> Opportunity</h4>
+                    <ul>
+                        <li>Open-source, reproducible toolkit (low cost, high adoption)</li>
+                        <li>Local relevance → potential to pilot and iterate rapidly</li>
+                        <li>Real-world validation → credible for upscaling to regional SMEs</li>
+                        <li>Ethical and transparent approach → builds trust in resource-limited settings</li>
+                        <li>Practical guidance → empowers BAs without deep AI background</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section bg-gradient-overlay">
+        <div class="container reveal text-center">
+            <h2 class="section-title">Next Steps</h2>
+            <p class="mb-12">Ready to see how we propose to tackle these challenges? Explore the methodology, implementation plan, and research timeline.</p>
+            
+            <div class="flex-center flex-wrap section-actions">
+                <a href="methodology.html" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-arrow-right"></i> View Methodology
+                </a>
+                <a href="progress.html" class="btn btn-secondary btn-lg">
+                    <i class="fa-solid fa-chart-line"></i> Timeline & Progress
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-brain"></i> AI-BA Research</h3>
+                    <p>Exploring AI-enhanced methodologies for Business Analysis in Software Development at the University of Ruhuna.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="problem.html">Problem & Motivation</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                        <li><a href="presentation.html">Presentation</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="progress.html">Progress & Timeline</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Proposal v1</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Proposal v2</a></li>
+                        <li><a href="resources.html">Research References</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><strong>Student:</strong> A.P.N.K. Abeysekara</li>
+                        <li><strong>ID:</strong> SC/2021/12375</li>
+                        <li><strong>Email:</strong> <a href="mailto:nimnadakavishwarank.ugc@gmail.com">nimnadakavishwarank.ugc@gmail.com</a></li>
+                        <li><strong>University:</strong> University of Ruhuna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> A.P.N.K. Abeysekara • BSc (Hons) Computer Science, University of Ruhuna</p>
+                <div class="footer-socials">
+                    <a href="#top" title="Back to top" aria-label="Back to top">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pages/footer-year.js" defer></script>
+</body>
+</html>

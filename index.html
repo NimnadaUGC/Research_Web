@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Enhanced BA Research | A.P.N.K. Abeysekara</title>
+    <meta name="description" content="Research dashboard for AI-enhanced business analysis methodologies, ethical prompting, hybrid AI agents, progress tracking, and project artifacts.">
+        <link rel="icon" href="data:,">
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Modular CSS System -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    
+    <!-- Main Application Script -->
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body class="home-page">
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
+
+    <nav class="navbar at-top" id="top">
+        <div class="nav-container container">
+            <div class="logo" aria-label="Website logo">
+                <h2><i class="fa-solid fa-brain"></i> AI-BA<span>Research</span></h2>
+                <p class="tagline">Adaptive • Hybrid Intelligence</p>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Problem</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li class="mobile-only">
+                    <a href="beta.html">Apply for Beta</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="beta.html" class="btn btn-primary">
+                    <i class="fa-solid fa-flask-vial"></i> Apply for Beta
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero hero-short" id="home">
+        <div class="hero-content container reveal">
+            <div class="hero-text">
+                <p class="kicker"><i class="fa-solid fa-graduation-cap"></i> BSc (Hons) Individual Research Project</p>
+                <h1>AI-Enhanced Methodologies and Agents for Business Analysis in Software Development</h1>
+                <p class="subtitle">Adaptive Prompt Engineering • Ethical Prompting • Hybrid AI Agents (Human-in-the-Loop)</p>
+
+                <div class="meta">
+                    <p><strong>Student:</strong> A.P.N.K. Abeysekara (SC/2021/12375)</p>
+                    <p><strong>Supervisor:</strong> Dr. S.W.A.M. Upamalika</p>
+                    <p><strong>University:</strong> University of Ruhuna</p>
+                    <p><strong>Submitted:</strong> 23 February 2026</p>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="beta.html" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> Apply for Beta</a>
+                    <a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-solid fa-file-arrow-down"></i> View Proposal</a>
+                </div>
+
+                <div class="status-pill">
+                    <span class="dot"></span>
+                    Proposal Phase • March 2026 • Live Dashboard
+                </div>
+            </div>
+
+            <aside class="hero-panel reveal">
+                <h3><i class="fa-solid fa-rocket"></i> Project Snapshot</h3>
+                <ul>
+                    <li><span>Current Phase</span><strong>Proposal + Design</strong></li>
+                    <li><span>Lit. Sources Curated</span><strong>18</strong></li>
+                    <li><span>Target Participants</span><strong>15-25</strong></li>
+                    <li><span>Prototype Status</span><strong>In Progress</strong></li>
+                </ul>
+            </aside>
+        </div>
+    </header>
+
+    <section id="overview" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Research Overview</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3><i class="fa-solid fa-user-tie"></i> Business Analysts in the SDLC</h3>
+                    <p>BAs act as critical intermediaries translating stakeholder needs into clear, testable requirements across Agile and traditional SDLC environments. This project augments (does not replace) BAs with AI in Sri Lankan SME contexts.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Core Innovation</h3>
+                    <ul>
+                        <li>Adaptive prompt engineering for iterative requirements elicitation and refinement</li>
+                        <li>Ethical prompting and bias-reduction framework for transparency</li>
+                        <li>Hybrid AI agents (human-in-the-loop) supporting Agile BA workflows</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem" class="section bg-light">
+        <div class="container reveal">
+            <h2 class="section-title">Problem Definition</h2>
+            <div class="problem-grid">
+                <div class="issue">
+                    <h4>1. Ambiguity in Requirements</h4>
+                    <p>Elicited requirements often contain vague terms or missing details; generic AI fails to ask targeted clarification questions.</p>
+                </div>
+                <div class="issue">
+                    <h4>2. Ethical Risk and Low Transparency</h4>
+                    <p>AI-generated artifacts may embed bias in wording and prioritization; teams lack trust without explicit assumptions and explanations.</p>
+                </div>
+                <div class="issue">
+                    <h4>3. Alignment and Handover Friction</h4>
+                    <p>SME Agile teams face communication gaps between stakeholders, BAs, and developers, leading to rework and delays.</p>
+                </div>
+            </div>
+            <div class="research-questions">
+                <h3>Research Questions</h3>
+                <p><strong>Main RQ:</strong> How can AI-enhanced methodologies and hybrid agents improve BA work while ensuring ethical safeguards and preserving the BA's human role?</p>
+                <ul>
+                    <li><strong>SQ1 (Elicitation):</strong> How well do adaptive prompt workflows reduce ambiguity and improve clarity and completeness?</li>
+                    <li><strong>SQ2 (Ethics):</strong> Which ethical prompting and bias checks best improve transparency and reduce bias in BA artifacts?</li>
+                    <li><strong>SQ3 (Hybrid workflow):</strong> How much does a human-in-the-loop hybrid agent prototype improve BA efficiency and BA-developer alignment in Agile SMEs?</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="objectives" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Research Objectives</h2>
+            <div class="grid-3">
+                <div class="obj-card">
+                    <div class="obj-number">1</div>
+                    <h4>Adaptive Prompt Methodologies</h4>
+                    <p>Enhance requirements elicitation and refinement (target: 20-40% improvement via A/B rubric evaluation).</p>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-number">2</div>
+                    <h4>Ethical Prompting and Bias Checks</h4>
+                    <p>Improve transparency and reduce bias (target: 15-30% reduction via checklist + bias-lint metrics).</p>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-number">3</div>
+                    <h4>Hybrid AI Agents Prototype</h4>
+                    <p>Support BA workflows in Agile SMEs (target: 30-50% efficiency and alignment gain with human-in-the-loop).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="methodology" class="section bg-light">
+        <div class="container reveal">
+            <h2 class="section-title">Methodology (Design Science + Empirical)</h2>
+            <div class="method-steps">
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <h4>Adaptive Prompting</h4>
+                    <p>Stakeholder input -> Draft -> Ambiguity detection -> Clarification questions -> Refined user stories and SRS.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <h4>Ethics and Bias Layer</h4>
+                    <p>Bias-sensitive language detection, stakeholder fairness prompts, transparency notes (assumptions and traceability).</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <h4>Hybrid Agent Toolkit</h4>
+                    <p>Elicitation Assistant + Ethics Checker + Documentation Generator + Human feedback loop (Streamlit-ready prototype).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="progress" class="section">
+        <div class="container reveal">
+            <h2 class="section-title"> Current Research Progress and Statistics <span class="live-dot"></span></h2>
+            <p class="update-date"><i class="fa-regular fa-clock"></i> Last updated: 28 March 2026 (Proposal Phase)</p>
+
+            <div class="stats-grid" id="stats-grid"></div>
+
+            <div class="progress-log card-like">
+                <h3>Research Log (Latest Entries)</h3>
+                <ul id="log-list">
+                    <li><strong>28 Mar 2026</strong> - Website prototype launched for real-time tracking</li>
+                    <li><strong>23 Feb 2026</strong> - Research Proposal v1 submitted (12 pages)</li>
+                    <li><strong>Feb 2026</strong> - Preliminary literature review completed (18 sources curated)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="documents" class="section bg-light">
+        <div class="container reveal">
+            <h2 class="section-title">Documents and Resources</h2>
+            <div class="docs-grid">
+                <a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer" class="doc-card">
+                    <h4>Final Year Research Proposal v1.pdf</h4>
+                    <p>12 pages • Submitted 23 Feb 2026</p>
+                    <span class="doc-type">PDF • 165 KB</span>
+                </a>
+                <div class="doc-card">
+                    <h4>Bibliography and Key References</h4>
+                    <p>IIBA BABOK v3, ISO/IEC/IEEE 29148, AI Fairness 360, Generative AI in SE papers (2024-2026).</p>
+                    <button id="bibliography-link" class="doc-link" type="button">View 18 references <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+                <div class="doc-card">
+                    <h4>Dataset Plan</h4>
+                    <p>Anonymized SME BA interviews and artifacts (target: 15-25 participants).</p>
+                    <span class="status">Data collection phase planned for Q2 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">8-Month Project Timeline (Tentative)</h2>
+            <div class="table-wrap">
+                <table class="timeline-table">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Major Tasks</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 (Feb-Mar 2026)</td>
+                            <td>Literature review, finalize RQs and metrics</td>
+                            <td class="status-complete">Completed</td>
+                        </tr>
+                        <tr>
+                            <td>2 (Mar-Apr 2026)</td>
+                            <td>Adaptive prompt design, ethics framework, prototype wireframes</td>
+                            <td class="status-inprogress">In Progress</td>
+                        </tr>
+                        <tr>
+                            <td>3-4 (Apr-May 2026)</td>
+                            <td>Data collection (15-25 BAs/SMEs)</td>
+                            <td class="status-planned">Planned</td>
+                        </tr>
+                        <tr>
+                            <td>5-6 (Jun-Jul 2026)</td>
+                            <td>Prototype implementation (web toolkit), pilot testing</td>
+                            <td class="status-planned">Planned</td>
+                        </tr>
+                        <tr>
+                            <td>7-8 (Aug-Sep 2026)</td>
+                            <td>Full evaluation, thesis writing, paper submission</td>
+                            <td class="status-planned">Planned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-brain"></i> AI-BA Research</h3>
+                    <p>A comprehensive research project exploring AI-enhanced methodologies for Business Analysis in Software Development.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="problem.html">Problem & Motivation</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                        <li><a href="presentation.html">Presentation</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="progress.html">Progress & Timeline</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Proposal v1</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Proposal v2</a></li>
+                        <li><a href="resources.html">Research References</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><strong>Student:</strong> A.P.N.K. Abeysekara</li>
+                        <li><strong>ID:</strong> SC/2021/12375</li>
+                        <li><strong>Email:</strong> <a href="mailto:nimnadakavishwarank.ugc@gmail.com">nimnadakavishwarank.ugc@gmail.com</a></li>
+                        <li><strong>University:</strong> University of Ruhuna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> A.P.N.K. Abeysekara • BSc (Hons) Computer Science, University of Ruhuna</p>
+                <div class="footer-socials">
+                    <a href="#top" title="Back to top" aria-label="Back to top">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pages/footer-year.js" defer></script>
+</body>
+</html>

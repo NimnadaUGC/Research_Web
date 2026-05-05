@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress & Timeline | AI-Enhanced BA Research</title>
+    <link rel="icon" href="data:,">
+    <meta name="description" content="Research progress, timeline, materials, evaluation metrics, and prototype toolkit access.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
+
+    <nav class="navbar at-top" id="top">
+        <div class="nav-container container">
+            <div class="logo" aria-label="Website logo">
+                <h2><i class="fa-solid fa-brain"></i> AI-BA<span>Research</span></h2>
+                <p class="tagline">Adaptive • Hybrid Intelligence</p>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Problem</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="progress.html" class="active">Progress</a></li>
+                <li class="mobile-only">
+                    <a href="beta.html">Apply for Beta</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="beta.html" class="btn btn-primary">
+                    <i class="fa-solid fa-flask-vial"></i> Apply for Beta
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero hero-short">
+        <div class="hero-content container reveal">
+            <div class="hero-text">
+                <p class="kicker"><i class="fa-solid fa-chart-line"></i> Live Tracking</p>
+                <h1>Progress & Timeline</h1>
+                <p class="subtitle">8-month research roadmap with real-time updates, parallel work streams, and phase-wise deliverables</p>
+            </div>
+            
+            <div class="hero-graphic">
+                <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Rounded Rectangle Base -->
+                    <rect x="20" y="20" width="200" height="200" rx="40" fill="url(#grad1)" opacity="0.08"/>
+                    
+                    <!-- Base Axis Lines -->
+                    <line x1="30" y1="180" x2="210" y2="180" stroke="#00b2ff" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+                    <line x1="40" y1="185" x2="40" y2="50" stroke="#00b2ff" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+                    
+                    <!-- Chart Background Area - Solid vibrantly filled -->
+                    <path d="M42 178 L42 160 L85 110 L125 135 L190 70 L190 178 Z" fill="#0f5ad4" class="svg-fade-in" style="transform-origin: 116px 144px;"/>
+                    
+                    <!-- Traced Line Graph -->
+                    <path d="M42 160 L85 110 L125 135 L190 70" stroke="#00b2ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" class="svg-draw" pathLength="100"/>
+                    
+                    <!-- Nodes fading in synced with the line drawing -->
+                    <circle cx="42" cy="160" r="6" fill="#0645b7" class="svg-fade-in" style="transform-origin: 42px 160px;"/>
+                    <circle cx="85" cy="110" r="6" fill="#0645b7" class="svg-fade-in-delayed" style="transform-origin: 85px 110px;"/>
+                    <circle cx="125" cy="135" r="6" fill="#0645b7" class="svg-fade-in-delayed-2" style="transform-origin: 125px 135px;"/>
+
+                    <!-- Final Highlighted Node Area -->
+                    <g class="svg-fade-in-delayed-2" style="transform-origin: 190px 70px;">
+                        <!-- Solid internal marker -->
+                        <rect x="178" y="58" width="24" height="24" rx="8" fill="#0645b7"/>
+                        <!-- White glowing dot inside -->
+                        <circle cx="190" cy="70" r="4" fill="#fff" class="svg-pulse" style="animation-delay: 1.5s;"/>
+                    </g>
+                    <!-- External hollow stroke marker tracing around it -->
+                    <rect x="174" y="54" width="32" height="32" rx="10" stroke="#00b2ff" stroke-width="3" fill="none" class="svg-draw-delayed-2" pathLength="100"/>
+                    
+                    <defs>
+                        <linearGradient id="grad1" x1="0" y1="0" x2="240" y2="240">
+                            <stop stop-color="#0f5ad4"/><stop offset="1" stop-color="#00b2ff"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Research Progress</h2>
+            <p class="update-date text-center"><i class="fa-regular fa-calendar"></i> Last updated: 30 March 2026 | Status: <span class="badge primary">Proposal Phase</span></p>
+
+            <div class="grid-4 mb-12">
+                <div class="stat-card reveal stagger-1">
+                    <div class="stat-value">18</div>
+                    <div class="stat-label">Lit. Sources</div>
+                    <div class="stat-detail">Curated & reviewed</div>
+                </div>
+
+                <div class="stat-card reveal stagger-2">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Framework</div>
+                    <div class="stat-detail">Hybrid BA agents (novel)</div>
+                </div>
+
+                <div class="stat-card reveal stagger-3">
+                    <div class="stat-value">20-50%</div>
+                    <div class="stat-label">Target Gain</div>
+                    <div class="stat-detail">Efficiency & clarity</div>
+                </div>
+
+                <div class="stat-card reveal stagger-4">
+                    <div class="stat-value">95%</div>
+                    <div class="stat-label">On Track</div>
+                    <div class="stat-detail">Timeline compliance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-gradient-overlay">
+        <div class="container reveal">
+            <h2 class="section-title">8-Month Timeline</h2>
+            <div class="timeline-legend text-soft">
+                <span class="text-semibold">Legend:</span>
+                <span class="timeline-status completed"><i class="fa-solid fa-circle-check"></i> Completed</span>
+                <span class="timeline-status inprogress"><i class="fa-solid fa-hourglass-half"></i> In Progress</span>
+                <span class="timeline-status planned"><i class="fa-regular fa-calendar"></i> Planned</span>
+            </div>
+
+            <div class="timeline timeline-centered">
+                <div class="timeline-item" data-step="1">
+                    <div class="timeline-content">
+                        <h4><i class="fa-solid fa-circle-check"></i> Month 1 (Feb–Mar 2026): Foundation</h4>
+                        <ul>
+                            <li>Literature review (40+ sources, 2023–2026 SLRs)</li>
+                            <li>Research questions finalized (MRQ + 3 SQs)</li>
+                            <li>Evaluation metrics designed (clarity rubric, bias flags, time deltas)</li>
+                            <li>Supervisor alignment checkpoint</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date"><span class="timeline-status completed"><i class="fa-solid fa-circle-check"></i> Completed</span></div>
+                </div>
+
+                <div class="timeline-item" data-step="2">
+                    <div class="timeline-content">
+                        <h4><i class="fa-solid fa-hourglass-half"></i> Month 2 (Mar–Apr 2026): Proto Design & Ethics Framework</h4>
+                        <ul>
+                            <li>Adaptive prompt design (iterative loop, clarification strategy)</li>
+                            <li>Ethics rubric development (bias-sensitive language, fairness checks)</li>
+                            <li>Prototype wireframes (Streamlit UI mockups)</li>
+                            <li>SME recruitment & ethics approval</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date"><span class="timeline-status inprogress"><i class="fa-solid fa-hourglass-half"></i> In Progress</span></div>
+                </div>
+
+                <div class="timeline-item" data-step="3">
+                    <div class="timeline-content">
+                        <h4><i class="fa-regular fa-calendar"></i> Month 3 (Apr–May 2026): Data Collection</h4>
+                        <ul>
+                            <li>Pilot interview round 1 (5–8 BAs from 2–3 SMEs)</li>
+                            <li>Artifact collection (user stories, SRS, requirements docs)</li>
+                            <li>Baseline manual workflow metrics</li>
+                            <li>Consent & anonymization compliance</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date"><span class="timeline-status planned"><i class="fa-regular fa-calendar"></i> Planned</span></div>
+                </div>
+
+                <div class="timeline-item" data-step="4">
+                    <div class="timeline-content">
+                        <h4><i class="fa-regular fa-calendar"></i> Month 4 (May–Jun 2026): Prototype Build & Pilot</h4>
+                        <ul>
+                            <li>Elicitation Assistant MVP (Python + Streamlit)</li>
+                            <li>Ethics Checker integration (bias-lint library)</li>
+                            <li>Documentation Generator setup (Jinja2 templates)</li>
+                            <li>Pilot test with 2–3 SMEs (A/B comparison on real tasks)</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date"><span class="timeline-status planned"><i class="fa-regular fa-calendar"></i> Planned</span></div>
+                </div>
+
+                <div class="timeline-item" data-step="5">
+                    <div class="timeline-content">
+                        <h4><i class="fa-regular fa-calendar"></i> Month 5 (Jun–Jul 2026): Final Testing & Evaluation</h4>
+                        <ul>
+                            <li>Pilot interview round 2 (post-intervention feedback)</li>
+                            <li>Quantitative analysis (clarity scores, bias flags, time metrics)</li>
+                            <li>Qualitative coding (BA interviews, emergent themes)</li>
+                            <li>Toolkit refinements based on feedback</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date"><span class="timeline-status planned"><i class="fa-regular fa-calendar"></i> Planned</span></div>
+                </div>
+
+                <div class="timeline-item" data-step="6">
+                    <div class="timeline-content">
+                        <h4><i class="fa-regular fa-calendar"></i> Month 6 (Jul–Aug 2026): Thesis & Paper Writing</h4>
+                        <ul>
+                            <li>Thesis draft (research methods, findings, discussion)</li>
+                            <li>Conference paper submission (if target outlet ready)</li>
+                            <li>Toolkit documentation & GitHub release</li>
+                            <li>Supervisor review & corrections</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date"><span class="timeline-status planned"><i class="fa-regular fa-calendar"></i> Planned</span></div>
+                </div>
+
+                <div class="timeline-item" data-step="7">
+                    <div class="timeline-content">
+                        <h4><i class="fa-regular fa-calendar"></i> Month 7 (Aug–Sep 2026): Finalization & Submission</h4>
+                        <ul>
+                            <li>Thesis final edits & formatting</li>
+                            <li>Open-source toolkit polished & deployed</li>
+                            <li>Deployment guide & tutorial videos</li>
+                            <li>University submission deadline</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date"><span class="timeline-status planned"><i class="fa-regular fa-calendar"></i> Planned</span></div>
+                </div>
+
+                <div class="timeline-item" data-step="8">
+                    <div class="timeline-content">
+                        <h4><i class="fa-regular fa-calendar"></i> Month 8 (Sep 2026): Defense & Beyond</h4>
+                        <ul>
+                            <li>Final viva preparation & defense</li>
+                            <li>Post-defense release of toolkit beta to broader SME community</li>
+                            <li>Follow-up publication planning</li>
+                            <li>Potential for follow-on research or scaling</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date"><span class="timeline-status planned"><i class="fa-regular fa-calendar"></i> Planned</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Expandable Sections: Future Content</h2>
+            <p class="text-center text-soft mb-12">The following sections contain detailed information. Use the expand buttons to explore materials, evaluation metrics, and toolkit access:</p>
+
+            <div class="accordion">
+                <!-- Materials Section -->
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <i class="fa-solid fa-folder-open"></i> Materials & Datasets
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <h4>Data Collection Sources</h4>
+                            <ul>
+                                <li><strong>Primary:</strong> Anonymized SME BA interviews & real SDLC artifacts (15–25 participants, 2–3 SME organizations)</li>
+                                <li><strong>Backup:</strong> Public benchmarks & synthetic datasets (GitHub issues, Jira specs, OpenStack requirements)</li>
+                                <li><strong>Ethics:</strong> Consent forms, anonymization protocol (SOP drafted, ethics approval pending)</li>
+                            </ul>
+
+                            <p class="divider-top">
+                                <strong>Access:</strong> Subject to ethical approval. Anonymized dataset to be archived in university research repository post-publication (12-month embargo for participant privacy).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evaluation Metrics Section -->
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <i class="fa-solid fa-chart-bar"></i> Evaluation Metrics & Rubrics
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <h4>Quantitative Metrics</h4>
+                            <ul>
+                                <li><strong>Clarity Score (1–5 rubric):</strong> Completeness, specificity, testability (based on IEEE 29148 standard)</li>
+                                <li><strong>Bias Flag Count:</strong> # of detected risks per artifact (bias-lint + manual audits)</li>
+                                <li><strong>Time to Completion:</strong> Baseline manual workflow vs. AI-assisted (in hours)</li>
+                                <li><strong>Defect Rate:</strong> Post-development rework incidents (caused by vague/incorrect specs)</li>
+                                <li><strong>Transparency Score:</strong> Presence of explicit assumptions, trade-offs, traceability notes</li>
+                            </ul>
+
+                            <h4 class="mt-6">Qualitative Evidence</h4>
+                            <ul>
+                                <li><strong>BA Interviews:</strong> Usability (System Usability Scale), trust, cognitive load, adoption barriers</li>
+                                <li><strong>Developer Feedback:</strong> Likert-scale survey on spec clarity, completeness, handover friction</li>
+                                <li><strong>Stakeholder Satisfaction:</strong> Fairness perception, representation in final artifact</li>
+                                <li><strong>Thematic Analysis:</strong> Open-ended responses coded by 2+ independent reviewers (Cohen's kappa ≥ 0.70)</li>
+                            </ul>
+
+                            <h4 class="mt-6">Target Success Criteria</h4>
+                            <ul>
+                                <li>Clarity: 20–40% improvement post-intervention vs. baseline</li>
+                                <li>Bias: 15–30% reduction in flag counts + improved transparency scores</li>
+                                <li>Efficiency: 30–50% time savings in specification phase</li>
+                                <li>Adoption: Positive feedback from 80%+ of pilot BAs (Likert ≥ 3.5/5)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toolkit Access Section -->
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <i class="fa-solid fa-wrench"></i> Prototype Toolkit & Beta Access
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="alert warning">
+                                <i class="fa-solid fa-code"></i> Coming Soon (Q3 2026)
+                            </div>
+
+                            <h4>What's Included</h4>
+                            <ul>
+                                <li><strong>Elicitation Assistant:</strong> Streamlit UI for iterative requirement refinement</li>
+                                <li><strong>Ethics Checker:</strong> Bias detection & transparency audit tool (Python CLI)</li>
+                                <li><strong>Documentation Generator:</strong> SRS & traceability matrix export (Markdown + PDF)</li>
+                                <li><strong>Deployment Guide:</strong> Step-by-step setup for local SME use (Docker-ready)</li>
+                                <li><strong>User Handbook:</strong> Best practices, troubleshooting, examples</li>
+                            </ul>
+
+                            <h4 class="mt-6">License & Availability</h4>
+                            <p><strong>Open-source:</strong> MIT License (permissive for SME adoption)</p>
+                            <p><strong>Repository:</strong> GitHub (link will be posted upon release)</p>
+                            <p><strong>Status:</strong> Beta testing phase Q2–Q3 2026. Formal release by September 2026.</p>
+
+                            <p class="highlight-box">
+                                <strong>Early Access:</strong> Interested SMEs or researchers may request beta access via email. Contact: <a href="mailto:nimnadakavishwarank.ugc@gmail.com">nimnadakavishwarank.ugc@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publications & Dissemination Section -->
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <i class="fa-solid fa-book"></i> Publications & Dissemination
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <h4>Planned Outputs</h4>
+                            <ul>
+                                <li><strong>Thesis:</strong> University of Ruhuna BSc (Hons) final submission (Aug–Sep 2026)</li>
+                                <li><strong>Conference Paper:</strong> Target: ICSE, ASE, or Hybrid AI in SE venues (submitted Q2/Q3 2026)</li>
+                                <li><strong>Journal Article:</strong> Extended findings for IEEE TSE or ACM TSC (planned 2027)</li>
+                                <li><strong>Open-Source Toolkit:</strong> GitHub + PyPI package (release Sep 2026)</li>
+                                <li><strong>Case Study Reports:</strong> SME adoption stories & lessons learned (anonymized)</li>
+                            </ul>
+
+                            <h4 class="mt-6">Community Engagement</h4>
+                            <ul>
+                                <li>Workshop presentation at local SME forums & Agile meetups</li>
+                                <li>Tutorial webinars for practitioners (Q4 2026 onwards)</li>
+                                <li>Collaboration with IIBA Sri Lanka chapter for dissemination</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-gradient-overlay">
+        <div class="container reveal text-center">
+            <h2 class="section-title">What's Next?</h2>
+            <p class="mb-12">Explore our presentation slides, research references, and downloadable proposal documents to learn more about the research strategy and findings to date.</p>
+            
+            <div class="flex-center flex-wrap section-actions">
+                <a href="presentation.html" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-slideshow"></i> View Presentation
+                </a>
+                <a href="resources.html" class="btn btn-secondary btn-lg">
+                    <i class="fa-solid fa-file-pdf"></i> Resources & PDFs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-brain"></i> AI-BA Research</h3>
+                    <p>Exploring AI-enhanced methodologies for Business Analysis in Software Development at the University of Ruhuna.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="problem.html">Problem & Motivation</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                        <li><a href="presentation.html">Presentation</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="progress.html">Progress & Timeline</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Proposal v1</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Proposal v2</a></li>
+                        <li><a href="resources.html">Research References</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><strong>Student:</strong> A.P.N.K. Abeysekara</li>
+                        <li><strong>ID:</strong> SC/2021/12375</li>
+                        <li><strong>Email:</strong> <a href="mailto:nimnadakavishwarank.ugc@gmail.com">nimnadakavishwarank.ugc@gmail.com</a></li>
+                        <li><strong>University:</strong> University of Ruhuna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> A.P.N.K. Abeysekara • BSc (Hons) Computer Science, University of Ruhuna</p>
+                <div class="footer-socials">
+                    <a href="#top" title="Back to top" aria-label="Back to top">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pages/footer-year.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | AI-Enhanced BA Research</title>
+    <link rel="icon" href="data:,">
+    <meta name="description" content="Research proposals and reference documents for AI-enhanced business analysis research. Download PDFs and browse research materials.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/resources.css">
+
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
+
+    <nav class="navbar at-top" id="top">
+        <div class="nav-container container">
+            <div class="logo" aria-label="Website logo">
+                <h2><i class="fa-solid fa-brain"></i> AI-BA<span>Research</span></h2>
+                <p class="tagline">Adaptive • Hybrid Intelligence</p>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Problem</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li class="mobile-only">
+                    <a href="beta.html">Apply for Beta</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="beta.html" class="btn btn-primary">
+                    <i class="fa-solid fa-flask-vial"></i> Apply for Beta
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero hero-short">
+        <div class="hero-content container reveal">
+            <div class="hero-text">
+                <p class="kicker"><i class="fa-solid fa-book"></i> Resources</p>
+                <h1>Research Documents & References</h1>
+                <p class="subtitle">Access research proposals, references, and supporting documents</p>
+            </div>
+            
+            <div class="hero-graphic">
+                <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Rounded Rectangle Base -->
+                    <rect x="20" y="20" width="200" height="200" rx="40" fill="url(#grad1)" opacity="0.08"/>
+                    
+                    <!-- Data Drives / Resources stack -->
+                    <g class="svg-float" style="animation-delay: 1s;">
+                        <rect x="50" y="150" width="140" height="30" rx="10" fill="url(#grad2)" opacity="0.5" class="svg-fade-in" style="transform-origin: 120px 165px;"/>
+                        <rect x="50" y="150" width="140" height="30" rx="10" stroke="#00b2ff" stroke-width="2" fill="none" class="svg-draw" pathLength="100"/>
+                        <circle cx="70" cy="165" r="4" fill="#0f5ad4" class="svg-pulse"/>
+                        <line x1="90" y1="165" x2="170" y2="165" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity="0.3" class="svg-fade-in" style="transform-origin: 130px 165px;"/>
+                    </g>
+
+                    <g class="svg-float" style="animation-delay: 0.5s;">
+                        <rect x="50" y="110" width="140" height="30" rx="10" fill="url(#grad2)" opacity="0.75" class="svg-fade-in-delayed" style="transform-origin: 120px 125px;"/>
+                        <rect x="50" y="110" width="140" height="30" rx="10" stroke="#00b2ff" stroke-width="2" fill="none" class="svg-draw-delayed" pathLength="100"/>
+                        <circle cx="70" cy="125" r="4" fill="#00b2ff" class="svg-pulse" style="animation-delay: 0.5s;"/>
+                        <line x1="90" y1="125" x2="150" y2="125" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity="0.5" class="svg-fade-in-delayed" style="transform-origin: 120px 125px;"/>
+                    </g>
+
+                    <g class="svg-float">
+                        <rect x="50" y="70" width="140" height="30" rx="10" fill="url(#grad2)" opacity="1" class="svg-fade-in-delayed-2" style="transform-origin: 120px 85px;"/>
+                        <rect x="50" y="70" width="140" height="30" rx="10" stroke="#00b2ff" stroke-width="2" fill="none" class="svg-draw-delayed-2" pathLength="100"/>
+                        <circle cx="70" cy="85" r="4" fill="#fff" class="svg-pulse" style="animation-delay: 1s;"/>
+                        <line x1="90" y1="85" x2="160" y2="85" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity="0.8" class="svg-fade-in-delayed-2" style="transform-origin: 125px 85px;"/>
+                        
+                        <!-- Data floating out -->
+                        <path d="M180 70 C 180 20, 120 40, 120 40" stroke="#00b2ff" stroke-width="3" stroke-linecap="round" fill="none" class="svg-draw-delayed" pathLength="100"/>
+                        <circle cx="120" cy="40" r="6" fill="#00b2ff" class="svg-fade-in-delayed-2" style="transform-origin: 120px 40px;"/>
+                    </g>
+
+                    <defs>
+                        <linearGradient id="grad1" x1="0" y1="0" x2="240" y2="240">
+                            <stop stop-color="#0f5ad4"/><stop offset="1" stop-color="#00b2ff"/>
+                        </linearGradient>
+                        <linearGradient id="grad2" x1="50" y1="150" x2="190" y2="70">
+                            <stop stop-color="#0f5ad4"/><stop offset="1" stop-color="#0645b7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Research Proposals Section -->
+    <section class="pdf-section">
+        <div class="container reveal">
+            <div class="pdf-section-header">
+                <h3><i class="fa-solid fa-file-contract"></i> Research Proposals</h3>
+                <span class="pdf-section-badge">2 Documents</span>
+            </div>
+            <p class="text-soft mb-8">Download the full research proposal (available in two versions) for detailed project documentation and ethical approvals.</p>
+
+            <div class="resources-grid">
+                <div class="pdf-card">
+                    <div class="pdf-card-preview">
+                        <i class="fa-solid fa-file-pdf pdf-card-icon"></i>
+                    </div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Proposal v1</div>
+                        <div class="pdf-card-meta">Initial submission. February 2026.</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research Proposal/Final Year Research Proposal v1.pdf', 'Proposal v1')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-card">
+                    <div class="pdf-card-preview">
+                        <i class="fa-solid fa-file-pdf pdf-card-icon"></i>
+                    </div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Proposal v2</div>
+                        <div class="pdf-card-meta">Revised version with feedback. March 2026.</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research Proposal/Final Year Research Proposal v2.pdf', 'Proposal v2')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research References Section -->
+    <section class="pdf-section">
+        <div class="container reveal">
+            <div class="pdf-section-header">
+                <h3><i class="fa-solid fa-bookmarks"></i> Reference Documents</h3>
+                <span class="pdf-section-badge">10+ References</span>
+            </div>
+            <p class="text-soft mb-8">Curated collection of research papers, articles, and books supporting the research foundation and literature review.</p>
+
+            <div class="resources-grid">
+                <div class="pdf-card">
+                    <div class="pdf-card-preview"><i class="fa-solid fa-file-pdf pdf-card-icon"></i></div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Reference 1</div>
+                        <div class="pdf-card-meta">AI in Software Engineering</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research References/AI_Applications_in_Lean_Startup_Methodology.pdf', 'Reference 1')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research References/AI_Applications_in_Lean_Startup_Methodology.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-card">
+                    <div class="pdf-card-preview"><i class="fa-solid fa-file-pdf pdf-card-icon"></i></div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Reference 2</div>
+                        <div class="pdf-card-meta">Business Requirements Elicitation</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research References/AI_Driven_Business_Analytics.pdf', 'Reference 2')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research References/AI_Driven_Business_Analytics.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-card">
+                    <div class="pdf-card-preview"><i class="fa-solid fa-file-pdf pdf-card-icon"></i></div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Reference 3</div>
+                        <div class="pdf-card-meta">Ethical AI & Responsible Computing</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research References/AI_Enhanced_Business_Intelligence_for_Decision_Making.pdf', 'Reference 3')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research References/AI_Enhanced_Business_Intelligence_for_Decision_Making.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-card">
+                    <div class="pdf-card-preview"><i class="fa-solid fa-file-pdf pdf-card-icon"></i></div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Reference 4</div>
+                        <div class="pdf-card-meta">Human-in-the-Loop AI Systems</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research References/AI_to_Enhance_BA_Education.pdf', 'Reference 4')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research References/AI_to_Enhance_BA_Education.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-card">
+                    <div class="pdf-card-preview"><i class="fa-solid fa-file-pdf pdf-card-icon"></i></div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Reference 5</div>
+                        <div class="pdf-card-meta">LLM Prompt Engineering Research</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research References/Gen_AI_for_Advancing_Agile_Development.pdf', 'Reference 5')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research References/Gen_AI_for_Advancing_Agile_Development.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-card">
+                    <div class="pdf-card-preview"><i class="fa-solid fa-file-pdf pdf-card-icon"></i></div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Reference 6</div>
+                        <div class="pdf-card-meta">AI-Assisted Software Requirements Generation</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research References/Gen_AI_in_SDLC.pdf', 'Reference 6')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research References/Gen_AI_in_SDLC.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-card">
+                    <div class="pdf-card-preview"><i class="fa-solid fa-file-pdf pdf-card-icon"></i></div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Reference 7</div>
+                        <div class="pdf-card-meta">Hybrid Intelligence & Agent Systems</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research References/Gen_AI_in_Software_Engineering.pdf', 'Reference 7')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research References/Gen_AI_in_Software_Engineering.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-card">
+                    <div class="pdf-card-preview"><i class="fa-solid fa-file-pdf pdf-card-icon"></i></div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Reference 8</div>
+                        <div class="pdf-card-meta">Bias Mitigation in AI Systems</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research References/Hybrid_Methodologies_in_Software_Development_with_AI.pdf', 'Reference 8')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research References/Hybrid_Methodologies_in_Software_Development_with_AI.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-card">
+                    <div class="pdf-card-preview"><i class="fa-solid fa-file-pdf pdf-card-icon"></i></div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Reference 9</div>
+                        <div class="pdf-card-meta">Domain-Specific Language Models</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research References/Revolutionizing_BA_QA_Team_Dynamics.pdf', 'Reference 9')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research References/Revolutionizing_BA_QA_Team_Dynamics.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pdf-card">
+                    <div class="pdf-card-preview"><i class="fa-solid fa-file-pdf pdf-card-icon"></i></div>
+                    <div class="pdf-card-content">
+                        <div class="pdf-card-title">Reference 10</div>
+                        <div class="pdf-card-meta">Evaluating AI-Generated Requirements</div>
+                        <div class="pdf-card-actions">
+                            <button onclick="openPDFViewer('assets/Research References/Wizard_Software_Business_Analysis.pdf', 'Reference 10')">
+                                <i class="fa-solid fa-eye"></i> View
+                            </button>
+                            <a href="assets/Research References/Wizard_Software_Business_Analysis.pdf" target="_blank" class="pdf-action-link">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF Viewer Modal -->
+    <div class="pdf-viewer-modal" id="pdfViewerModal">
+        <div class="pdf-viewer-container" id="pdfViewerContainer">
+            <div class="pdf-viewer-header">
+                <h3 class="pdf-viewer-title" id="pdfViewerTitle">Document</h3>
+                <div class="pdf-viewer-controls">
+                    <button class="toggle-fullscreen" onclick="togglePDFFullscreen()" title="Enter fullscreen" aria-label="Enter fullscreen" id="pdfFullscreenBtn">
+                        <i class="fa-solid fa-expand" id="pdfFullscreenIcon"></i>
+                        <span id="pdfFullscreenLabel">Fullscreen</span>
+                    </button>
+                    <button class="close-pdf-viewer" onclick="closePDFViewer()" title="Close PDF viewer" aria-label="Close PDF viewer">
+                        <i class="fa-solid fa-xmark"></i>
+                        <span>Close</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="pdf-viewer-content">
+                <div class="pdf-canvas-container" id="pdfCanvasContainer">
+                    <div class="flipbook-stage" id="flipbookStage">
+                        <div class="flipbook-shadow" aria-hidden="true"></div>
+                        <div class="flipbook-gutter" aria-hidden="true"></div>
+                        <button class="flip-nav-fixed flip-nav-left" onclick="previousPDFPage()" title="Previous spread" aria-label="Previous spread" id="prevPdfBtn">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <div id="pdfFlipBook" class="pdf-flipbook" aria-label="PDF Flipbook"></div>
+                        <button class="flip-nav-fixed flip-nav-right" onclick="nextPDFPage()" title="Next spread" aria-label="Next spread" id="nextPdfBtn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pdf-viewer-footer">
+                <div class="pdf-control-panel" aria-label="Flipbook controls">
+                    <span class="pdf-page-counter" id="pdfPageCounterText">Page <span id="currentPdfPage">1</span><span class="counter-sep">/</span><span id="totalPdfPages">1</span><span class="counter-mode" id="pdfPageMode">Spread</span></span>
+                    <button class="pdf-control-btn" onclick="downloadCurrentPDF()" title="Download PDF" aria-label="Download PDF">
+                        <i class="fa-solid fa-download"></i> Download
+                    </button>
+                    <button class="pdf-control-btn" onclick="zoomOutPDF()" title="Zoom out" aria-label="Zoom out">
+                        <i class="fa-solid fa-magnifying-glass-minus"></i>
+                    </button>
+                    <span class="pdf-zoom-value" id="pdfZoomValue">100%</span>
+                    <button class="pdf-control-btn" onclick="zoomInPDF()" title="Zoom in" aria-label="Zoom in">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </button>
+                    <button class="pdf-control-btn" onclick="fitPDFViewer()" title="Fit to viewer" aria-label="Fit to viewer">
+                        <i class="fa-solid fa-expand"></i> Fit
+                    </button>
+                </div>
+                <div class="flipbook-hint">Flipbook Mode • Use Left and Right arrow keys</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resource Info Section -->
+    <section class="section bg-gradient-overlay">
+        <div class="container reveal">
+            <h2 class="section-title">How to Use These Resources</h2>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h4><i class="fa-solid fa-eye"></i> View Online</h4>
+                    <p>Click the "View" button on any document to open it in the embedded viewer. The documents may take a moment to load depending on file size and your connection speed.</p>
+                    <ul class="mt-4">
+                        <li>Zoom using browser controls</li>
+                        <li>Print from your browser (Ctrl+P / Cmd+P)</li>
+                        <li>Use browser navigation buttons</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4><i class="fa-solid fa-download"></i> Download Locally</h4>
+                    <p>Click the "Download" button to save a copy to your computer. This is useful for offline reading, archival, or detailed review.</p>
+                    <ul class="mt-4">
+                        <li>Files saved as PDF (high compatibility)</li>
+                        <li>Works with any PDF reader</li>
+                        <li>Keep backups for reference</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="alert mt-8">
+                <h4><i class="fa-solid fa-info-circle"></i> Document Access</h4>
+                <p class="mb-0">All documents are provided for academic review and research purposes. Some files may not be displayed in the browser viewer due to file format or size. In such cases, please download the document to view it locally.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container reveal text-center">
+            <h2 class="section-title">Continue Exploring</h2>
+            <p class="mb-12">Return to the presentation, check the latest progress, or review the research methodology.</p>
+            
+            <div class="flex-center flex-wrap section-actions">
+                <a href="presentation.html" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-slideshow"></i> View Presentation
+                </a>
+                <a href="progress.html" class="btn btn-secondary btn-lg">
+                    <i class="fa-solid fa-chart-line"></i> Check Progress
+                </a>
+                <a href="methodology.html" class="btn btn-ghost btn-lg">
+                    <i class="fa-solid fa-flask"></i> Methodology
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-brain"></i> AI-BA Research</h3>
+                    <p>Exploring AI-enhanced methodologies for Business Analysis in Software Development at the University of Ruhuna.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="problem.html">Problem & Motivation</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                        <li><a href="presentation.html">Presentation</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="progress.html">Progress & Timeline</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Proposal v1</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Proposal v2</a></li>
+                        <li><a href="resources.html">Research References</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><strong>Student:</strong> A.P.N.K. Abeysekara</li>
+                        <li><strong>ID:</strong> SC/2021/12375</li>
+                        <li><strong>Email:</strong> <a href="mailto:nimnadakavishwarank.ugc@gmail.com">nimnadakavishwarank.ugc@gmail.com</a></li>
+                        <li><strong>University:</strong> University of Ruhuna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> A.P.N.K. Abeysekara • BSc (Hons) Computer Science, University of Ruhuna</p>
+                <div class="footer-socials">
+                    <a href="#top" title="Back to top" aria-label="Back to top">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/pages/resources.js" defer></script>
+</body>
+</html>

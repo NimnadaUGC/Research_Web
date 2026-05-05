@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology & Approach | AI-Enhanced BA Research</title>
+    <link rel="icon" href="data:,">
+    <meta name="description" content="Proposed methodology: adaptive prompt engineering, ethical prompting, and hybrid AI agents for business analysis.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
+
+    <nav class="navbar at-top" id="top">
+        <div class="nav-container container">
+            <div class="logo" aria-label="Website logo">
+                <h2><i class="fa-solid fa-brain"></i> AI-BA<span>Research</span></h2>
+                <p class="tagline">Adaptive • Hybrid Intelligence</p>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Problem</a></li>
+                <li><a href="methodology.html" class="active">Methodology</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li class="mobile-only">
+                    <a href="beta.html">Apply for Beta</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="beta.html" class="btn btn-primary">
+                    <i class="fa-solid fa-flask-vial"></i> Apply for Beta
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero hero-short">
+        <div class="hero-content container reveal">
+            <div class="hero-text">
+                <p class="kicker"><i class="fa-solid fa-hammer"></i> Phase 03</p>
+                <h1>Proposed Approach: Three Pillars</h1>
+                <p class="subtitle">A comprehensive framework combining adaptive prompting, ethical safeguards, and human-in-the-loop hybrid agents</p>
+            </div>
+
+            <div class="hero-graphic">
+                <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Rounded Rectangle Base -->
+                    <rect x="20" y="20" width="200" height="200" rx="40" fill="url(#grad1)" opacity="0.08"/>
+                    
+                    <!-- Process Line -->
+                    <path d="M40 120 L80 120 L120 70 L160 120 L200 120" stroke="url(#grad2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" class="svg-draw" pathLength="100"/>
+                    
+                    <!-- Steps (Rounded Rects) -->
+                    <rect x="60" y="100" width="40" height="40" rx="12" fill="url(#grad2)" opacity="0.8" class="svg-fade-in" style="transform-origin: 80px 120px;"/>
+                    <rect x="60" y="100" width="40" height="40" rx="12" stroke="#00b2ff" stroke-width="2" fill="none" class="svg-draw" pathLength="100"/>
+                    
+                    <rect x="100" y="50" width="40" height="40" rx="12" fill="url(#grad2)" opacity="0.8" class="svg-fade-in-delayed" style="transform-origin: 120px 70px;"/>
+                    <rect x="100" y="50" width="40" height="40" rx="12" stroke="#00b2ff" stroke-width="2" fill="none" class="svg-draw-delayed" pathLength="100"/>
+                    
+                    <rect x="140" y="100" width="40" height="40" rx="12" fill="url(#grad2)" opacity="0.8" class="svg-fade-in-delayed-2" style="transform-origin: 160px 120px;"/>
+                    <rect x="140" y="100" width="40" height="40" rx="12" stroke="#00b2ff" stroke-width="2" fill="none" class="svg-draw-delayed-2" pathLength="100"/>
+
+                    <!-- Inner dots representing data moving -->
+                    <circle cx="80" cy="120" r="4" fill="#fff" class="svg-fade-in" style="transform-origin: 80px 120px;"/>
+                    <circle cx="120" cy="70" r="4" fill="#fff" class="svg-fade-in-delayed" style="transform-origin: 120px 70px;"/>
+                    <circle cx="160" cy="120" r="4" fill="#fff" class="svg-fade-in-delayed-2" style="transform-origin: 160px 120px;"/>
+                    
+                    <!-- Connector pulses -->
+                    <rect x="80" y="155" width="80" height="8" rx="4" fill="url(#grad2)" opacity="0.4" class="svg-fade-in-delayed-2" style="transform-origin: 120px 159px;"/>
+
+                    <defs>
+                        <linearGradient id="grad1" x1="0" y1="0" x2="240" y2="240">
+                            <stop stop-color="#0f5ad4"/><stop offset="1" stop-color="#00b2ff"/>
+                        </linearGradient>
+                        <linearGradient id="grad2" x1="20" y1="20" x2="220" y2="220">
+                            <stop stop-color="#0f5ad4"/><stop offset="1" stop-color="#0645b7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container reveal">
+            <h2 class="section-title">The Three-Pillar Framework</h2>
+            <p class="text-center text-soft mb-12">Our methodology is built on three interconnected pillars, each addressing a specific research question. Together, they form a cohesive, human-centered approach to AI-enhanced Business Analysis.</p>
+
+            <div class="grid-3">
+                <div class="card hover-lift step">
+                    <span class="step-num">1</span>
+                    <h3>Adaptive Prompt Engineering <sup class="pillar-sup">Pillar 1</sup></h3>
+                    <p><strong>Objective:</strong> Reduce ambiguity in requirements through iterative, context-aware prompting.</p>
+                    <ul class="text-sm">
+                        <li><strong>Stakeholder input</strong> → Initial requirement sketch</li>
+                        <li><strong>Ambiguity detection</strong> → Identify vague terms, missing constraints</li>
+                        <li><strong>Clarification loop</strong> → AI generates targeted questions</li>
+                        <li><strong>Refinement</strong> → Updated user stories, SRS with clarity scores</li>
+                    </ul>
+                </div>
+
+                <div class="card hover-lift step">
+                    <span class="step-num">2</span>
+                    <h3>Ethical Prompting & Bias Reduction <sup class="pillar-sup">Pillar 2</sup></h3>
+                    <p><strong>Objective:</strong> Improve transparency and reduce fairness risks in AI-generated artifacts.</p>
+                    <ul class="text-sm">
+                        <li><strong>Bias-sensitive language detection</strong> → Flag loaded terms, hidden assumptions</li>
+                        <li><strong>Stakeholder fairness prompts</strong> → Ensure all voices are considered</li>
+                        <li><strong>Transparency notes</strong> → Explicit assumptions, trade-offs, dependencies</li>
+                        <li><strong>Traceability</strong> → Link decisions back to source stakeholders</li>
+                    </ul>
+                </div>
+
+                <div class="card hover-lift step">
+                    <span class="step-num">3</span>
+                    <h3>Hybrid AI Agents (Human-in-the-Loop) <sup class="pillar-sup">Pillar 3</sup></h3>
+                    <p><strong>Objective:</strong> Support BA workflows while maintaining human oversight and decision-making power.</p>
+                    <ul class="text-sm">
+                        <li><strong>Modular agents</strong> → Elicitation Assistant, Ethics Checker, Documentation Generator</li>
+                        <li><strong>Human feedback loop</strong> → BA reviews, approves, or revises AI output</li>
+                        <li><strong>Traceability</strong> → Audit trail of AI suggestions and human decisions</li>
+                        <li><strong>Reproducibility</strong> → Open-source toolkit for local SME adoption</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-gradient-overlay">
+        <div class="container reveal">
+            <h2 class="section-title">Workflow Integration</h2>
+            
+            <div class="callout mb-8">
+                <h4>End-to-End Artifact Flow</h4>
+                <p><strong>Stakeholder Input</strong> → <strong>Elicitation Agent</strong> (clarification) → <strong>Ethics Checker</strong> (bias audit) → <strong>Documentation Generator</strong> (final output) → <strong>Human Review</strong> (approval) → <strong>Refined BA Artifact</strong></p>
+            </div>
+
+            <div class="grid-2">
+                <div class="box">
+                    <h4><i class="fa-solid fa-list-ol"></i> Elicitation Assistant</h4>
+                    <ul>
+                        <li>Accepts unstructured stakeholder input (verbal notes, rough sketches)</li>
+                        <li>Generates clarification questions using iterative prompts</li>
+                        <li>Synthesizes responses into user stories (INVEST framework) and acceptance criteria</li>
+                        <li>Provides clarity score based on rubric (completeness, specificity, testability)</li>
+                    </ul>
+                </div>
+
+                <div class="box">
+                    <h4><i class="fa-solid fa-scale-balanced"></i> Ethics Checker</h4>
+                    <ul>
+                        <li>Audits generated artifacts for bias-sensitive language</li>
+                        <li>Flags assumptions, hidden dependencies, and stakeholder representation gaps</li>
+                        <li>Generates transparency notes (what was assumed, why, alternatives considered)</li>
+                        <li>Provides bias flag counts and severity ratings</li>
+                    </ul>
+                </div>
+
+                <div class="box">
+                    <h4><i class="fa-solid fa-file-lines"></i> Documentation Generator</h4>
+                    <ul>
+                        <li>Synthesizes refined stories and acceptance criteria into SRS format</li>
+                        <li>Includes traceability matrix (requirement → stakeholder source)</li>
+                        <li>Generates technical and functional constraints documentation</li>
+                        <li>Produces one-page executive summary for quick alignment checks</li>
+                    </ul>
+                </div>
+
+                <div class="box">
+                    <h4><i class="fa-solid fa-user-check"></i> Human Review Loop</h4>
+                    <ul>
+                        <li>BA reviews AI output, approves or requests revisions</li>
+                        <li>Audit trail logs all changes and human decisions</li>
+                        <li>Stakeholder feedback incorporated via feedback loop to Elicitation Agent</li>
+                        <li>Final artifact ready for developer handoff</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Evaluation Approach</h2>
+            <p class="text-center text-soft mb-12">Mixed-methods evaluation combining quantitative metrics and qualitative insights from SME participants:</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4><i class="fa-solid fa-chart-bar"></i> Quantitative Metrics</h4>
+                    <ul>
+                        <li><strong>Clarity Score:</strong> 1–5 rubric (completeness, specificity, testability)</li>
+                        <li><strong>Bias Flags Count:</strong> # of detected risks per artifact</li>
+                        <li><strong>Time to Completion:</strong> Baseline vs. AI-assisted workflow</li>
+                        <li><strong>Defect Rate Post-Dev:</strong> Rework incidents due to vague/incorrect specs</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4><i class="fa-solid fa-comments"></i> Qualitative Evidence</h4>
+                    <ul>
+                        <li><strong>BA Interviews:</strong> Usability, trust, cognitive load, confidence</li>
+                        <li><strong>Developer Feedback:</strong> Spec clarity, completeness, handover friction</li>
+                        <li><strong>Stakeholder Surveys:</strong> Fairness perception, representation, trust</li>
+                        <li><strong>Thematic Analysis:</strong> Emergent patterns in adoption barriers/enablers</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4><i class="fa-solid fa-flask-vial"></i> A/B Trial Design</h4>
+                    <p>Matched-task studies across 3 SMEs comparing manual BA workflow vs. AI-augmented workflow using the same artifacts and metrics.</p>
+                </div>
+
+                <div class="card">
+                    <h4><i class="fa-solid fa-target"></i> Success Criteria</h4>
+                    <ul>
+                        <li>20–40% improvement in clarity scores</li>
+                        <li>15–30% bias flag reduction after ethics checks</li>
+                        <li>30–50% time savings in specification phase</li>
+                        <li>Positive BA feedback on trust & usability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-gradient-overlay">
+        <div class="container reveal">
+            <h2 class="section-title">Prototype Implementation Plan</h2>
+            <p class="text-center text-soft mb-12">A lean, open-source toolkit built with Python, Streamlit, and LLM APIs:</p>
+
+            <div class="timeline timeline-centered">
+                <div class="timeline-item" data-step="1">
+                    <div class="timeline-content">
+                        <h4>Phase 1: Elicitation Assistant</h4>
+                        <p><strong>Tools:</strong> Streamlit UI + OpenAI/LLaMA call</p>
+                        <p><strong>Input:</strong> Unstructured stakeholder notes</p>
+                        <p><strong>Output:</strong> User stories (INVEST), acceptance criteria, clarity score</p>
+                    </div>
+                    <div class="timeline-date">Months 1–2</div>
+                </div>
+
+                <div class="timeline-item" data-step="2">
+                    <div class="timeline-content">
+                        <h4>Phase 2: Ethics Checker</h4>
+                        <p><strong>Tools:</strong> Bias-lint library (Python) + custom rubric</p>
+                        <p><strong>Input:</strong> Generated stories, acceptance criteria</p>
+                        <p><strong>Output:</strong> Bias flag list, transparency notes</p>
+                    </div>
+                    <div class="timeline-date">Months 2–3</div>
+                </div>
+
+                <div class="timeline-item" data-step="3">
+                    <div class="timeline-content">
+                        <h4>Phase 3: Documentation Generator</h4>
+                        <p><strong>Tools:</strong> Jinja2 templates + Markdown export</p>
+                        <p><strong>Input:</strong> Refined stories, bias-checked artifacts</p>
+                        <p><strong>Output:</strong> SRS PDF, traceability matrix, summary docs</p>
+                    </div>
+                    <div class="timeline-date">Months 3–4</div>
+                </div>
+
+                <div class="timeline-item" data-step="4">
+                    <div class="timeline-content">
+                        <h4>Phase 4: Integration & Testing</h4>
+                        <p><strong>Tools:</strong> GitHub Actions, pytest, user acceptance testing</p>
+                        <p><strong>Input:</strong> Real SME pilot data</p>
+                        <p><strong>Output:</strong> Refined toolkit, documentation, deployment guide</p>
+                    </div>
+                    <div class="timeline-date">Months 4–5</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container reveal text-center">
+            <h2 class="section-title">Next Steps</h2>
+            <p class="mb-12">See how this methodology is being executed across our research timeline, and explore the hybrid agent architecture in detail.</p>
+            
+            <div class="flex-center flex-wrap section-actions">
+                <a href="progress.html" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-chart-line"></i> Timeline & Progress
+                </a>
+                <a href="presentation.html" class="btn btn-secondary btn-lg">
+                    <i class="fa-solid fa-slideshow"></i> Presentation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-brain"></i> AI-BA Research</h3>
+                    <p>Exploring AI-enhanced methodologies for Business Analysis in Software Development at the University of Ruhuna.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="problem.html">Problem & Motivation</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                        <li><a href="presentation.html">Presentation</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="progress.html">Progress & Timeline</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Proposal v1</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Proposal v2</a></li>
+                        <li><a href="resources.html">Research References</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><strong>Student:</strong> A.P.N.K. Abeysekara</li>
+                        <li><strong>ID:</strong> SC/2021/12375</li>
+                        <li><strong>Email:</strong> <a href="mailto:nimnadakavishwarank.ugc@gmail.com">nimnadakavishwarank.ugc@gmail.com</a></li>
+                        <li><strong>University:</strong> University of Ruhuna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> A.P.N.K. Abeysekara • BSc (Hons) Computer Science, University of Ruhuna</p>
+                <div class="footer-socials">
+                    <a href="#top" title="Back to top" aria-label="Back to top">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pages/footer-year.js" defer></script>
+</body>
+</html>
