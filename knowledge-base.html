@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base | AI-Enhanced BA Research</title>
+    <link rel="icon" href="data:,">
+    <meta name="description" content="Hierarchical research Q&A knowledge base for AI-enhanced Business Analysis, requirements engineering, methodology, evaluation, and counterarguments.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Knowledge Base Page Specific Styles -->
+    <link rel="stylesheet" href="css/pages/kb-hero.css">
+    <link rel="stylesheet" href="css/pages/kb-workspace.css">
+    <link rel="stylesheet" href="css/pages/kb-responsive.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+
+    <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/pages/knowledge-base.js" defer></script>
+</head>
+<body class="knowledge-page">
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
+
+    <nav class="navbar at-top" id="top">
+        <div class="nav-container container">
+            <div class="logo" aria-label="Website logo">
+                <h2><i class="fa-solid fa-brain"></i> AI-BA<span>Research</span></h2>
+                <p class="tagline">Adaptive • Hybrid Intelligence</p>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problem.html">Problem</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="presentation.html">Presentation</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="progress.html">Progress</a></li>
+                <li class="mobile-only"><a href="beta.html">Apply for Beta</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="beta.html" class="btn btn-primary">
+                    <i class="fa-solid fa-flask-vial"></i> Apply for Beta
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="kb-hero" id="knowledge-start">
+        <div class="container kb-hero-grid reveal">
+            <div class="kb-hero-copy">
+                <p class="kicker"><i class="fa-solid fa-sitemap"></i> Research Knowledge Base</p>
+                <h1>Branch through the project Q&A hierarchy</h1>
+                <p class="subtitle">Select a primary question, expand its answer, and follow suggested branches in a mind-map style research defense flow.</p>
+                <div class="kb-hero-actions">
+                    <a href="#knowledge-app" class="btn btn-primary"><i class="fa-solid fa-diagram-project"></i> Open Branching View</a>
+                    <a href="#counterarguments" class="btn btn-secondary"><i class="fa-solid fa-scale-balanced"></i> Counterarguments</a>
+                </div>
+            </div>
+
+            <aside class="kb-intel-panel" aria-label="Knowledge base summary">
+                <div class="kb-orbit" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+                <h3><i class="fa-solid fa-diagram-project"></i> Smart Branching</h3>
+                <ul>
+                    <li><span>Primary Topics</span><strong id="kb-topic-count">15</strong></li>
+                    <li><span>Research Questions</span><strong id="kb-question-count">199</strong></li>
+                    <li><span>Suggestion Mode</span><strong>Contextual</strong></li>
+                    <li><span>Content Source</span><strong>Proposal Q&A</strong></li>
+                </ul>
+            </aside>
+        </div>
+    </header>
+
+    <main>
+        <section class="section kb-workspace" id="knowledge-app">
+            <div class="container wide reveal">
+                <div class="kb-toolbar">
+                    <div>
+                        <p class="kicker"><i class="fa-solid fa-magnifying-glass-chart"></i> Question Navigator</p>
+                        <h2 class="section-title">Knowledge Base</h2>
+                    </div>
+                    <div class="kb-topic-filter" id="kb-topic-filter">
+                        <i class="fa-solid fa-filter" aria-hidden="true"></i>
+                        <button class="kb-topic-filter-toggle" id="kb-topic-filter-toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+                            <span id="kb-topic-filter-label">All main topics</span>
+                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="kb-topic-filter-menu" id="kb-topic-filter-menu" role="listbox" hidden></div>
+                    </div>
+                    <div class="kb-view-toggle" aria-label="Knowledge Base view mode">
+                        <button class="active" type="button" data-view="map"><i class="fa-solid fa-diagram-project"></i> Branching View</button>
+                        <button type="button" data-view="basic"><i class="fa-solid fa-table-list"></i> Basic View</button>
+                    </div>
+                </div>
+
+                <div class="kb-map-view" id="kb-map-view">
+                    <div class="kb-map-shell">
+                        <div class="kb-map-shell-head">
+                            <div>
+                                <span>Branching Schema</span>
+                                <strong>Primary question → selected answer → suggested next branches</strong>
+                            </div>
+                            <button class="kb-small-btn" id="kb-map-fullscreen" type="button"><i class="fa-solid fa-expand"></i> Full Screen</button>
+                        </div>
+                        <svg class="kb-map-lines" id="kb-map-lines" aria-hidden="true"></svg>
+                        <div class="kb-map-column kb-map-primary">
+                            <div class="kb-map-label">Primary questions</div>
+                            <div class="kb-map-nodes" id="kb-map-primary"></div>
+                        </div>
+                        <div class="kb-map-column kb-map-focus">
+                            <div class="kb-map-label">Selected answer</div>
+                            <article class="kb-map-answer" id="kb-map-answer"></article>
+                        </div>
+                        <div class="kb-map-column kb-map-next">
+                            <div class="kb-map-label">Related questions</div>
+                            <div class="kb-map-nodes" id="kb-map-next"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kb-layout is-hidden" id="kb-basic-view">
+                    <aside class="kb-sidebar" aria-label="Primary question tree">
+                        <div class="kb-sidebar-head">
+                            <h3>Question Tree</h3>
+                            <button class="kb-small-btn" id="kb-fullscreen" type="button"><i class="fa-solid fa-expand"></i> Full Screen</button>
+                        </div>
+                        <div class="kb-section-list" id="kb-section-list"></div>
+                    </aside>
+
+                    <section class="kb-answer-stage" aria-live="polite">
+                        <div class="kb-branch-strip" id="kb-branch-strip"></div>
+                        <article class="kb-answer-card" id="kb-answer-card"></article>
+                        <div class="kb-suggestions" id="kb-suggestions"></div>
+                    </section>
+                </div>
+
+                <div class="kb-mobile-answer-modal" id="kb-mobile-answer-modal" hidden aria-hidden="true">
+                    <div class="kb-mobile-answer-backdrop" data-mobile-answer-close></div>
+                    <article class="kb-mobile-answer-dialog" role="dialog" aria-modal="true" aria-labelledby="kb-mobile-answer-title">
+                        <button class="kb-mobile-answer-close" type="button" data-mobile-answer-close aria-label="Close selected answer">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <div class="kb-mobile-answer-body" id="kb-mobile-answer-body"></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light" id="counterarguments">
+            <div class="container reveal">
+                <div class="kb-counter-head">
+                    <div>
+                        <p class="kicker"><i class="fa-solid fa-shield-halved"></i> Defense Section</p>
+                        <h2 class="section-title">Obvious Counterarguments</h2>
+                    </div>
+                </div>
+                <div class="kb-counter-grid" id="kb-counter-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <div class="kb-counter-modal" id="kb-counter-modal" hidden aria-hidden="true">
+        <div class="kb-counter-modal-backdrop" data-counter-close></div>
+        <article class="kb-counter-dialog" role="dialog" aria-modal="true" aria-labelledby="kb-counter-modal-title">
+            <button class="kb-counter-close" type="button" data-counter-close aria-label="Close counterargument">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="kb-counter-dialog-body" id="kb-counter-dialog-body"></div>
+            <div class="kb-counter-dialog-nav">
+                <button type="button" class="prev-btn" id="kb-counter-prev">
+                    <i class="fa-solid fa-arrow-left"></i> Previous
+                </button>
+                <span id="kb-counter-position"></span>
+                <button type="button" class="next-btn" id="kb-counter-next">
+                    Next <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-brain"></i> AI-BA Research</h3>
+                    <p>A comprehensive research project exploring AI-enhanced methodologies for Business Analysis in Software Development.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="problem.html">Problem & Motivation</a></li>
+                        <li><a href="methodology.html">Methodology</a></li>
+                        <li><a href="presentation.html">Presentation</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="progress.html">Progress & Timeline</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Proposal v1</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Proposal v2</a></li>
+                        <li><a href="resources.html">Research References</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><strong>Student:</strong> A.P.N.K. Abeysekara</li>
+                        <li><strong>ID:</strong> SC/2021/12375</li>
+                        <li><strong>Email:</strong> <a href="mailto:nimnadakavishwarank.ugc@gmail.com">nimnadakavishwarank.ugc@gmail.com</a></li>
+                        <li><strong>University:</strong> University of Ruhuna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> A.P.N.K. Abeysekara • BSc (Hons) Computer Science, University of Ruhuna</p>
+                <div class="footer-socials">
+                    <a href="#top" title="Back to top" aria-label="Back to top">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pages/footer-year.js" defer></script>
+</body>
+</html>
