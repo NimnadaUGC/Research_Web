@@ -1,0 +1,198 @@
+/* ============================================================================
+   KNOWLEDGE BASE — PART 1: PAGE BASE & HERO
+   Covers: page body, hero, intel panel, orbit animation
+   ========================================================================== */
+
+/* ── Page base ─────────────────────────────────────────────────────────── */
+
+.knowledge-page {
+    background:
+        radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.95), transparent 28%),
+        radial-gradient(circle at 90% 14%, rgba(53, 121, 255, 0.12), transparent 22%),
+        linear-gradient(135deg, #eef5ff 0%, #f6f9ff 42%, #edf4ff 100%);
+    color: var(--text);
+}
+
+.knowledge-page main { display: block; }
+
+.knowledge-page section:not(.research-chatbot) { position: relative; }
+
+.knowledge-page .section {
+    padding-top: clamp(var(--space-8), 4vw, var(--space-12));
+    padding-bottom: clamp(var(--space-8), 4vw, var(--space-12));
+}
+
+.knowledge-page .bg-light {
+    background:
+        radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.7), transparent 35%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(246, 249, 255, 0.9));
+}
+
+.knowledge-page .kb-workspace,
+.knowledge-page #counterarguments {
+    padding-top: clamp(var(--space-8), 4vw, var(--space-12));
+    padding-bottom: clamp(var(--space-8), 4vw, var(--space-12));
+}
+
+.knowledge-page .kb-workspace .container.wide {
+    max-width: 1560px;
+}
+
+/* ── Hero ──────────────────────────────────────────────────────────────── */
+
+.kb-hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--nav-height) + var(--space-12)) 0 var(--space-10);
+    overflow: hidden;
+    position: relative;
+}
+
+.kb-hero::before,
+.kb-hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+}
+
+.kb-hero::before {
+    inset: 10% auto auto 68%;
+    width: min(34vw, 520px);
+    height: min(34vw, 520px);
+    background: radial-gradient(circle, rgba(42, 116, 255, 0.14), transparent 68%);
+    filter: blur(2px);
+}
+
+.kb-hero::after {
+    inset: auto auto 5% 2%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(42, 116, 255, 0.08), transparent 70%);
+}
+
+.kb-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.76fr);
+    gap: clamp(var(--space-8), 3vw, var(--space-12));
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.kb-hero-copy h1 {
+    max-width: 760px;
+    font-size: var(--font-size-4xl);
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-4);
+}
+
+.kb-hero-copy .subtitle {
+    max-width: 720px;
+    font-size: var(--font-size-lg);
+    line-height: 1.65;
+}
+
+.kb-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+/* ── Intel panel (hero sidebar card) ───────────────────────────────────── */
+
+.kb-intel-panel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--primary) 16%, var(--line));
+    border-radius: var(--radius-xl);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 255, 0.88)),
+        var(--surface);
+    box-shadow: 0 18px 50px rgba(22, 41, 72, 0.08);
+    padding: clamp(var(--space-6), 2vw, var(--space-8));
+}
+
+.kb-intel-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent), var(--success));
+}
+
+.kb-intel-panel h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-5);
+}
+
+.kb-intel-panel h3 i { color: var(--primary); }
+
+.kb-intel-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-1);
+}
+
+.kb-intel-panel li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--line);
+    margin: 0;
+}
+
+.kb-intel-panel li:last-child { border-bottom: 0; }
+
+.kb-intel-panel span { color: var(--text-soft); }
+
+.kb-intel-panel strong { color: var(--primary); }
+
+/* ── Orbit decoration ──────────────────────────────────────────────────── */
+
+.kb-orbit {
+    height: 150px;
+    margin-bottom: var(--space-6);
+    border-radius: var(--radius-xl);
+    background:
+        linear-gradient(145deg, rgba(15, 90, 212, 0.14), rgba(0, 178, 255, 0.06)),
+        var(--surface-alt);
+    border: 1px solid color-mix(in srgb, var(--primary) 14%, var(--line));
+    position: relative;
+    overflow: hidden;
+}
+
+.kb-orbit::before {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 12%;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(15, 90, 212, 0.35), transparent);
+}
+
+.kb-orbit span {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(15, 90, 212, 0.22);
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: var(--shadow-xs);
+    animation: kbNodeFloat 6s ease-in-out infinite;
+}
+
+.kb-orbit span:nth-child(1) { left: 18%; top: 52%; }
+.kb-orbit span:nth-child(2) { left: 44%; top: 22%; animation-delay: 0.8s; }
+.kb-orbit span:nth-child(3) { left: 70%; top: 58%; animation-delay: 1.6s; }

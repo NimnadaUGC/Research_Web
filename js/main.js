@@ -5,6 +5,7 @@
 import { initScrollReveal,animateValue, isMobile } from './utils.js';
 import { initNavbar } from './navbar.js';
 import { initComponents } from './components.js';
+import { initResearchChatbot } from './chatbot.js';
 
 /**
  * Main application class
@@ -34,6 +35,8 @@ class App {
         this.initComponents();
         this.initAnimations();
         this.initStats();
+        this.initKnowledgeShortcut();
+        this.initResearchAssistant();
         this.attachEventListeners();
 
         this.initialized = true;
@@ -76,6 +79,25 @@ class App {
         });
 
         stats.forEach((stat) => observer.observe(stat));
+    }
+
+    initKnowledgeShortcut() {
+        const isKnowledgePage = window.location.pathname.endsWith('/knowledge-base.html') || window.location.pathname.endsWith('knowledge-base.html');
+        const shortcut = document.createElement('a');
+        shortcut.className = 'global-kb-shortcut';
+        shortcut.href = isKnowledgePage ? 'index.html' : 'knowledge-base.html#knowledge-app';
+        shortcut.setAttribute('aria-label', isKnowledgePage ? 'Go back to home' : 'Explore Knowledge Base');
+        shortcut.innerHTML = isKnowledgePage
+            ? '<i class="fa-solid fa-house"></i><span>Go back to home</span>'
+            : '<i class="fa-solid fa-sitemap"></i><span>Explore Knowledge Base</span>';
+        document.body.appendChild(shortcut);
+    }
+
+    initResearchAssistant() {
+        initResearchChatbot({
+            kbUrl: 'kb.json',
+            cssUrl: 'css/chatbot.css'
+        });
     }
 
     attachEventListeners() {
