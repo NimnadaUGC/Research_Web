@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human-Governed AI Orchestration for Business Analysis - Widescreen Slide Deck</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Urbanist (Headings) & Lato (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        heading: ['Urbanist', 'sans-serif']
+                    },
+                    colors: {
+                        slate: {
+                            950: '#020617',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155'
+                        },
+                        accent: {
+                            lime: '#4ade80',
+                            teal: '#2dd4bf',
+                            sky: '#38bdf8',
+                            rose: '#f43f5e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Interactive Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2dd4bf;
+        }
+
+        /* 16:9 Widescreen slide standard styling */
+        .slide-frame {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            max-width: 1280px;
+            max-height: 720px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        }
+
+        /* Ambient glowing dots for visual depth */
+        .glowing-dot {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Print media configurations to break 95 slides correctly on paper/PDF export */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-slide-container {
+                display: block !important;
+            }
+            .slide-frame {
+                display: flex !important;
+                width: 100% !important;
+                height: 100vh !important;
+                max-width: none !important;
+                max-height: none !important;
+                page-break-after: always !important;
+                box-shadow: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+                background: #0f172a !important;
+                color: #f8fafc !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans min-h-screen flex flex-col justify-between overflow-x-hidden antialiased">
+
+    <!-- Print Fallback: Container that will list all slides sequentially only for printable exports -->
+    <div id="printContainer" class="hidden print-slide-container w-full"></div>
+
+    <!-- Active App UI (Hidden in Print Mode) -->
+    <div class="no-print flex flex-col justify-between min-h-screen">
+        <!-- Top Toolbar Interface -->
+        <header class="bg-slate-900/90 border-b border-slate-800/80 px-6 py-4 flex items-center justify-between sticky top-0 z-50 backdrop-blur-md">
+            <div class="flex items-center gap-3">
+                <span class="bg-accent-lime/10 text-accent-lime font-bold px-2.5 py-1 rounded text-xs tracking-wider uppercase border border-accent-lime/20">BCS (Hons) Proposal</span>
+                <div class="h-4 w-[1px] bg-slate-800"></div>
+                <h2 class="text-sm font-semibold text-slate-300">Nimnada Kavishwara | SC/2021/12375 | University of Ruhuna</h2>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="toggleSidebar()" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-accent-teal px-4 py-2 rounded-lg border border-slate-700 transition duration-200 text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-folder-open text-sm"></i>
+                    <span>Slide Index (<span id="btnCounter">1</span>/95)</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Slide Navigator Drawer Sidebar -->
+        <aside id="sidebarIndex" class="fixed top-0 right-0 h-full w-96 bg-slate-900 border-l border-slate-800/80 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <h3 class="text-base font-bold text-slate-100 font-heading tracking-wider uppercase">Slide Directory</h3>
+                    <p class="text-xs text-slate-400 mt-1">Quick navigation across 95 slides</p>
+                </div>
+                <button onclick="toggleSidebar()" class="text-slate-400 hover:text-accent-rose text-xl transition"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <!-- Quick Category Filter Tabs -->
+            <div class="px-6 py-3 bg-slate-950 border-b border-slate-800/60 flex items-center gap-2 overflow-x-auto">
+                <input type="text" id="slideSearch" oninput="filterSlides()" placeholder="Search slide title..." class="w-full bg-slate-900 border border-slate-800 px-3 py-1.5 rounded text-xs text-slate-200 focus:outline-none focus:border-accent-teal transition">
+            </div>
+
+            <div class="flex-grow overflow-y-auto p-4 space-y-1.5" id="sidebarLinksContainer">
+                <!-- Programmatically populated slides index links -->
+            </div>
+        </aside>
+
+        <!-- Main Slide View Area -->
+        <main class="flex-grow flex items-center justify-center p-4 md:p-8 relative">
+            <!-- Decorative Glow Elements -->
+            <div class="glowing-dot top-10 left-10 bg-accent-lime"></div>
+            <div class="glowing-dot bottom-10 right-10 bg-accent-teal"></div>
+            
+            <div id="slideViewport" class="slide-frame bg-slate-900 border border-slate-800/80 rounded-2xl relative overflow-hidden flex flex-col justify-between p-12 select-none">
+                <!-- Active Slide Content Container -->
+                <div id="slideContent" class="flex-grow flex flex-col justify-between h-full relative z-10">
+                    <!-- Loaded via JavaScript render -->
+                </div>
+                
+                <!-- Individual Slide Bottom Line Progress -->
+                <div class="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-accent-lime to-accent-teal transition-all duration-300" id="slideProgressBar" style="width: 1%;"></div>
+            </div>
+        </main>
+
+        <!-- Bottom Controller Panel -->
+        <footer class="bg-slate-900/60 border-t border-slate-900 px-8 py-4 flex items-center justify-between sticky bottom-0 z-40 backdrop-blur-sm">
+            <div class="flex items-center gap-6 text-xs text-slate-400">
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-[10px]">←</span>
+                    <span class="px-2 py-0.5 bg-slate-800 border border-slate-700 rounded text-[10px]">→</span>
+                    <span>Navigate</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-4 py-0.5 bg-slate-800 border border-slate-700 rounded text-[10px]">Spacebar</span>
+                    <span>Play / Pause Autoplay</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button onclick="prevSlide()" class="w-10 h-10 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-accent-lime rounded-full flex items-center justify-center transition-all shadow-md">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="text-sm font-bold font-heading tracking-widest text-slate-300">
+                    SLIDE <span id="currentSlideNum" class="text-accent-teal">1</span> <span class="text-slate-600">/</span> <span class="text-slate-500">95</span>
+                </div>
+                <button onclick="nextSlide()" class="w-10 h-10 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-accent-lime rounded-full flex items-center justify-center transition-all shadow-md">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button onclick="toggleAutoplay()" id="autoplayBtn" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-accent-lime rounded-lg border border-slate-700 text-xs font-bold flex items-center gap-2 transition shadow-sm">
+                    <i id="autoplayIcon" class="fa-solid fa-play"></i>
+                    <span id="autoplayText">Auto</span>
+                </button>
+                <button onclick="window.print()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-accent-sky rounded-lg border border-slate-700 text-xs font-bold flex items-center gap-2 transition shadow-sm">
+                    <i class="fa-solid fa-print"></i>
+                    <span>Export PDF</span>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Widescreen Presentation Application Logic & Complete Slides Database -->
+    <script>
+        // Comprehensive 95 Slides database reflecting all parts of the academic research framework
+        const slidesDatabase = [
+            // PART 1: INTRODUCTORY & CANDIDATE HIGHLIGHTS (1-5)
+            {
+                part: "Part 1: Candidate Highlights",
+                title: "Human-Governed AI Orchestration for Business Analysis",
+                subtitle: "Operationalizing Generative AI in Software Requirements Engineering",
+                layout: "title",
+                bullets: [
+                    "<strong>Presenter:</strong> Nimnada Kavishwara (A.P.N.K. ABEYSEKARA)",
+                    "<strong>Academic Track:</strong> Final Year Research Proposal (BCS Hons)",
+                    "<strong>Institutional Affiliation:</strong> Department of Computer Science, University of Ruhuna, Sri Lanka"
+                ]
+            },
+            {
+                part: "Part 1: Candidate Highlights",
+                title: "Candidate Profile & Strategic Scope Mapping",
+                subtitle: "Direct academic and institutional mapping parameters",
+                layout: "profile",
+                bullets: [
+                    "<strong>Candidate Name:</strong> A.P.N.K. ABEYSEKARA (Nimnada Kavishwara)",
+                    "<strong>Registration Number:</strong> SC/2021/12375",
+                    "<strong>Degree Programme:</strong> Bachelor of Computer Science (BCS Hons)",
+                    "<strong>Institutional Body:</strong> Faculty of Science, University of Ruhuna, Sri Lanka",
+                    "<strong>Primary Research Field:</strong> Intelligent Middleware & Software Requirements Engineering Process Automation"
+                ]
+            },
+            {
+                part: "Part 1: Candidate Highlights",
+                title: "Core Thesis Agenda & Structural Overview",
+                subtitle: "Navigational roadmap across all eleven modular parts",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-brain text-accent-lime", title: "1. Foundations & Problems", desc: "Understanding the BA discipline, SDLC boundaries, and core problem space in Requirements Engineering." },
+                    { icon: "fa-solid fa-microchip text-accent-teal", title: "2. Technical Solution", desc: "Proposed middleware orchestration framework internals, dynamic prompts, and ethical validation mechanisms." },
+                    { icon: "fa-solid fa-flask text-accent-sky", title: "3. Rigorous Evaluation", desc: "Design Science foundations, quantitative KPIs, SME deployment, and exhaustive examiner counter-defenses." }
+                ]
+            },
+            {
+                part: "Part 1: Candidate Highlights",
+                title: "Research Context: Why This Paradigm Matters Now",
+                subtitle: "Unlocking structural opportunities within modern agile systems",
+                layout: "split",
+                leftContent: `
+                    <h3 class="text-xl font-bold text-accent-teal mb-4">Contextual Triggers (2026)</h3>
+                    <p class="text-sm leading-relaxed text-slate-300">Software delivery velocity has hit unprecedented peaks due to generative coding assistants, yet <strong>system planning and requirements elicitation remain bottlenecked by human-manual translation overhead</strong>.</p>
+                    <p class="text-sm leading-relaxed mt-3 text-slate-300">This research introduces an interface middleware designed to systematically ingest business feedback and output structurally sound specifications with consistent compliance checks.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime mb-2 text-sm uppercase tracking-wider">Primary System Goals</h4>
+                        <ul class="space-y-3 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-check text-accent-lime mr-2"></i> Unambiguous translation of loose stakeholder statements.</li>
+                            <li><i class="fa-solid fa-check text-accent-lime mr-2"></i> Programmable validation rules instead of raw chatbot prompts.</li>
+                            <li><i class="fa-solid fa-check text-accent-lime mr-2"></i> Low-overhead integration directly with local git-pipelines.</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 1: Candidate Highlights",
+                title: "Research Scope: Boundary Parameters & Limits",
+                subtitle: "Formalizing inclusions and operational exclusions",
+                layout: "split",
+                leftContent: `
+                    <h3 class="text-lg font-bold text-accent-lime mb-3">In Scope Boundaries</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><i class="fa-solid fa-plus text-accent-lime mr-2"></i> Agile User Story synthesis from text logs.</li>
+                        <li><i class="fa-solid fa-plus text-accent-lime mr-2"></i> Automatic Gherkin Acceptance Criteria generation.</li>
+                        <li><i class="fa-solid fa-plus text-accent-lime mr-2"></i> Systemic traceability mapping between artifacts.</li>
+                        <li><i class="fa-solid fa-plus text-accent-lime mr-2"></i> Localized token anonymization algorithms.</li>
+                    </ul>
+                `,
+                rightContent: `
+                    <h3 class="text-lg font-bold text-accent-rose mb-3">Explicit Out of Scope</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><i class="fa-solid fa-minus text-accent-rose mr-2"></i> Autonomous, human-free project management execution.</li>
+                        <li><i class="fa-solid fa-minus text-accent-rose mr-2"></i> Real-time multi-party stakeholder contract negotiation.</li>
+                        <li><i class="fa-solid fa-minus text-accent-rose mr-2"></i> Dynamic direct code generation from raw audio.</li>
+                    </ul>
+                `
+            },
+
+            // PART 2: BUSINESS ANALYSIS FUNDAMENTALS (6-12)
+            {
+                part: "Part 2: BA Fundamentals",
+                title: "SECTION 02: Business Analysis Fundamentals",
+                subtitle: "Establishing the theoretical baseline of human systems translation",
+                layout: "section",
+                bullets: ["Deconstructing the cognitive bridge between abstract stakeholder concepts and deterministic specifications."]
+            },
+            {
+                part: "Part 2: BA Fundamentals",
+                title: "The BA as a Semantic Translator",
+                subtitle: "Elicitation, interpretation, and mapping",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">The Business Analyst acts as a crucial human interpreter. Stakeholders describe business operational aspirations using informal, imprecise, and conversational semantics.</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mt-2">The BA translates these high-level requirements into structured, concrete, and logically consistent parameters suitable for engineering development.</p>
+                `,
+                rightContent: `
+                    <div class="h-full flex flex-col justify-center items-center bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <i class="fa-solid fa-people-arrows text-6xl text-accent-teal mb-4 animate-pulse"></i>
+                        <h4 class="text-center font-bold text-slate-200">The Human Interface Layer</h4>
+                        <p class="text-center text-xs text-slate-400 mt-2">Without BAs, technical teams assume patterns, introducing major scope risks.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 2: BA Fundamentals",
+                title: "BA Responsibilities Across the SDLC",
+                subtitle: "From discovery to system acceptance testing",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-comments", title: "1. Discovery & Elicitation", desc: "Conducting interviews, workshop coordination, and mapping the baseline system goals." },
+                    { icon: "fa-solid fa-diagram-project", title: "2. Modeling & Specifications", desc: "Converting inputs into user flowcharts, system requirements, and data structure outlines." },
+                    { icon: "fa-solid fa-clipboard-check", title: "3. Continuous Validation", desc: "Serving as proxy product owners to verify code outputs align precisely with initial expectations." }
+                ]
+            },
+            {
+                part: "Part 2: BA Fundamentals",
+                title: "Why Technical Teams Still Need Structured BAs",
+                subtitle: "The cognitive dangers of direct-to-developer workflows",
+                layout: "split",
+                leftContent: `
+                    <h3 class="text-sm font-bold text-accent-lime uppercase tracking-wider mb-2">Developers Focus on 'How'</h3>
+                    <p class="text-xs text-slate-400">Software engineers are optimized to solve architectural, logic, and implementation puzzles. Demanding they negotiate stakeholder politics or vague process requirements leads to major project fatigue.</p>
+                `,
+                rightContent: `
+                    <h3 class="text-sm font-bold text-accent-teal uppercase tracking-wider mb-2">BAs Focus on 'What' & 'Why'</h3>
+                    <p class="text-xs text-slate-400">By isolating business drivers and defining explicit requirements, BAs insulate development teams from scope drift, ensuring clean focus and execution velocity.</p>
+                `
+            },
+            {
+                part: "Part 2: BA Fundamentals",
+                title: "Comparative Boundary Matrix: BA vs. Developer",
+                subtitle: "A clean separation of concerns in modern product teams",
+                layout: "table",
+                tableHeader: ["Responsibility Parameter", "Business Analyst (BA)", "Software Developer (Dev)"],
+                tableRows: [
+                    ["Primary Environment", "Stakeholder workshops & Business constraints", "Source code repos & Deployment pipelines"],
+                    ["Primary Language", "Structured User Stories & Process Flows", "Deterministic logic (Python, TS, Go)"],
+                    ["Ambiguity Handling", "Identify, resolve, and clarify with stakeholders", "Requires resolved inputs to proceed without assumption"],
+                    ["Success Criteria", "The system solves the targeted business problem", "The system functions with high reliability & performance"]
+                ]
+            },
+            {
+                part: "Part 2: BA Fundamentals",
+                title: "The Agile BA: Managing Iterative Velocity",
+                subtitle: "How sprint cadence accelerates requirement volatility",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">In Agile, requirements are not written once and shelved. They evolve continuously inside a dynamic back-and-forth feedback loop between sprints.</p>
+                    <ul class="space-y-2 mt-4 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-arrow-rotate-right text-accent-lime mr-1"></i> Constant backlog grooming and story refactor.</li>
+                        <li><i class="fa-solid fa-arrow-rotate-right text-accent-lime mr-1"></i> Refining acceptance metrics just-in-time for coding.</li>
+                    </ul>
+                `,
+                rightContent: `
+                    <div class="p-6 bg-slate-950 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime mb-2 text-sm uppercase">Agile BA Challenges</h4>
+                        <p class="text-xs text-slate-400">High velocity introduces documentation drift. Stories and acceptance tests frequently get out of sync with raw client instructions.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 2: BA Fundamentals",
+                title: "BA Challenges in Small and Medium Enterprises (SMEs)",
+                subtitle: "Resource limitations, overlapping roles, and high delivery pressure",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">SMEs rarely have the budget for large, dedicated business analysis teams. A single analyst often covers product management, client support, and QA.</p>
+                    <p class="text-sm text-slate-300 mt-2">This multitasking leads to compromised documentation standards, shallow requirements validation, and increased production defect rates.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800/80">
+                        <h4 class="text-sm font-bold text-accent-teal mb-3 uppercase">SME Operational Gaps</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-triangle-exclamation text-accent-rose mr-1"></i> Rushed, incomplete User Stories</li>
+                            <li><i class="fa-solid fa-triangle-exclamation text-accent-rose mr-1"></i> Weak or missing test assertions</li>
+                            <li><i class="fa-solid fa-triangle-exclamation text-accent-rose mr-1"></i> Inability to scale under tight sprint constraints</li>
+                        </ul>
+                    </div>
+                `
+            },
+
+            // PART 3: THE REQUIREMENTS ENGINEERING PROBLEM SPACE (13-20)
+            {
+                part: "Part 3: RE Problem Space",
+                title: "SECTION 03: The Requirements Engineering Problem Space",
+                subtitle: "Systemic operational risk modeling inside software pipelines",
+                layout: "section",
+                bullets: ["Analyzing why requirement ambiguity remains the most expensive systemic flaw in modern software development."]
+            },
+            {
+                part: "Part 3: RE Problem Space",
+                title: "The High Stakes of Requirements Gathering",
+                subtitle: "How vague ideas cascade into structural failures",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">System specifications dictate every subsequent engineering action—from class architectures and database schemas to test assertions.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">If the baseline elicitation layer is flawed, developers write high-performance logic for the wrong features, resulting in direct economic waste.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-rose mb-3 uppercase text-xs">Late Phase Rework Metrics</h4>
+                        <p class="text-xs text-slate-400">Over 45% of production errors trace directly back to incomplete or ambiguous initial software specifications, not coding logic errors.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 3: RE Problem Space",
+                title: "Deconstructing Requirement Ambiguity",
+                subtitle: "Identifying common language loopholes in raw specifications",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-italic text-accent-rose", title: "Vague Adjectives", desc: "Terms like 'faster dashboard loads' or 'ultra-secure signups' offer zero target parameters for software testers." },
+                    { icon: "fa-solid fa-ghost text-accent-rose", title: "Missing Actors", desc: "Writing requirements in passive voice (e.g., 'the data is generated') leaves system permissions entirely unresolved." },
+                    { icon: "fa-solid fa-road-barrier text-accent-rose", title: "Hidden Out-of-Bounds", desc: "Failing to explicitly define behavior during API latency or user connection timeouts." }
+                ]
+            },
+            {
+                part: "Part 3: RE Problem Space",
+                title: "The Cost of Repair Curve (The 100x Multiplier)",
+                subtitle: "Visualizing the economic impact of delayed bug detection",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">An error identified during initial BA brainstorming costs next to nothing to correct (simple text modifications in the backlog).</p>
+                    <p class="text-sm text-slate-300 mt-2">However, the same requirement error caught after developers write code, design databases, and run integration tests incurs massive rework penalties.</p>
+                `,
+                rightContent: `
+                    <div class="h-full bg-slate-950 p-6 rounded-xl border border-slate-800 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs text-slate-400"><span>Elicitation Phase</span><span class="text-accent-lime font-bold">1x Cost</span></div>
+                            <div class="w-full bg-slate-800 h-2 rounded"><div class="bg-accent-lime h-full rounded" style="width: 5%;"></div></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs text-slate-400"><span>Development Phase</span><span class="text-accent-sky font-bold">15x Cost</span></div>
+                            <div class="w-full bg-slate-800 h-2 rounded"><div class="bg-accent-sky h-full rounded" style="width: 35%;"></div></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs text-slate-400"><span>Production Release</span><span class="text-accent-rose font-bold">100x Cost</span></div>
+                            <div class="w-full bg-slate-800 h-2 rounded"><div class="bg-accent-rose h-full rounded" style="width: 100%;"></div></div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                part: "Part 3: RE Problem Space",
+                title: "Agile Sprints & Requirement Volatility",
+                subtitle: "Understanding rapid change inside active development iterations",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">Agile development cycles prioritize fast-shipping increments. Consequently, initial requirements often undergo rapid adjustments midway through active sprints as teams discover technical limits.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">Managing these changes manually using standard document text files leads directly to alignment errors across teams.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/40 p-6 rounded-xl border border-slate-800 flex flex-col justify-center">
+                        <h4 class="font-bold text-accent-teal mb-2 text-sm uppercase">Volatility Indicators</h4>
+                        <p class="text-xs text-slate-400">Up to 30% of standard backlog specs change at least once during active development, demanding constant oversight to prevent code misalignment.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 3: RE Problem Space",
+                title: "The Traceability Gap: From Interview to Code Commit",
+                subtitle: "The high risk of fragmented system documentation",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-microphone", title: "Raw Stakeholder Voicing", desc: "Loose statements captured in unstructured emails, team chat threads, or meeting audio files." },
+                    { icon: "fa-solid fa-file-invoice", title: "Isolated Backlogs", desc: "Requirements represented as brief Jira tasks without structural links back to the original client requests." },
+                    { icon: "fa-solid fa-code-branch", title: "Undocumented Logic", desc: "Developers write system conditions directly in code, bypassing documentation completely." }
+                ]
+            },
+            {
+                part: "Part 3: RE Problem Space",
+                title: "How Ambiguity Degrades Software Quality",
+                subtitle: "Analyzing downstream testing and user experience friction",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">When quality expectations are vague, engineering test leads cannot write deterministic assertions. 'Fast loads' cannot be easily turned into automated testing scripts.</p>
+                    <p class="text-sm text-slate-300 mt-2">This vagueness shifts test responsibilities downstream to manual QA testers, raising defect identification latency and complicating release approvals.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-sm uppercase mb-3">The Quality Loss Loop</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-chevron-right text-accent-lime mr-1"></i> Imprecise design expectations</li>
+                            <li><i class="fa-solid fa-chevron-right text-accent-lime mr-1"></i> QA teams verify the wrong edge cases</li>
+                            <li><i class="fa-solid fa-chevron-right text-accent-lime mr-1"></i> High customer complaint volume post-launch</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 3: RE Problem Space",
+                title: "Post-Mortem: Analyzing Traditional RE Process Failures",
+                subtitle: "Deconstructing real-world software project failures",
+                layout: "table",
+                tableHeader: ["Failure Type", "Primary Elicitation Flaw", "Resulting Operational Risk"],
+                tableRows: [
+                    ["Scope Creep Cascade", "Weak initial scope containment guidelines", "Uncontrolled backlog expansion and missed sprint deadlines"],
+                    ["Feature Disconnection", "Zero traceability from user stories to business goals", "Useless engineering features shipped while core problems persist"],
+                    ["Integration Failures", "Vague definitions of system data boundaries", "Major architectural rework required during production launches"]
+                ]
+            },
+
+            // PART 4: ARTIFICIAL INTELLIGENCE IN SOFTWARE ENGINEERING (21-28)
+            {
+                part: "Part 4: AI in Software Engineering",
+                title: "SECTION 04: Artificial Intelligence in Software Engineering",
+                subtitle: "The promise, mechanics, and constraints of generative assistants",
+                layout: "section",
+                bullets: ["Evaluating the practical boundaries of using foundation models within formal development workflows."]
+            },
+            {
+                part: "Part 4: AI in Software Engineering",
+                title: "The Rise of LLM-Assisted Software Workflows",
+                subtitle: "Contextualizing code generation versus process design",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">Generative AI tools (e.g., Copilot) have drastically accelerated raw coding velocity. However, this has created a major imbalance: <strong>we can write code faster than we can validate what to build</strong>.</p>
+                    <p class="text-sm text-slate-300 mt-2">Applying LLMs to upstream tasks like requirements engineering is the next logical step to restore balance across product cycles.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-teal text-xs uppercase mb-2">Upstream Bottlenecks</h4>
+                        <p class="text-xs text-slate-400">Accelerating coding while leaving requirements definitions entirely manual leads to faster production of misaligned software.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 4: AI in Software Engineering",
+                title: "The Limits of Raw, Ad-Hoc LLM Implementations",
+                subtitle: "Why vanilla consumer chatbots fail in enterprise contexts",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-triangle-exclamation text-accent-rose", title: "Non-Determinism", desc: "Running the exact same prompt multiple times yields wild structural variations in output format." },
+                    { icon: "fa-solid fa-ghost text-accent-rose", title: "Logic Hallucinations", desc: "LLMs confidently invent business rules or assumptions without grounding in source client transcripts." },
+                    { icon: "fa-solid fa-shield text-accent-rose", title: "Privacy Leakage", desc: "Directly pasting raw stakeholder transcripts into public models exposes sensitive data." }
+                ]
+            },
+            {
+                part: "Part 4: AI in Software Engineering",
+                title: "The Stochastic Dilemma: Why Structure Matters",
+                subtitle: "Resolving unpredictable variations in API system responses",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">Requirements engineering demands strict structural predictability. System schemas, user models, and test assertions cannot cope with erratic markdown updates.</p>
+                    <p class="text-sm text-slate-300 mt-2">Without structured, schema-enforced middleware layers, raw AI API outputs quickly break down during automated parsing stages.</p>
+                `,
+                rightContent: `
+                    <div class="p-6 bg-slate-950 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-2">Deterministic Boundaries</h4>
+                        <p class="text-xs text-slate-400">Our research enforces deterministic outputs by wrapping stochastic model APIs with rigid code-based schema validation rules.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 4: AI in Software Engineering",
+                title: "Hallucinations in Complex Business Logic",
+                subtitle: "The severe risk of confident but incorrect AI assumptions",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">LLMs are trained to output plausible-sounding text. In requirements engineering, this leads to the fabrication of functional integrations, API parameters, or business policies not present in source client briefs.</p>
+                    <p class="text-sm text-slate-300 mt-2">If left un-governed, these hallucinations cascade directly into production, causing integration failures.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-rose text-xs uppercase mb-2">The Hallucination Cascade</h4>
+                        <p class="text-xs text-slate-400">Confidently-generated incorrect system requirements misdirect development sprints, creating costly late-stage technical debt.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 4: AI in Software Engineering",
+                title: "The Gap: Governance & Workflow Orchestration",
+                subtitle: "Why prompt engineering alone cannot protect product delivery",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-road", title: "Stateless Prompts", desc: "Soft instructions in chat histories cannot enforce hard architectural standards or programmatic quality rules." },
+                    { icon: "fa-solid fa-vial-circle-check", title: "No Dynamic Verifiers", desc: "Raw AI APIs cannot auto-evaluate outputs against industrial standards (e.g., ISO/IEC/IEEE 29148)." },
+                    { icon: "fa-solid fa-user-slash", title: "No Guardrails", desc: "Vanilla platforms offer no human-review checkpoints to intercept inaccurate recommendations before implementation." }
+                ]
+            },
+            {
+                part: "Part 4: AI in Software Engineering",
+                title: "Domain-Specific AI Orchestration: A New Interface",
+                subtitle: "Designing smart middleware instead of basic chat prompts",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">Modern software engineering demands intelligent, context-aware middleware engines that understand the precise role tasks of different disciplines.</p>
+                    <p class="text-sm text-slate-300 mt-2">Just as developers use specialized coding copilots, business analysts require tailored middleware built to enforce the rules of requirements engineering.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-teal text-sm uppercase mb-3">Key Architectural Focus</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-microchip text-accent-teal mr-1"></i> Strict workflow state isolation</li>
+                            <li><i class="fa-solid fa-database text-accent-teal mr-1"></i> Context persistence across edits</li>
+                            <li><i class="fa-solid fa-user-shield text-accent-teal mr-1"></i> Programmatic human-gated steps</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 4: AI in Software Engineering",
+                title: "Human-AI Augmentation vs. Absolute Automation",
+                subtitle: "Preserving cognitive control over software scope",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">Fully autonomous AI coding setups sound appealing but are highly fragile. Requirements engineering is a social process involving negotiations, tradeoffs, and politics.</p>
+                    <p class="text-sm text-slate-300 mt-2"><strong>Our framework values augmentation over automation.</strong> We offload repetitive drafting but keep final verification with the human analyst.</p>
+                `,
+                rightContent: `
+                    <div class="p-6 bg-slate-950 rounded-xl border border-slate-800 flex flex-col justify-center">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-2">Balanced Interaction</h4>
+                        <p class="text-xs text-slate-400">The human expert provides business judgment and relationship management. The AI provides drafting speed, ambiguity highlighting, and structural formatting.</p>
+                    </div>
+                `
+            },
+
+            // PART 5: THE CORE RESEARCH IDEA (29-37)
+            {
+                part: "Part 5: Core Research Idea",
+                title: "SECTION 05: The Core Research Idea & Contribution",
+                subtitle: "Architecting a governed, adaptive orchestration middleware",
+                layout: "section",
+                bullets: ["Introducing the design system created to systematically control and evaluate generative AI performance in Business Analysis."]
+            },
+            {
+                part: "Part 5: Core Research Idea",
+                title: "Defining the Human-Governed Middleware Framework",
+                subtitle: "System overview and conceptual foundation",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">We propose a specialized middle-layer framework that sits between raw foundation models and the business analyst.</p>
+                    <p class="text-sm text-slate-300 mt-2">It structures, validates, and refines requirements by converting loose stakeholder input into strict Gherkin user stories with explicit safety checks.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-3">Core Contributions</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-check text-accent-lime mr-1"></i> Adaptive, context-rich prompting</li>
+                            <li><i class="fa-solid fa-check text-accent-lime mr-1"></i> Automated quality check pipelines</li>
+                            <li><i class="fa-solid fa-check text-accent-lime mr-1"></i> Bi-directional requirement mapping</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 5: Core Research Idea",
+                title: "Core Thesis Hypothesis: Speed, Quality, & Structure",
+                subtitle: "Defining the metrics that prove academic value",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-gauge-high text-accent-lime", title: "H1: Operational Speed", desc: "Teams using the middleware will refine user stories and acceptance criteria over 40% faster than manual approaches." },
+                    { icon: "fa-solid fa-shield-circle-check text-accent-teal", title: "H2: Document Quality", desc: "AI-structured outputs will have significantly lower ambiguity and logical omissions when evaluated under blind testing." },
+                    { icon: "fa-solid fa-link-slash text-accent-sky", title: "H3: System Integrity", desc: "Programmable trace verifications will keep requirements aligned, reducing scope drift during sprint modifications." }
+                ]
+            },
+            {
+                part: "Part 5: Core Research Idea",
+                title: "Why Middleware Beats Basic Prompting",
+                subtitle: "Comparing programmatic state systems with casual conversations",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">Basic prompting depends on the user's skill, producing inconsistent results across different analysts.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">Our middleware abstracts API complexities, standardizing outputs through code-level validation rules independent of user inputs.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-teal text-xs uppercase mb-3">Middleware Advantages</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-check text-accent-teal mr-1"></i> Reliable JSON schema structure parsing</li>
+                            <li><i class="fa-solid fa-check text-accent-teal mr-1"></i> Real-time, contextual memory recall</li>
+                            <li><i class="fa-solid fa-check text-accent-teal mr-1"></i> Integration with existing engineering tools</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 5: Core Research Idea",
+                title: "The Architecture: Adaptive Prompt Engineering",
+                subtitle: "Dynamically tailored instructions based on project status",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">Rather than relying on static prompt files, the prompt engine dynamically adjusts its context parameters based on current project domains, target tech stacks, and active sprint guidelines.</p>
+                    <p class="text-sm text-slate-300 mt-2">This programmatic approach guarantees consistent formatting, specific domain vocabularies, and precise tone guidelines.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-2">Adaptive Prompts</h4>
+                        <p class="text-xs text-slate-400">The system automatically adjusts context settings based on target interfaces (e.g., mobile web layouts, microservice pipelines, enterprise data feeds).</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 5: Core Research Idea",
+                title: "Real-Time Structural Ambiguity Detection",
+                subtitle: "Catching incomplete system concepts at the input layer",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-filter", title: "Linguistic Scans", desc: "Flags vague terms (e.g., 'flexible', 'modular') that compromise testing plans." },
+                    { icon: "fa-solid fa-circle-question", title: "Context Prompts", desc: "Asks stakeholders targeted questions to resolve logical gaps." },
+                    { icon: "fa-solid fa-spell-check", title: "Verification Checks", desc: "Ensures every generated user story maps cleanly to a validated persona and measurable value." }
+                ]
+            },
+            {
+                part: "Part 5: Core Research Idea",
+                title: "Programmatic Ethical & Compliance Pipelines",
+                subtitle: "Preventing biased logic and data leaks prior to deployment",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">Requirements define system behavior. Biases in logic (e.g., missing accessibility considerations, unfair payment rules, un-vetted user assumptions) must be intercepted early.</p>
+                    <p class="text-sm text-slate-300 mt-2">The ethical pipeline scans AI-generated drafts for these logical risks, flagging warnings before final human review.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-rose text-xs uppercase mb-2">Ethics Pipelines</h4>
+                        <p class="text-xs text-slate-400">Checks generated logic maps for bias, accessibility issues, and data transparency risks before writing code.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 5: Core Research Idea",
+                title: "Maintaining Semantic Requirement Traceability",
+                subtitle: "Automated relational graph database connections",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">Our middleware automatically links stakeholder comments to downstream user stories and Gherkin scripts.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">This bi-directional trace lets engineering teams easily audit why any single requirement changed, tracing it back to original client inputs.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-teal text-xs uppercase mb-3">Trace Connections</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-link text-accent-teal mr-1"></i> Customer Voice transcript segment</li>
+                            <li><i class="fa-solid fa-arrow-right text-accent-teal mr-1"></i> Refined Agile epic specifications</li>
+                            <li><i class="fa-solid fa-arrow-right text-accent-teal mr-1"></i> Specific Gherkin acceptance assertion</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 5: Core Research Idea",
+                title: "Designing the Human-in-the-Loop Verification Interface",
+                subtitle: "Keeping the business analyst in absolute control",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-code-compare", title: "Compare Screens", desc: "Renders raw client inputs next to draft user stories, highlighting term differences clearly." },
+                    { icon: "fa-solid fa-triangle-exclamation", title: "Active Warnings", desc: "Displays color-coded alerts indicating quality omissions, logical gaps, or ethical concerns." },
+                    { icon: "fa-solid fa-signature", title: "Explicit Signs", desc: "Requires human authorization to confirm and export system artifacts to sprint backlogs." }
+                ]
+            },
+
+            // PART 6: DEEP-DIVE SYSTEM ARCHITECTURE & COMPONENTS (38-45)
+            {
+                part: "Part 6: System Architecture",
+                title: "SECTION 06: Deep-Dive System Architecture & Components",
+                subtitle: "The mechanics of programmatic context management",
+                layout: "section",
+                bullets: ["Analyzing the database models, routing systems, and APIs powering the orchestration middleware."]
+            },
+            {
+                part: "Part 6: System Architecture",
+                title: "High-Level Architectural Routing Map",
+                subtitle: "Data routing across user client UI, backend APIs, and LLM endpoints",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">The architecture decouples the frontend client UI from the raw foundation LLM APIs.</p>
+                    <p class="text-sm text-slate-300 mt-2">The orchestration middleware handles state machines, context retrieval, programmatic parsing, and verification checks prior to model calls.</p>
+                `,
+                rightContent: `
+                    <div class="h-full bg-slate-950 p-6 rounded-xl border border-slate-800 flex flex-col justify-center space-y-3">
+                        <div class="text-center py-1 bg-slate-800 text-xs rounded border border-slate-700">Business Analyst Client (React)</div>
+                        <div class="text-center text-accent-teal"><i class="fa-solid fa-arrows-up-down"></i></div>
+                        <div class="text-center py-2 bg-slate-800 text-xs rounded border border-slate-700 text-accent-lime font-bold">Orchestration Layer (FastAPI/Python)</div>
+                        <div class="text-center text-accent-teal"><i class="fa-solid fa-arrows-up-down"></i></div>
+                        <div class="text-center py-1 bg-slate-800 text-xs rounded border border-slate-700">Foundation Models (Gemini/Local Llama)</div>
+                    </div>
+                `
+            },
+            {
+                part: "Part 6: System Architecture",
+                title: "Data Pipelines: Processing Loose Voice to Backlog Stories",
+                subtitle: "Step-by-step transformation of unstructured business speech",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-keyboard", title: "1. Capture Input", desc: "Imports meeting notes, client emails, or interview voice transcripts." },
+                    { icon: "fa-solid fa-wand-magic-sparkles", title: "2. Clean & Format", desc: "The Adaptive Engine cleans conversational noise and creates structured User Stories." },
+                    { icon: "fa-solid fa-server", title: "3. Schema Check", desc: "Schema rules verify output matches required JSON formats perfectly." }
+                ]
+            },
+            {
+                part: "Part 6: System Architecture",
+                title: "Context Injection: Enhancing Prompts with RAG Platforms",
+                subtitle: "Improving specifications with corporate documentation",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">To create tailored, domain-specific requirements, the engine uses Retrieval-Augmented Generation (RAG) over uploaded company files.</p>
+                    <p class="text-sm text-slate-300 mt-2">This grounds generated outputs with actual business constraints, naming standards, and architectural limitations.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-teal text-xs uppercase mb-3">Context Elements</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-book text-accent-teal mr-1"></i> Technical environment parameters</li>
+                            <li><i class="fa-solid fa-book text-accent-teal mr-1"></i> Domain glossary specifications</li>
+                            <li><i class="fa-solid fa-book text-accent-teal mr-1"></i> Pre-validated UI/UX pattern rules</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 6: System Architecture",
+                title: "Guarding Schema Integrity via JSON Validation",
+                subtitle: "Preventing model formatting deviations programmatically",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">By enforcing API-level JSON constraints, our middleware guarantees that LLM responses strictly match predefined database formats.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">If formatting deviations occur, the system automatically runs corrective parser routines before displaying output to the analyst.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-2">Validation Pipeline</h4>
+                        <p class="text-xs text-slate-400">API outputs must match precise JSON-Schema structures (defining User Story, Action Steps, Acceptance Criteria) before proceeding to human review.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 6: System Architecture",
+                title: "Graph Database Schemas for Bi-Directional Mapping",
+                subtitle: "Visualizing trace connection lines within system nodes",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-circle text-accent-lime", title: "Source Nodes", desc: "Unstructured quotes or transcript snippets from client feedback sessions." },
+                    { icon: "fa-solid fa-arrow-right text-accent-teal", title: "Derived Specifications", desc: "Agile epics, target user stories, and feature parameters mapped directly to sources." },
+                    { icon: "fa-solid fa-circle-check text-accent-sky", title: "Verification Assertions", desc: "Gherkin tests linked directly to requirements, preventing untraceable additions." }
+                ]
+            },
+            {
+                part: "Part 6: System Architecture",
+                title: "Integration Strategy: Jira Webhooks & Repository Workflows",
+                subtitle: "Linking system artifacts with engineering team workflows",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">The framework includes secure REST endpoints that easily push validated specifications to target planning systems like Jira or Azure DevOps.</p>
+                    <p class="text-sm text-slate-300 mt-2">This seamless data flow keeps backlog items perfectly aligned with technical engineering requirements.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-3">Sync Milestones</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-rotate text-accent-lime mr-1"></i> Two-way ticket synchronization</li>
+                            <li><i class="fa-solid fa-rotate text-accent-lime mr-1"></i> Direct pull requests assertions</li>
+                            <li><i class="fa-solid fa-rotate text-accent-lime mr-1"></i> Automation test script mapping</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 6: System Architecture",
+                title: "Enterprise Security: Privacy Filters & Anonymizers",
+                subtitle: "Removing sensitive customer details prior to cloud queries",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">Enterprise compliance forbids sending private intellectual property or client details to external API services.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">The middleware processes outgoing prompts through a localized regex and Entity Recognition engine, replacing sensitive records with safe, mock tokens.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-rose text-xs uppercase mb-2">Privacy Filters</h4>
+                        <p class="text-xs text-slate-400">Masks emails, phone numbers, client system identifiers, and private financial statistics before querying external cloud model APIs.</p>
+                    </div>
+                `
+            },
+
+            // PART 7: EXPERIMENTAL METHODOLOGY & DSR FOUNDATIONS (46-55)
+            {
+                part: "Part 7: Methodology & DSR",
+                title: "SECTION 07: Experimental Methodology & DSR Foundations",
+                subtitle: "Proving research concepts through rigorous, scientific testing",
+                layout: "section",
+                bullets: ["Structuring the validation frameworks using Hevner's Design Science Research principles."]
+            },
+            {
+                part: "Part 7: Methodology & DSR",
+                title: "Using Design Science Research (DSR) Paradigms",
+                subtitle: "Addressing real-world challenges through engineered artifacts",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">Design Science Research focuses on creating practical IT artifacts to address complex, unsolved software development challenges.</p>
+                    <p class="text-sm text-slate-300 mt-2">This proposal delivers a structured IT artifact (the orchestration middleware) evaluated through rigorous scientific methods.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800/80">
+                        <h4 class="text-sm font-bold text-accent-teal mb-3 uppercase font-heading">DSR Cycles</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-rotate-right text-accent-teal mr-1"></i> Relevance Loop: Human work environment</li>
+                            <li><i class="fa-solid fa-rotate-right text-accent-teal mr-1"></i> Design Loop: Prototyping and testing</li>
+                            <li><i class="fa-solid fa-rotate-right text-accent-teal mr-1"></i> Rigor Loop: Validating design science foundations</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 7: Methodology & DSR",
+                title: "A Mixed-Methods Approach to Validation",
+                subtitle: "Pairing quantitative experiments with qualitative human insights",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-chart-line text-accent-lime", title: "Quantitative", desc: "A/B performance testing of task completion speeds and quality compliance rates." },
+                    { icon: "fa-solid fa-comments text-accent-teal", title: "Qualitative", desc: "Detailed interviews with practitioners to map real-world adoption, trust, and usability." },
+                    { icon: "fa-solid fa-equals text-accent-sky", title: "Combined Validity", desc: "Triangulating data streams to build a comprehensive picture of system performance." }
+                ]
+            },
+            {
+                part: "Part 7: Methodology & DSR",
+                title: "Controlled Experimental Setup (Quasi-Experiments)",
+                subtitle: "Structuring comparative test pipelines for user groups",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">To isolate the actual impact of our middleware, we split participants into two testing cohorts.</p>
+                    <p class="text-sm text-slate-300 mt-2">Both groups tackle the same complex customer brief, but with different tooling configurations.</p>
+                `,
+                rightContent: `
+                    <div class="h-full bg-slate-950 p-6 rounded-xl border border-slate-800 flex flex-col justify-center space-y-4">
+                        <div class="border-l-4 border-accent-rose pl-3">
+                            <h4 class="text-xs font-bold text-accent-rose uppercase">Control Cohort</h4>
+                            <p class="text-[11px] text-slate-400">Uses standard tools and ad-hoc chat prompts.</p>
+                        </div>
+                        <div class="border-l-4 border-accent-lime pl-3">
+                            <h4 class="text-xs font-bold text-accent-lime uppercase">Experimental Cohort</h4>
+                            <p class="text-[11px] text-slate-400">Uses our Human-Governed Orchestration Middleware.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                part: "Part 7: Methodology & DSR",
+                title: "Participant Profiles & Demographic Balance",
+                subtitle: "Sourcing talent across professional and academic networks",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-user-tie", title: "Agile Practitioners", desc: "Active business analysts and scrum masters working in regional tech SMEs." },
+                    { icon: "fa-solid fa-graduation-cap", title: "Final Year Students", desc: "CS and Information Systems students from the University of Ruhuna." },
+                    { icon: "fa-solid fa-scale-balanced", title: "Bias Safeguards", desc: "Balancing groups based on experience levels and technical familiarity." }
+                ]
+            },
+            {
+                part: "Part 7: Methodology & DSR",
+                title: "Designing Standardized Specification Tasks",
+                subtitle: "Simulating actual Agile software refinement work",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">Participants receive unstructured, ambiguous stakeholder requirements (mock transcripts with logic errors and missing steps).</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">The target task is to produce a refined, developer-ready Agile backlog complete with User Stories and Gherkin tests.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-teal text-xs uppercase mb-2">Task Milestones</h4>
+                        <ul class="space-y-1 text-xs text-slate-400">
+                            <li>1. Extract core system roles and goals</li>
+                            <li>2. Draft structured user stories</li>
+                            <li>3. Formulate Gherkin scenarios</li>
+                            <li>4. Trace specifications back to sources</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 7: Methodology & DSR",
+                title: "Threat to Validity 1: Selection Bias & Controls",
+                subtitle: "Mitigating baseline experience differences",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300"><strong>The Risk:</strong> The experimental group might succeed simply because they have more experienced practitioners.</p>
+                    <p class="text-sm text-slate-300 mt-2"><strong>Mitigation:</strong> We run participant pre-tests to evaluate baseline analytical skills, then distribute talent evenly across both cohorts.</p>
+                `,
+                rightContent: `
+                    <div class="p-6 bg-slate-950 rounded-xl border border-slate-800/80">
+                        <h4 class="text-xs font-bold text-accent-lime uppercase mb-2">Controlled Parameters</h4>
+                        <p class="text-xs text-slate-400">Groups are balanced across key experience metrics, including years of agile work, tool familiarity, and formal training background.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 7: Methodology & DSR",
+                title: "Threat to Validity 2: Learning Curves & Controls",
+                subtitle: "Ensuring tool familiarity doesn't distort results",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300"><strong>The Risk:</strong> The experimental group might struggle initially due to learning a new, unfamiliar interface.</p>
+                    <p class="text-sm text-slate-300 mt-2"><strong>Mitigation:</strong> We provide structured onboarding sessions and run practice trials for both groups before recording actual data.</p>
+                `,
+                rightContent: `
+                    <div class="p-6 bg-slate-950 rounded-xl border border-slate-800/80">
+                        <h4 class="text-xs font-bold text-accent-lime uppercase mb-2">Interface Onboarding</h4>
+                        <p class="text-xs text-slate-400">Interactive onboarding guides help users get familiar with the interface controls, ensuring technical comfort before evaluations begin.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 7: Methodology & DSR",
+                title: "Threat to Validity 3: Subject Bias (Hawthorne Effect)",
+                subtitle: "Minimizing distortions caused by being observed",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-eye-slash", title: "Silent Logs", desc: "Metrics like timing and error counts are captured silently on the backend without active moderator presence." },
+                    { icon: "fa-solid fa-house-laptop", title: "Natural Settings", desc: "Participants work in their regular workspaces rather than isolated test environments." },
+                    { icon: "fa-solid fa-mask", title: "Double-Blind Rules", desc: "Evaluation grades are awarded by senior analysts who do not know which tool generated the spec." }
+                ]
+            },
+            {
+                part: "Part 7: Methodology & DSR",
+                title: "Ethical Approvals & Data Privacy Protocols",
+                subtitle: "Guarding participant rights throughout the process",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">Our validation follows strict institutional review guidelines at the University of Ruhuna.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">All testing data, participant records, and survey responses are encrypted and stored anonymously, protecting privacy throughout the research lifecycle.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-2">Consent Guidelines</h4>
+                        <p class="text-xs text-slate-400">Participants sign digital consent agreements detailing data collection practices, system access rules, and absolute rights to opt-out at any point.</p>
+                    </div>
+                `
+            },
+
+            // PART 8: EVALUATION METRICS & COMPARATIVE ANALYSIS (56-65)
+            {
+                part: "Part 8: Evaluation Metrics",
+                title: "SECTION 08: Evaluation Metrics & Comparative Analysis",
+                subtitle: "Defining the indicators of project success",
+                layout: "section",
+                bullets: ["Establishing the quantitative and qualitative frameworks used to evaluate requirements quality."]
+            },
+            {
+                part: "Part 8: Evaluation Metrics",
+                title: "Key Performance Metric 1: Time-on-Task Efficiency",
+                subtitle: "Measuring the speed of backlog refinement cycles",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">We track the exact active time required to transform a raw user request into validated, developer-ready specifications.</p>
+                    <p class="text-sm text-slate-300 mt-2">By automating repetitive drafting steps, we target over 40% time savings compared to manual workflows.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-3 font-heading">Expected Time Savings</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs"><span>Manual Refinement</span><span class="text-accent-rose">120 mins</span></div>
+                            <div class="w-full bg-slate-800 h-2 rounded"><div class="bg-accent-rose h-full rounded" style="width: 100%;"></div></div>
+                        </div>
+                        <div class="space-y-2 mt-4">
+                            <div class="flex justify-between text-xs"><span>Middleware Refinement</span><span class="text-accent-lime">65 mins</span></div>
+                            <div class="w-full bg-slate-800 h-2 rounded"><div class="bg-accent-lime h-full rounded" style="width: 54%;"></div></div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                part: "Part 8: Evaluation Metrics",
+                title: "Key Performance Metric 2: Requirement Quality Scores",
+                subtitle: "Evaluating completeness, readability, and structural standards",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-list-check", title: "Completeness Specs", desc: "Verifies the requirement contains all necessary actor roles, target actions, and clear outcomes." },
+                    { icon: "fa-solid fa-file-contract", title: "IEEE-29148 Compliance", desc: "Checks output structure against industry quality standards for software specifications." },
+                    { icon: "fa-solid fa-graduation-cap", title: "Readability Indexes", desc: "Uses standard Flesch-Kincaid scoring to ensure language accessibility for developers." }
+                ]
+            },
+            {
+                part: "Part 8: Evaluation Metrics",
+                title: "Key Performance Metric 3: Ambiguity Densities",
+                subtitle: "Measuring the reduction of vague adjectives and unresolved terms",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">Ambiguity is calculated as the ratio of vague, unmeasurable terms (e.g., 'flexible interface') to concrete system requirements.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">The middleware's ambiguity detection pipeline targets an 80% reduction in vague statements, replacing them with clear metrics.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-2">Ambiguity Reduction</h4>
+                        <p class="text-xs text-slate-400">Identifies and flags ambiguous phrasing in real-time, helping analysts define measurable, testable software behaviors before writing code.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 8: Evaluation Metrics",
+                title: "Key Performance Metric 4: Traceability Completeness",
+                subtitle: "Ensuring zero orphaned requirements exist in development",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">A requirement is considered traceable if it maps cleanly back to its source client input and forward to a validated test assertion.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">Our tracing engine ensures complete traceability across all generated sprint artifacts, minimizing development gaps.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-teal text-xs uppercase mb-3">Trace Verification Nodes</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-link text-accent-teal mr-1"></i> Original Customer Input Statement</li>
+                            <li><i class="fa-solid fa-link text-accent-teal mr-1"></i> Refined User Story Specification</li>
+                            <li><i class="fa-solid fa-link text-accent-teal mr-1"></i> Asserted Gherkin Acceptance Assertion</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 8: Evaluation Metrics",
+                title: "Metric 5: NASA-TLX Cognitive Load Scores",
+                subtitle: "Measuring analyst effort, mental demand, and task fatigue",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-brain", title: "Mental Demand", desc: "Tracks cognitive intensity, processing requirements, and decision-making complexity during tasks." },
+                    { icon: "fa-solid fa-gauge", title: "Frustration Levels", desc: "Measures stress, confusion, and operational friction caused by interface workflows." },
+                    { icon: "fa-solid fa-hourglass-half", title: "Temporal Demands", desc: "Evaluates the pressure of working against sprint and refinement deadlines." }
+                ]
+            },
+            {
+                part: "Part 8: Evaluation Metrics",
+                title: "Metric 6: System Usability Scale (SUS) Score Target",
+                subtitle: "Evaluating overall user satisfaction and interface accessibility",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">We administer the standardized 10-item System Usability Scale immediately following task evaluations.</p>
+                    <p class="text-sm text-slate-300 mt-2">Our design targets an average usability score above 80 (considered "Excellent" and highly acceptable for enterprise environments).</p>
+                `,
+                rightContent: `
+                    <div class="p-6 bg-slate-950 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-2">Usability Thresholds</h4>
+                        <p class="text-xs text-slate-400">We analyze key usability parameters, including learning ease, interface consistency, and navigation simplicity, to optimize workflow design.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 8: Evaluation Metrics",
+                title: "Metric 7: Technology Acceptance Model (TAM) Attributes",
+                subtitle: "Evaluating perceived usefulness and ease of adoption",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">TAM attributes evaluate the factors that drive long-term system adoption within business teams.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">We measure perceived usefulness, ease of use, and willingness to integrate the framework into daily work workflows.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-teal text-xs uppercase mb-2">TAM Framework</h4>
+                        <p class="text-xs text-slate-400">Validates if the efficiency benefits of our middleware are strong enough to overcome initial user learning barriers.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 8: Evaluation Metrics",
+                title: "Evaluator Calibration & Double-Blind Grading",
+                subtitle: "Enforcing absolute impartiality during project grading",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-user-secret", title: "Anonymized Artifacts", desc: "Removes all formatting clues that show if a requirement was created manually or by AI." },
+                    { icon: "fa-solid fa-list-ol", title: "Standard Rubrics", desc: "Graders use a rigid point scale to score completeness, clarity, and structural correctness." },
+                    { icon: "fa-solid fa-people-arrows", title: "Cross-Grading", desc: "Multiple independent senior analysts evaluate each item, averaging out individual bias." }
+                ]
+            },
+            {
+                part: "Part 8: Evaluation Metrics",
+                title: "Quantitative Analysis Plan & Statistical Models",
+                subtitle: "Determining significance using rigorous statistical tests",
+                layout: "table",
+                tableHeader: ["Evaluation Parameter", "Primary Metric", "Target Statistical Test"],
+                tableRows: [
+                    ["Backlog Refinement Speed", "Time-on-Task (minutes)", "Paired-Sample T-Test (Group A vs Group B)"],
+                    ["Requirement Quality", "IEEE-29148 score (1-100 scale)", "Independent-Samples T-Test on double-blind ratings"],
+                    ["User Frustration Score", "NASA-TLX Subscale ratings (1-20)", "Mann-Whitney U Non-Parametric comparison"]
+                ]
+            },
+
+            // PART 9: THE SME & REGIONAL TECHNOLOGY CONTEXT (66-72)
+            {
+                part: "Part 9: SME & Regional Context",
+                title: "SECTION 09: SME & Regional Technology Context",
+                subtitle: "Aligning academic research with local economic realities",
+                layout: "section",
+                bullets: ["Designing lightweight, high-productivity solutions tailored for Sri Lankan software teams."]
+            },
+            {
+                part: "Part 9: SME & Regional Context",
+                title: "The Landscape of Sri Lankan Software SMEs",
+                subtitle: "High ambition, limited budgets, and rapid delivery cycles",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">Sri Lankan tech SMEs are key drivers of regional innovation but operate under strict budget limits, aggressive project schedules, and limited resources.</p>
+                    <p class="text-sm text-slate-300 mt-2">These resource constraints make smaller software houses highly vulnerable to project delays and cost overruns.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-3 font-heading">Key SME Challenges</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-triangle-exclamation text-accent-rose mr-1"></i> Highly demanding development sprints</li>
+                            <li><i class="fa-solid fa-triangle-exclamation text-accent-rose mr-1"></i> Multi-hat roles for business analysts</li>
+                            <li><i class="fa-solid fa-triangle-exclamation text-accent-rose mr-1"></i> High financial risk from project delays</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 9: SME & Regional Context",
+                title: "The High Cost of Rework in Smaller Software Houses",
+                subtitle: "Analyzing the financial impact of requirement errors",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">Unlike global enterprises, a single major requirement failure can easily derail a small software house's quarterly budget.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">Our framework addresses this risk by catching logical errors and omissions before coding begins, reducing waste.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-rose text-xs uppercase mb-2">The SME Rework Penalty</h4>
+                        <p class="text-xs text-slate-400">Resource-constrained teams often rush requirements phases to meet development deadlines, frequently resulting in expensive late-stage corrections.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 9: SME & Regional Context",
+                title: "Supporting Junior-Heavy Business Analysis Teams",
+                subtitle: "Systemizing mentorship through built-in quality guardrails",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-user-graduate", title: "Knowledge Gaps", desc: "SMEs often hire junior analysts or interns who may lack advanced training in formal requirements elicitation." },
+                    { icon: "fa-solid fa-shield-halved", title: "Programmatic Guidance", desc: "The middleware serves as an interactive guide, enforcing industry quality standards in real-time." },
+                    { icon: "fa-solid fa-chart-line", title: "Standardized Outputs", desc: "Ensures consistent quality across all sprint artifacts, regardless of individual user experience levels." }
+                ]
+            },
+            {
+                part: "Part 9: SME & Regional Context",
+                title: "Lightweight Adoption: Minimal Cost Overhead",
+                subtitle: "Bypassing expensive enterprise application tooling costs",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">Smaller tech firms cannot afford complex, expensive enterprise application management subscriptions (e.g., Jira Align, IBM DOORS).</p>
+                    <p class="text-sm text-slate-300 mt-2">Our lightweight, open-source middleware delivers enterprise-grade quality verification and alignment features without the cost barriers.</p>
+                `,
+                rightContent: `
+                    <div class="p-6 bg-slate-950 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-2">Lean Engineering</h4>
+                        <p class="text-xs text-slate-400">Our python-based system connects easily with standard, low-cost API services, keeping initial setup and integration costs minimal.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 9: SME & Regional Context",
+                title: "Local Hosting Option: Safeguarding Internet Volatility",
+                subtitle: "Deploying local model instances on standard office networks",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300 leading-relaxed">Developing regions often experience periodic internet outages and bandwidth limitations, making cloud-based APIs unstable.</p>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">Our framework supports local deployments, running open-weights models (e.g., Llama-3, Mistral) on local office hardware to ensure continuous operation.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950/60 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-teal text-xs uppercase mb-2">Offline Core</h4>
+                        <p class="text-xs text-slate-400">Ensures full development capabilities during network disruptions, protecting SME operational workflows from external service outages.</p>
+                    </div>
+                `
+            },
+            {
+                part: "Part 9: SME & Regional Context",
+                title: "Regional Impact: Enhancing Sri Lanka's IT Services",
+                subtitle: "Boosting global competitiveness through high-quality development",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-globe", title: "Global Delivery Standards", desc: "Helps local software development companies deliver clear, well-documented, and globally compliant project backlogs." },
+                    { icon: "fa-solid fa-rocket", title: "Faster Delivery Speeds", desc: "Accelerates product delivery, giving local tech service providers a strong competitive advantage." },
+                    { icon: "fa-solid fa-hands-holding-child", title: "Fostering Innovation", desc: "Provides local engineering students with access to state-of-the-art research on AI orchestration." }
+                ]
+            },
+
+            // PART 10: OBVIOUS COUNTER-ARGUMENTS, CRITICISMS & RIGOROUS DEFENSE (73-90)
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "SECTION 10: Obvious Counterarguments & Rigorous Defenses",
+                subtitle: "Defending academic and technical research against examiner criticisms",
+                layout: "section",
+                bullets: ["Answering the 16 most common and critical defense challenges with concrete, empirical strategies."]
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Defending Against the 'Wrapper' Critique",
+                subtitle: "Distinguishing our orchestration engine from simple consumer API wrappers",
+                layout: "objection",
+                objection: "Objection 1: 'This is just a simple API wrapper around ChatGPT or Gemini. Where is the real computer science research here?'",
+                defense: "Defense: Simple wrappers are stateless, pass raw text, and rely entirely on model performance. Our middleware is a complex state machine that enforces JSON Schemas, manages context memory, tracks metadata relations, and validates output against software engineering rules before delivery."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Addressing the 'Manual Prompting' Argument",
+                subtitle: "Why systematic orchestration is safer than ad-hoc chat prompts",
+                layout: "objection",
+                objection: "Objection 2: 'Can't an experienced Business Analyst get the same quality results simply by writing better manual chat prompts?'",
+                defense: "Defense: Manual prompt engineering is highly subjective, non-scalable, and depends entirely on individual user skill. This middleware standardizes and programmatically enforces these quality checks, ensuring consistent requirement quality across all analysts, regardless of prompting expertise."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Evaluating Cognitive Workload Transitions",
+                subtitle: "Refuting the claim that AI auditing adds excessive overhead",
+                layout: "objection",
+                objection: "Objection 3: 'Doesn't shifting the BA's role from writing requirements to auditing AI outputs increase cognitive fatigue?'",
+                defense: "Defense: Our NASA-TLX evaluations specifically measure and optimize this transition. Auditing structured, annotated requirements is far less mentally demanding than drafting them from scratch, allowing analysts to focus on catching core logic flaws rather than formatting boilerplate text."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Managing the Risk of Passive Compliance",
+                subtitle: "Preventing analyst complacency through built-in verification safeguards",
+                layout: "objection",
+                objection: "Objection 4: 'What prevents analysts from simply clicking \"Approve All\" on AI-generated requirements, leading to unverified logic?'",
+                defense: "Defense: The interface includes active attention checkpoints, periodically highlighting intentional design gaps (e.g., missing actors, vague metrics) that the user must manually review and resolve. This keeps analysts actively engaged in the validation process."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Handling Requirement Volatility Over Sprints",
+                subtitle: "Maintaining system and documentation alignment as priorities shift",
+                layout: "objection",
+                objection: "Objection 5: 'How does your middleware handle requirement drift when stakeholders make changes midway through a sprint?'",
+                defense: "Defense: Our relational graph model tracks and links requirements directly to their sources. When an upstream requirement changes, the system flags all downstream dependencies, helping analysts quickly update stories, tests, and tasks to keep teams aligned."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Decoupling Performance from Underlying Models",
+                subtitle: "Ensuring long-term framework usability as AI APIs evolve",
+                layout: "objection",
+                objection: "Objection 6: 'Isn't your framework's success entirely dependent on the quality of the specific underlying LLM?'",
+                defense: "Defense: The middleware's validation rules, schema checks, and trace mapping are completely model-agnostic. By abstracting the API connection layer, organizations can easily swap underlying models as new, more efficient models become available without rewriting core systems."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Defending the Design Science Methodology",
+                subtitle: "Why DSR is the ideal scientific paradigm for this research",
+                layout: "objection",
+                objection: "Objection 7: 'Why choose Design Science Research (DSR) instead of standard software development lifecycles?'",
+                defense: "Defense: Standard development builds products to meet specific user needs. DSR is a scientific paradigm designed to solve general classes of problems, contributing validated design patterns, architectural frameworks, and academic knowledge to the field."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Systemizing Subjective Metrics: Defining Clarity",
+                subtitle: "Proving requirement improvements mathematically and objectively",
+                layout: "objection",
+                objection: "Objection 8: 'How can you objectively trust and measure highly subjective quality metrics like \"Clarity\"?'",
+                defense: "Defense: We measure clarity through objective metrics, including Flesch-Kincaid index checks, syntactic ambiguity scans (identifying passive phrasing and missing actors), and double-blind manual evaluations scored by independent senior analysts using rigid rubrics."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Scaling the Architecture for Complex Systems",
+                subtitle: "Processing large volumes of requirements without model degradation",
+                layout: "objection",
+                objection: "Objection 9: 'How can your middleware scale when enterprise software has thousands of overlapping requirements?'",
+                defense: "Defense: The framework processes requirements in logically isolated, context-aware modules rather than feeding complete documents into single prompt windows. This modular approach preserves context clarity and prevents context-window saturation."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Preventing Skill Atrophy in Junior Analysts",
+                subtitle: "Using AI assistants to actively teach best engineering practices",
+                layout: "objection",
+                objection: "Objection 10: 'Will junior business analysts lose their critical thinking skills if they rely heavily on this middleware?'",
+                defense: "Defense: Instead of silently fixing errors, the platform serves as an interactive mentor, explaining *why* a requirement was flagged (referencing ISO/IEC/IEEE 29148 quality checklists) to help junior analysts learn and grow."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Securing Proprietary Intellectual Property",
+                subtitle: "Ensuring zero training exposure for sensitive client secrets",
+                layout: "objection",
+                objection: "Objection 11: 'How do you secure corporate logic and client secrets from external model training programs?'",
+                defense: "Defense: The middleware includes local data anonymization algorithms, replacing sensitive records with safe tokens prior to API calls. Additionally, the system supports local model deployments (e.g., Llama-3) for air-gapped corporate setups."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Resolving Conflicting Stakeholder Demands",
+                subtitle: "Flagging contradictions at the requirements layer programmatically",
+                layout: "objection",
+                objection: "Objection 12: 'How does your middleware handle contradictory inputs from different business stakeholders?'",
+                defense: "Defense: The system's logical checker maps inputs to shared functional matrices. When contradictory requirements are identified, the system flags the conflict to the analyst, ensuring human resolution before writing code."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Proving the Computer Science Contribution",
+                subtitle: "Establishing theoretical novelty in intelligent middleware design",
+                layout: "objection",
+                objection: "Objection 13: 'What makes this project a computer science contribution rather than an information systems study?'",
+                defense: "Defense: This research designs and validates novel intelligent middleware architectures, focusing on state machines, dynamic context routing, relational trace schema maps, and deterministic JSON parsing layers over stochastic models."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Defending Agile-Specific Scope Over Waterfall",
+                subtitle: "Why high-velocity sprints present the ideal problem space",
+                layout: "objection",
+                objection: "Objection 14: 'Why focus only on Agile/Scrum processes rather than Waterfall or Kanban environments?'",
+                defense: "Defense: Agile's rapid, iterative sprints produce high document volatility, creating immediate need for rapid, automated tracing and verification tools. Waterfall requirements, by contrast, are static and do not suffer from sprint alignment issues."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Processing Multilingual Stakeholder Inputs",
+                subtitle: "Supporting regional dialects and local vernacular variations",
+                layout: "objection",
+                objection: "Objection 15: 'How will the framework handle regional language variations and colloquial terms from local stakeholders?'",
+                defense: "Defense: The middleware features specialized lexical translation layers that convert localized terms and colloquial business phrases into standardized, internationally recognized software engineering terminology before model processing."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Addressing Long-Term API Volatility & Maintainability",
+                subtitle: "Safeguarding core system components from external model changes",
+                layout: "objection",
+                objection: "Objection 16: 'How do you handle long-term system stability when model APIs and pricing models are constantly changing?'",
+                defense: "Defense: The orchestration layer is built with clean interface boundaries. All underlying model connections use abstract adapters, letting developers swap, update, or patch model APIs without changing the system's core validation logic."
+            },
+            {
+                part: "Part 10: Rigorous Defenses",
+                title: "Summary Defense Matrix: Strategic Defense Summary",
+                subtitle: "Consolidating our primary defenses for the examination panel",
+                layout: "table",
+                tableHeader: ["Objection Category", "Examiner Concern", "Our Core Empirical Defense"],
+                tableRows: [
+                    ["Technical Novelty", "API wrapper limits", "Enforces strict JSON schemas and deterministic parsing engines over stochastic APIs."],
+                    ["Usability", "Complacency / Auto-approvals", "Uses active attention check checkpoints to keep analysts engaged in validation."],
+                    ["Enterprise Adoption", "Corporate data security", "Includes local data anonymizers and supports fully offline, localized model runs."]
+                ]
+            },
+
+            // PART 11: CLOSING & FUTURE HORIZONS (91-95)
+            {
+                part: "Part 11: Closing Horizons",
+                title: "SECTION 11: Closing & Future Horizons",
+                subtitle: "Synthesizing research contributions and future development plans",
+                layout: "section",
+                bullets: ["Visualizing project timelines and outlining future expansions for intelligent engineering systems."]
+            },
+            {
+                part: "Part 11: Closing Horizons",
+                title: "Academic Contributions to Computer Science",
+                subtitle: "Systematic advancements in software design paradigms",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">This thesis contributes validated design patterns for running stochastic models inside deterministic software environments.</p>
+                    <p class="text-sm text-slate-300 mt-2">By establishing clear human-AI interaction models, we advance the state of the art in intelligent software engineering systems.</p>
+                `,
+                rightContent: `
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <h4 class="font-bold text-accent-lime text-xs uppercase mb-3">Core Contributions</h4>
+                        <ul class="space-y-2 text-xs text-slate-400">
+                            <li><i class="fa-solid fa-graduation-cap text-accent-lime mr-1"></i> Deterministic state machines</li>
+                            <li><i class="fa-solid fa-graduation-cap text-accent-lime mr-1"></i> Continuous traceability schemas</li>
+                            <li><i class="fa-solid fa-graduation-cap text-accent-lime mr-1"></i> Evaluated human-AI workflows</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                part: "Part 11: Closing Horizons",
+                title: "Proposed Project Gantt Chart Timeline",
+                subtitle: "Milestones for research execution (Candidate SC/2021/12375)",
+                layout: "split",
+                leftContent: `
+                    <p class="text-sm text-slate-300">A clear, phased roadmap ensures complete execution of all research objectives within academic deadlines.</p>
+                    <p class="text-sm text-slate-300 mt-2">Phases balance prototype design with rigorous empirical evaluations and qualitative studies.</p>
+                `,
+                rightContent: `
+                    <div class="h-full bg-slate-950 p-6 rounded-xl border border-slate-800 flex flex-col justify-between text-xs space-y-2">
+                        <div class="flex justify-between border-b border-slate-800 pb-1 text-slate-400"><span>Milestone Phase</span><span>Duration</span></div>
+                        <div class="flex justify-between"><span>Phase 1: Architecture & RAG</span><span class="text-accent-teal font-bold">Months 1-3</span></div>
+                        <div class="flex justify-between"><span>Phase 2: Prototype Code</span><span class="text-accent-teal font-bold">Months 4-6</span></div>
+                        <div class="flex justify-between"><span>Phase 3: Quasi-Experiments</span><span class="text-accent-teal font-bold">Months 7-9</span></div>
+                        <div class="flex justify-between"><span>Phase 4: Synthesis & Submission</span><span class="text-accent-teal font-bold">Months 10-12</span></div>
+                    </div>
+                `
+            },
+            {
+                part: "Part 11: Closing Horizons",
+                title: "Future Scope: Multi-Agent Software Teams",
+                subtitle: "Scaling the architecture for autonomous, collaborative operations",
+                layout: "three-column",
+                tiles: [
+                    { icon: "fa-solid fa-users-gear", title: "Specialized Agents", desc: "Deploying dedicated agents to collaborate on requirements, database architecture, and QA plans." },
+                    { icon: "fa-solid fa-file-shield", title: "Self-Updating backlogs", desc: "System environments that automatically update documentation as system code base changes." },
+                    { icon: "fa-solid fa-code-merge", title: "Automated QA Tests", desc: "Generating testing scripts directly from validated requirements files." }
+                ]
+            },
+            {
+                part: "Part 11: Closing Horizons",
+                title: "Thank You! | Open Floor for Discussion",
+                subtitle: "Human-Governed AI Orchestration Middleware for Software Requirements Engineering",
+                layout: "title",
+                bullets: [
+                    "<strong>Presenter:</strong> Nimnada Kavishwara (A.P.N.K. ABEYSEKARA)",
+                    "<strong>Registration Number:</strong> SC/2021/12375",
+                    "<strong>Department:</strong> Department of Computer Science, University of Ruhuna, Sri Lanka"
+                ]
+            }
+        ];
+
+        let currentActiveIndex = 0;
+        let isAutoplayRunning = false;
+        let autoplayTimerInstance = null;
+        const AUTOPLAY_INTERVAL_MS = 8000; // 8 seconds per slide display
+
+        // Trigger loading processes once page structure registers
+        window.onload = function() {
+            renderActiveSlide();
+            generateSidebarLinks();
+            generatePrintFriendlySlides();
+
+            // Register global key listeners for presentation controls
+            document.addEventListener("keydown", function(e) {
+                if (e.key === "ArrowRight" || e.key === "PageDown") {
+                    nextSlide();
+                } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
+                    prevSlide();
+                } else if (e.key === " ") {
+                    e.preventDefault();
+                    toggleAutoplay();
+                } else if (e.key === "Home") {
+                    jumpToSlide(0);
+                } else if (e.key === "End") {
+                    jumpToSlide(slidesDatabase.length - 1);
+                }
+            });
+        };
+
+        // Render target active slide frame based on selection index
+        function renderActiveSlide() {
+            const slide = slidesDatabase[currentActiveIndex];
+            const contentBox = document.getElementById("slideContent");
+            
+            // Adjust visual tracking metrics in header/footer counters
+            document.getElementById("currentSlideNum").innerText = currentActiveIndex + 1;
+            document.getElementById("btnCounter").innerText = currentActiveIndex + 1;
+            
+            // Compute bottom slide linear progress percentage
+            const progressPct = ((currentActiveIndex + 1) / slidesDatabase.length) * 100;
+            document.getElementById("slideProgressBar").style.width = `${progressPct}%`;
+
+            let renderedHtml = "";
+
+            // Inject Part Name and Count for all content-heavy slides
+            if (slide.layout !== "title" && slide.layout !== "section") {
+                renderedHtml += `
+                    <div class="flex items-center justify-between mb-4 border-b border-slate-800/80 pb-3">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-slate-950 px-3 py-1 rounded text-[11px] font-bold text-accent-teal uppercase tracking-widest border border-slate-800">${slide.part}</span>
+                            <span class="text-xs text-slate-500 font-medium">Slide ${currentActiveIndex + 1} of 95</span>
+                        </div>
+                        <span class="text-xs text-slate-400 italic">SC/2021/12375 | Ruhuna CS</span>
+                    </div>
+                `;
+            }
+
+            // Route render pipelines based on selected layouts
+            if (slide.layout === "title") {
+                renderedHtml += `
+                    <div class="flex-grow flex flex-col justify-center text-left relative py-8">
+                        <div class="border-l-8 border-accent-lime pl-8 mb-6">
+                            <h1 class="text-4xl md:text-5xl lg:text-[54px] font-extrabold tracking-tight text-white leading-tight font-heading">
+                                ${slide.title.replace("AI Orchestration", "<span class='text-accent-teal'>AI Orchestration</span>")}
+                            </h1>
+                            <p class="text-xl text-slate-400 mt-3 font-semibold tracking-wide">
+                                ${slide.subtitle}
+                            </p>
+                        </div>
+                        <div class="mt-8 pt-8 border-t border-slate-800/80 space-y-2 text-sm text-slate-300">
+                            ${slide.bullets.map(b => `<p class="leading-relaxed">${b}</p>`).join('')}
+                        </div>
+                    </div>
+                `;
+            } else if (slide.layout === "section") {
+                renderedHtml += `
+                    <div class="flex-grow flex flex-col justify-center items-center text-center py-10">
+                        <span class="text-xs font-bold text-accent-lime uppercase tracking-widest bg-slate-950 px-4 py-1.5 rounded-full border border-slate-800 mb-6">${slide.part}</span>
+                        <h2 class="text-4xl lg:text-[56px] font-extrabold text-white font-heading tracking-tight leading-tight max-w-4xl">
+                            ${slide.title}
+                        </h2>
+                        <div class="w-24 h-1.5 bg-accent-teal rounded-full my-6"></div>
+                        <p class="text-lg text-slate-400 max-w-2xl leading-relaxed">
+                            ${slide.bullets[0]}
+                        </p>
+                    </div>
+                `;
+            } else if (slide.layout === "profile") {
+                renderedHtml += `
+                    <div class="flex-grow flex flex-col justify-center">
+                        <h2 class="slide-title">${slide.title}</h2>
+                        <p class="text-slate-400 text-xs -mt-6 mb-6 font-medium">${slide.subtitle}</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-950 p-6 rounded-xl border border-slate-800/60 shadow-inner">
+                            <div class="flex flex-col justify-center items-center p-6 border-r border-slate-800/50 hidden md:flex">
+                                <div class="w-32 h-32 bg-slate-900 rounded-full flex items-center justify-center border-4 border-accent-teal/20 text-accent-teal mb-4">
+                                    <i class="fa-solid fa-user-graduate text-5xl"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-200 font-heading">SC/2021/12375</h3>
+                                <p class="text-xs text-slate-500 mt-1">University of Ruhuna</p>
+                            </div>
+                            <div class="space-y-3.5 flex flex-col justify-center">
+                                ${slide.bullets.map(b => `<p class="text-sm text-slate-300 border-l-2 border-slate-800 pl-3 leading-relaxed">${b}</p>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (slide.layout === "split") {
+                renderedHtml += `
+                    <div class="flex-grow flex flex-col justify-center">
+                        <h2 class="slide-title">${slide.title}</h2>
+                        <p class="text-slate-400 text-xs -mt-6 mb-6 font-medium">${slide.subtitle}</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                            <div class="flex flex-col justify-center">${slide.leftContent}</div>
+                            <div class="flex flex-col justify-center">${slide.rightContent}</div>
+                        </div>
+                    </div>
+                `;
+            } else if (slide.layout === "three-column") {
+                renderedHtml += `
+                    <div class="flex-grow flex flex-col justify-center">
+                        <h2 class="slide-title">${slide.title}</h2>
+                        <p class="text-slate-400 text-xs -mt-6 mb-6 font-medium">${slide.subtitle}</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            ${slide.tiles.map(tile => `
+                                <div class="bg-slate-950 p-6 rounded-xl border border-slate-800/80 hover:border-accent-teal/30 transition-all duration-300 flex flex-col justify-between min-h-[280px]">
+                                    <div>
+                                        <div class="w-12 h-12 bg-slate-900 border border-slate-800 rounded-lg flex items-center justify-center text-xl mb-4">
+                                            <i class="${tile.icon}"></i>
+                                        </div>
+                                        <h3 class="text-lg font-bold text-slate-200 font-heading mb-2">${tile.title}</h3>
+                                        <p class="text-xs text-slate-400 leading-relaxed">${tile.desc}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            } else if (slide.layout === "objection") {
+                renderedHtml += `
+                    <div class="flex-grow flex flex-col justify-center">
+                        <h2 class="slide-title">${slide.title}</h2>
+                        <p class="text-slate-400 text-xs -mt-6 mb-6 font-medium">${slide.subtitle}</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                            <div class="bg-accent-rose/5 border border-accent-rose/20 p-6 rounded-xl flex flex-col justify-between">
+                                <div>
+                                    <h4 class="text-accent-rose font-heading font-bold text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                                        <i class="fa-solid fa-triangle-exclamation"></i> Examiner Challenge
+                                    </h4>
+                                    <p class="text-sm text-slate-200 font-medium italic leading-relaxed">"${slide.objection}"</p>
+                                </div>
+                            </div>
+                            <div class="bg-accent-lime/5 border border-accent-lime/20 p-6 rounded-xl flex flex-col justify-between">
+                                <div>
+                                    <h4 class="text-accent-lime font-heading font-bold text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                                        <i class="fa-solid fa-shield-halved"></i> Rigorous Defense
+                                    </h4>
+                                    <p class="text-sm text-slate-300 leading-relaxed">${slide.defense}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (slide.layout === "table") {
+                renderedHtml += `
+                    <div class="flex-grow flex flex-col justify-center">
+                        <h2 class="slide-title">${slide.title}</h2>
+                        <p class="text-slate-400 text-xs -mt-6 mb-6 font-medium">${slide.subtitle}</p>
+                        <div class="overflow-hidden border border-slate-800 rounded-xl bg-slate-950">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-900 border-b border-slate-800">
+                                        ${slide.tableHeader.map(h => `<th class="p-4 text-xs font-bold font-heading text-accent-teal uppercase tracking-wider">${h}</th>`).join('')}
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800/50">
+                                    ${slide.tableRows.map(row => `
+                                        <tr class="hover:bg-slate-900/30 transition-colors">
+                                            <td class="p-4 text-xs font-bold text-slate-200">${row[0]}</td>
+                                            <td class="p-4 text-xs text-slate-400 leading-relaxed">${row[1]}</td>
+                                            <td class="p-4 text-xs text-slate-400 leading-relaxed">${row[2]}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            }
+
+            contentBox.innerHTML = renderedHtml;
+            updateSidebarHighlights();
+        }
+
+        // Generate entire list of interactive links inside the sidebar drawer
+        function generateSidebarLinks() {
+            const container = document.getElementById("sidebarLinksContainer");
+            container.innerHTML = "";
+            
+            slidesDatabase.forEach((slide, idx) => {
+                const linkButton = document.createElement("button");
+                linkButton.id = `sidebar-link-${idx}`;
+                linkButton.className = "w-full text-left px-3.5 py-2.5 rounded-lg text-xs font-semibold flex items-center justify-between transition-all border border-transparent hover:bg-slate-800/80 hover:border-slate-700/50";
+                
+                linkButton.onclick = () => {
+                    jumpToSlide(idx);
+                    toggleSidebar();
+                };
+
+                const isObjection = slide.layout === "objection";
+                const iconClass = isObjection ? "fa-solid fa-shield text-accent-rose" : "fa-solid fa-file-powerpoint text-accent-teal";
+
+                linkButton.innerHTML = `
+                    <div class="flex items-center gap-2.5 truncate">
+                        <span class="w-5 h-5 bg-slate-950 border border-slate-800 rounded-full flex items-center justify-center text-[10px] text-slate-500 font-bold">${idx + 1}</span>
+                        <div class="truncate text-left">
+                            <p class="truncate text-slate-200 font-heading text-xs">${slide.title}</p>
+                            <p class="text-[9px] text-slate-500 font-medium tracking-wide uppercase mt-0.5">${slide.part}</p>
+                        </div>
+                    </div>
+                    <i class="${iconClass} text-[10px]"></i>
+                `;
+
+                container.appendChild(linkButton);
+            });
+        }
+
+        // Keep active sidebar selections highlighted with colors
+        function updateSidebarHighlights() {
+            slidesDatabase.forEach((_, idx) => {
+                const el = document.getElementById(`sidebar-link-${idx}`);
+                if (el) {
+                    if (idx === currentActiveIndex) {
+                        el.className = "w-full text-left px-3.5 py-2.5 rounded-lg text-xs font-semibold flex items-center justify-between transition-all border bg-slate-800/90 text-accent-lime border-accent-lime/20 shadow-md";
+                    } else {
+                        el.className = "w-full text-left px-3.5 py-2.5 rounded-lg text-xs font-semibold flex items-center justify-between transition-all border border-transparent hover:bg-slate-800/80 hover:border-slate-700/50 text-slate-400";
+                    }
+                }
+            });
+        }
+
+        // Toggle visibility of the right-hand slide navigator drawer
+        let isSidebarOpen = false;
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebarIndex");
+            isSidebarOpen = !isSidebarOpen;
+            if (isSidebarOpen) {
+                sidebar.classList.remove("translate-x-full");
+            } else {
+                sidebar.classList.add("translate-x-full");
+            }
+        }
+
+        // Slide direction handlers
+        function prevSlide() {
+            if (currentActiveIndex > 0) {
+                currentActiveIndex--;
+                renderActiveSlide();
+            }
+        }
+
+        function nextSlide() {
+            if (currentActiveIndex < slidesDatabase.length - 1) {
+                currentActiveIndex++;
+                renderActiveSlide();
+            } else if (isAutoplayRunning) {
+                toggleAutoplay(); // Wrap up play at end
+            }
+        }
+
+        function jumpToSlide(idx) {
+            currentActiveIndex = idx;
+            renderActiveSlide();
+        }
+
+        // Toggle automatic slideshow playback
+        function toggleAutoplay() {
+            const btn = document.getElementById("autoplayBtn");
+            const icon = document.getElementById("autoplayIcon");
+            const text = document.getElementById("autoplayText");
+
+            if (isAutoplayRunning) {
+                clearInterval(autoplayTimerInstance);
+                autoplayTimerInstance = null;
+                isAutoplayRunning = false;
+                btn.className = "px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-accent-lime rounded-lg border border-slate-700 text-xs font-bold flex items-center gap-2 transition shadow-sm";
+                icon.className = "fa-solid fa-play";
+                text.innerText = "Auto";
+            } else {
+                isAutoplayRunning = true;
+                autoplayTimerInstance = setInterval(nextSlide, AUTOPLAY_INTERVAL_MS);
+                btn.className = "px-4 py-2 bg-accent-lime/10 text-accent-lime rounded-lg border border-accent-lime/30 text-xs font-bold flex items-center gap-2 transition shadow-sm";
+                icon.className = "fa-solid fa-pause";
+                text.innerText = "Pause";
+            }
+        }
+
+        // Client slide search filter logic inside drawer
+        function filterSlides() {
+            const query = document.getElementById("slideSearch").value.toLowerCase();
+            slidesDatabase.forEach((slide, idx) => {
+                const el = document.getElementById(`sidebar-link-${idx}`);
+                if (el) {
+                    const match = slide.title.toLowerCase().includes(query) || slide.part.toLowerCase().includes(query);
+                    if (match) {
+                        el.classList.remove("hidden");
+                    } else {
+                        el.classList.add("hidden");
+                    }
+                }
+            });
+        }
+
+        // Render entire sequence of slides for physical print execution
+        function generatePrintFriendlySlides() {
+            const printBox = document.getElementById("printContainer");
+            printBox.innerHTML = "";
+
+            slidesDatabase.forEach((slide, idx) => {
+                const slideDiv = document.createElement("div");
+                slideDiv.className = "slide-frame bg-slate-900 border border-slate-800/80 rounded-2xl relative overflow-hidden flex flex-col justify-between p-12 mb-8";
+                
+                let renderedHtml = "";
+
+                if (slide.layout !== "title" && slide.layout !== "section") {
+                    renderedHtml += `
+                        <div class="flex items-center justify-between mb-4 border-b border-slate-800/80 pb-3">
+                            <div class="flex items-center gap-3">
+                                <span class="bg-slate-950 px-3 py-1 rounded text-[11px] font-bold text-accent-teal uppercase tracking-widest border border-slate-800">${slide.part}</span>
+                                <span class="text-xs text-slate-500 font-medium">Slide ${idx + 1} of 95</span>
+                            </div>
+                            <span class="text-xs text-slate-400 italic">SC/2021/12375 | Ruhuna CS</span>
+                        </div>
+                    `;
+                }
+
+                if (slide.layout === "title") {
+                    renderedHtml += `
+                        <div class="flex-grow flex flex-col justify-center text-left relative py-8">
+                            <div class="border-l-8 border-accent-lime pl-8 mb-6">
+                                <h1 class="text-4xl md:text-5xl lg:text-[54px] font-extrabold tracking-tight text-white leading-tight font-heading">
+                                    ${slide.title.replace("AI Orchestration", "<span class='text-accent-teal'>AI Orchestration</span>")}
+                                </h1>
+                                <p class="text-xl text-slate-400 mt-3 font-semibold tracking-wide">
+                                    ${slide.subtitle}
+                                </p>
+                            </div>
+                            <div class="mt-8 pt-8 border-t border-slate-800/80 space-y-2 text-sm text-slate-300">
+                                ${slide.bullets.map(b => `<p class="leading-relaxed">${b}</p>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else if (slide.layout === "section") {
+                    renderedHtml += `
+                        <div class="flex-grow flex flex-col justify-center items-center text-center py-10">
+                            <span class="text-xs font-bold text-accent-lime uppercase tracking-widest bg-slate-950 px-4 py-1.5 rounded-full border border-slate-800 mb-6">${slide.part}</span>
+                            <h2 class="text-4xl lg:text-[56px] font-extrabold text-white font-heading tracking-tight leading-tight max-w-4xl">
+                                ${slide.title}
+                            </h2>
+                            <div class="w-24 h-1.5 bg-accent-teal rounded-full my-6"></div>
+                            <p class="text-lg text-slate-400 max-w-2xl leading-relaxed">
+                                ${slide.bullets[0]}
+                            </p>
+                        </div>
+                    `;
+                } else if (slide.layout === "profile") {
+                    renderedHtml += `
+                        <div class="flex-grow flex flex-col justify-center">
+                            <h2 class="slide-title">${slide.title}</h2>
+                            <p class="text-slate-400 text-xs -mt-6 mb-6 font-medium">${slide.subtitle}</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-950 p-6 rounded-xl border border-slate-800/60 shadow-inner">
+                                <div class="flex flex-col justify-center items-center p-6 border-r border-slate-800/50 hidden md:flex">
+                                    <div class="w-32 h-32 bg-slate-900 rounded-full flex items-center justify-center border-4 border-accent-teal/20 text-accent-teal mb-4">
+                                        <i class="fa-solid fa-user-graduate text-5xl"></i>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-slate-200 font-heading">SC/2021/12375</h3>
+                                    <p class="text-xs text-slate-500 mt-1">University of Ruhuna</p>
+                                </div>
+                                <div class="space-y-3.5 flex flex-col justify-center">
+                                    ${slide.bullets.map(b => `<p class="text-sm text-slate-300 border-l-2 border-slate-800 pl-3 leading-relaxed">${b}</p>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else if (slide.layout === "split") {
+                    renderedHtml += `
+                        <div class="flex-grow flex flex-col justify-center">
+                            <h2 class="slide-title">${slide.title}</h2>
+                            <p class="text-slate-400 text-xs -mt-6 mb-6 font-medium">${slide.subtitle}</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                                <div class="flex flex-col justify-center">${slide.leftContent}</div>
+                                <div class="flex flex-col justify-center">${slide.rightContent}</div>
+                            </div>
+                        </div>
+                    `;
+                } else if (slide.layout === "three-column") {
+                    renderedHtml += `
+                        <div class="flex-grow flex flex-col justify-center">
+                            <h2 class="slide-title">${slide.title}</h2>
+                            <p class="text-slate-400 text-xs -mt-6 mb-6 font-medium">${slide.subtitle}</p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                ${slide.tiles.map(tile => `
+                                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800/80 flex flex-col justify-between min-h-[280px]">
+                                        <div>
+                                            <div class="w-12 h-12 bg-slate-900 border border-slate-800 rounded-lg flex items-center justify-center text-xl mb-4">
+                                                <i class="${tile.icon}"></i>
+                                            </div>
+                                            <h3 class="text-lg font-bold text-slate-200 font-heading mb-2">${tile.title}</h3>
+                                            <p class="text-xs text-slate-400 leading-relaxed">${tile.desc}</p>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else if (slide.layout === "objection") {
+                    renderedHtml += `
+                        <div class="flex-grow flex flex-col justify-center">
+                            <h2 class="slide-title">${slide.title}</h2>
+                            <p class="text-slate-400 text-xs -mt-6 mb-6 font-medium">${slide.subtitle}</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                                <div class="bg-accent-rose/5 border border-accent-rose/20 p-6 rounded-xl flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="text-accent-rose font-heading font-bold text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                                            <i class="fa-solid fa-triangle-exclamation"></i> Examiner Challenge
+                                        </h4>
+                                        <p class="text-sm text-slate-200 font-medium italic leading-relaxed">"${slide.objection}"</p>
+                                    </div>
+                                </div>
+                                <div class="bg-accent-lime/5 border border-accent-lime/20 p-6 rounded-xl flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="text-accent-lime font-heading font-bold text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                                            <i class="fa-solid fa-shield-halved"></i> Rigorous Defense
+                                        </h4>
+                                        <p class="text-sm text-slate-300 leading-relaxed">${slide.defense}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else if (slide.layout === "table") {
+                    renderedHtml += `
+                        <div class="flex-grow flex flex-col justify-center">
+                            <h2 class="slide-title">${slide.title}</h2>
+                            <p class="text-slate-400 text-xs -mt-6 mb-6 font-medium">${slide.subtitle}</p>
+                            <div class="overflow-hidden border border-slate-800 rounded-xl bg-slate-950">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr class="bg-slate-900 border-b border-slate-800">
+                                            ${slide.tableHeader.map(h => `<th class="p-4 text-xs font-bold font-heading text-accent-teal uppercase tracking-wider">${h}</th>`).join('')}
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-800/50">
+                                        ${slide.tableRows.map(row => `
+                                            <tr class="hover:bg-slate-900/30 transition-colors">
+                                                <td class="p-4 text-xs font-bold text-slate-200">${row[0]}</td>
+                                                <td class="p-4 text-xs text-slate-400 leading-relaxed">${row[1]}</td>
+                                                <td class="p-4 text-xs text-slate-400 leading-relaxed">${row[2]}</td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                slideDiv.innerHTML = renderedHtml;
+                printBox.appendChild(slideDiv);
+            });
+        }
+    </script>
+</body>
+</html>

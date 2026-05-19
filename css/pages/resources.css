@@ -743,6 +743,52 @@
     right: 18px;
 }
 
+@media (prefers-color-scheme: dark) {
+    .pdf-section {
+        color: var(--text);
+    }
+
+    .pdf-section-header {
+        border-bottom-color: color-mix(in srgb, var(--primary) 22%, var(--line));
+    }
+
+    .pdf-section-badge {
+        background: rgba(74, 143, 231, 0.15);
+        color: var(--primary-strong);
+    }
+
+    .pdf-card {
+        background: linear-gradient(180deg, rgba(26, 35, 50, 0.96), rgba(15, 22, 33, 0.96));
+        border-color: color-mix(in srgb, var(--primary) 18%, var(--line));
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+    }
+
+    .pdf-card:hover {
+        border-color: var(--primary);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+    }
+
+    .pdf-card-preview {
+        background:
+            radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.16), transparent 32%),
+            linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    }
+
+    .pdf-card-actions button,
+    .pdf-card-actions .pdf-action-link {
+        color: var(--text);
+        border-color: var(--line);
+        background: rgba(15, 22, 33, 0.42);
+    }
+
+    .pdf-card-actions button:hover,
+    .pdf-card-actions .pdf-action-link:hover {
+        color: var(--primary-strong);
+        border-color: var(--primary);
+        background: rgba(74, 143, 231, 0.12);
+    }
+}
+
 /* Dark mode hardening — force white backgrounds on PDF viewer regardless of system theme */
 @media (prefers-color-scheme: dark) {
     .pdf-viewer-container {
