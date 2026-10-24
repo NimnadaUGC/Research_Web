@@ -1,0 +1,117 @@
+/* Shared styles for the October 2026 pre-thesis research update. */
+.research-note {
+    padding: 1.1rem 1.3rem;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-lg);
+    background: var(--surface-alt);
+    color: var(--text-soft);
+    line-height: 1.65;
+}
+
+.research-note strong { color: var(--text); }
+.research-note.warning { border-left-color: var(--warning); }
+.research-note.success { border-left-color: var(--success); }
+.research-note a { overflow-wrap: anywhere; }
+
+.research-note + .research-note,
+.research-note + .grid-2,
+.research-note + .grid-3,
+.research-note + .grid-4,
+.research-note + .diagram-grid,
+.section-intro + .grid-2,
+.section-intro + .grid-3,
+.section-intro + .grid-4,
+.section-intro + .diagram-grid { margin-top: 1.5rem; }
+
+.section-intro {
+    max-width: 810px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+    color: var(--text-soft);
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: .65rem;
+    color: var(--primary);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+.card h3 + p, .card h4 + p { margin-top: .5rem; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+.card .btn { margin-top: .8rem; }
+
+.stage-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    list-style: none;
+}
+
+.stage-list li {
+    padding: 1.2rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xs);
+}
+
+.stage-list strong { display: block; margin-bottom: .45rem; color: var(--text); }
+.stage-list span { color: var(--text-soft); }
+
+.diagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.diagram-card {
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xs);
+}
+
+.diagram-card a.diagram-preview {
+    display: block;
+    height: 220px;
+    padding: .6rem;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+}
+
+.diagram-card img { width: 100%; height: 100%; object-fit: contain; }
+.diagram-card h3 { margin: 1rem 0 .35rem; }
+.diagram-card p { color: var(--text-soft); }
+.diagram-card .diagram-links { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: .6rem; }
+
+.progress-track {
+    width: 100%;
+    height: .75rem;
+    margin: .8rem 0;
+    overflow: hidden;
+    border-radius: var(--radius-full);
+    background: var(--bg-soft);
+}
+.progress-track span { display: block; width: 90%; height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); }
+
+.compact-steps { padding-left: 1.25rem; }
+.compact-steps li { margin-bottom: .8rem; }
+.compact-steps li:last-child { margin-bottom: 0; }
+
+@media (max-width: 900px) {
+    .diagram-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 650px) {
+    .stage-list, .diagram-grid { grid-template-columns: 1fr; }
+    .diagram-card a.diagram-preview { height: 250px; }
+}

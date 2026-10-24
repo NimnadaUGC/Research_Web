@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Methodology & Approach | AI-Enhanced BA Research</title>
     <link rel="icon" href="data:,">
-    <meta name="description" content="Proposed methodology: adaptive prompt engineering, ethical prompting, and hybrid AI agents for business analysis.">
+    <meta name="description" content="Current F4-draft.1 Business Analysis framework, lifecycle, governance diagrams and evaluation design.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/components.css">
     
+    <link rel="stylesheet" href="css/research-update.css">
+
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
@@ -44,13 +46,13 @@
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="progress.html">Progress</a></li>
                 <li class="mobile-only">
-                    <a href="beta.html">Apply for Beta</a>
+                    <a href="beta.html">Beta Access</a>
                 </li>
             </ul>
 
             <div class="nav-actions">
                 <a href="beta.html" class="btn btn-primary">
-                    <i class="fa-solid fa-flask-vial"></i> Apply for Beta
+                    <i class="fa-solid fa-flask-vial"></i> Beta Access
                 </a>
             </div>
         </div>
@@ -59,9 +61,9 @@
     <header class="hero hero-short">
         <div class="hero-content container reveal">
             <div class="hero-text">
-                <p class="kicker"><i class="fa-solid fa-hammer"></i> Phase 03</p>
-                <h1>Proposed Approach: Three Pillars</h1>
-                <p class="subtitle">A comprehensive framework combining adaptive prompting, ethical safeguards, and human-in-the-loop hybrid agents</p>
+                <p class="kicker"><i class="fa-solid fa-diagram-project"></i> Framework F4-draft.1</p>
+                <h1>The Current Research Framework</h1>
+                <p class="subtitle">An iterative method for evidence-grounded, human-governed Business Analysis with AI assistance</p>
             </div>
 
             <div class="hero-graphic">
@@ -105,209 +107,58 @@
 
     <section class="section">
         <div class="container reveal">
-            <h2 class="section-title">The Three-Pillar Framework</h2>
-            <p class="text-center text-soft mb-12">Our methodology is built on three interconnected pillars, each addressing a specific research question. Together, they form a cohesive, human-centered approach to AI-enhanced Business Analysis.</p>
-
+            <h2 class="section-title">From Research Idea to Defined Method</h2>
+            <p class="section-intro">The original three themes—adaptive prompting, ethical safeguards and human-in-the-loop work—remain the research motivation. F4-draft.1 now specifies the actual BA activities, decision rights and artifact relationships.</p>
             <div class="grid-3">
-                <div class="card hover-lift step">
-                    <span class="step-num">1</span>
-                    <h3>Adaptive Prompt Engineering <sup class="pillar-sup">Pillar 1</sup></h3>
-                    <p><strong>Objective:</strong> Reduce ambiguity in requirements through iterative, context-aware prompting.</p>
-                    <ul class="text-sm">
-                        <li><strong>Stakeholder input</strong> → Initial requirement sketch</li>
-                        <li><strong>Ambiguity detection</strong> → Identify vague terms, missing constraints</li>
-                        <li><strong>Clarification loop</strong> → AI generates targeted questions</li>
-                        <li><strong>Refinement</strong> → Updated user stories, SRS with clarity scores</li>
-                    </ul>
-                </div>
+                <div class="card"><h3>1. Evidence and clarification</h3><p>Define scope, review sources and distinguish confirmed information from assumptions, contradictions and unknowns. AI may propose questions, but responsible people supply business decisions.</p></div>
+                <div class="card"><h3>2. Requirements and review</h3><p>Draft requirements, rules, stories, acceptance criteria and process models from reviewed material. Check their clarity, testability, evidence support and stakeholder coverage.</p></div>
+                <div class="card"><h3>3. Approval and change</h3><p>Assemble faithful documents, record approval against exact revisions, and revisit affected items when evidence or requirements change. AI cannot grant approval.</p></div>
+            </div>
+            <p class="research-note" style="margin-top:1.5rem"><strong>Lifecycle:</strong> Scope → evidence → clarification → requirements and criteria → process model → validation → document → approval → change. This is an iterative guide, not nine compulsory screens. Process modeling may be tailored with rationale; change runs when triggered. Developer handover is an optional export.</p>
+        </div>
+    </section>
 
-                <div class="card hover-lift step">
-                    <span class="step-num">2</span>
-                    <h3>Ethical Prompting & Bias Reduction <sup class="pillar-sup">Pillar 2</sup></h3>
-                    <p><strong>Objective:</strong> Improve transparency and reduce fairness risks in AI-generated artifacts.</p>
-                    <ul class="text-sm">
-                        <li><strong>Bias-sensitive language detection</strong> → Flag loaded terms, hidden assumptions</li>
-                        <li><strong>Stakeholder fairness prompts</strong> → Ensure all voices are considered</li>
-                        <li><strong>Transparency notes</strong> → Explicit assumptions, trade-offs, dependencies</li>
-                        <li><strong>Traceability</strong> → Link decisions back to source stakeholders</li>
-                    </ul>
-                </div>
-
-                <div class="card hover-lift step">
-                    <span class="step-num">3</span>
-                    <h3>Hybrid AI Agents (Human-in-the-Loop) <sup class="pillar-sup">Pillar 3</sup></h3>
-                    <p><strong>Objective:</strong> Support BA workflows while maintaining human oversight and decision-making power.</p>
-                    <ul class="text-sm">
-                        <li><strong>Modular agents</strong> → Elicitation Assistant, Ethics Checker, Documentation Generator</li>
-                        <li><strong>Human feedback loop</strong> → BA reviews, approves, or revises AI output</li>
-                        <li><strong>Traceability</strong> → Audit trail of AI suggestions and human decisions</li>
-                        <li><strong>Reproducibility</strong> → Open-source toolkit for local SME adoption</li>
-                    </ul>
-                </div>
+    <section class="section bg-light">
+        <div class="container reveal">
+            <h2 class="section-title">Seven Mechanisms That Make the Method Testable</h2>
+            <p class="section-intro">The framework documents inputs, responsibilities, stopping conditions and failure routes for each mechanism.</p>
+            <div class="grid-3">
+                <div class="card"><h3>M1–M2 · Evidence and uncertainty</h3><p>Select relevant sources with provenance; keep unanswered or conflicting business questions visible.</p></div>
+                <div class="card"><h3>M3–M4 · Bounded AI and human adoption</h3><p>Give AI defined tasks and reject malformed or stale outputs. A BA selects, edits or rejects proposals before they become drafts.</p></div>
+                <div class="card"><h3>M5 · Semantic review</h3><p>Inspect quality and verify that a cited source actually supports a requirement; a citation alone is not proof.</p></div>
+                <div class="card"><h3>M6 · Revision integrity</h3><p>Bind approval to specific artifact revisions. Relevant changes trigger impact review and revalidation.</p></div>
+                <div class="card"><h3>M7 · Faithful documents</h3><p>Exports preserve the selected content and its true draft or approved status. Generated additions require review.</p></div>
+                <div class="card"><h3>Human authority throughout</h3><p>Stakeholders confirm business meaning. An authorised person makes approval decisions; model output remains advisory.</p></div>
             </div>
         </div>
     </section>
 
-    <section class="section bg-gradient-overlay">
+    <section class="section" id="diagrams">
         <div class="container reveal">
-            <h2 class="section-title">Workflow Integration</h2>
-            
-            <div class="callout mb-8">
-                <h4>End-to-End Artifact Flow</h4>
-                <p><strong>Stakeholder Input</strong> → <strong>Elicitation Agent</strong> (clarification) → <strong>Ethics Checker</strong> (bias audit) → <strong>Documentation Generator</strong> (final output) → <strong>Human Review</strong> (approval) → <strong>Refined BA Artifact</strong></p>
+            <h2 class="section-title">Public Framework Diagrams</h2>
+            <p class="section-intro">These F4-draft.1 figures explain the proposed method. They do not assert that every rule is already implemented in BA Mate or empirically validated.</p>
+            <div class="diagram-grid">
+                <article class="diagram-card"><a class="diagram-preview" href="assets/framework/lifecycle-v4.png" target="_blank" rel="noopener noreferrer"><img src="assets/framework/lifecycle-v4.png" alt="F4 lifecycle from scope and evidence through approval and change" loading="lazy"></a><h3>Lifecycle</h3><p>Core stages, feedback routes and optional handover.</p><div class="diagram-links"><a href="assets/framework/lifecycle-v4.png" target="_blank" rel="noopener noreferrer">Open image</a><a href="assets/framework/lifecycle-v4.svg" download>Download SVG</a></div></article>
+                <article class="diagram-card"><a class="diagram-preview" href="assets/framework/governance-v4.png" target="_blank" rel="noopener noreferrer"><img src="assets/framework/governance-v4.png" alt="F4 governance diagram showing AI proposals, human adoption, approval and revision" loading="lazy"></a><h3>Governance</h3><p>Proposal review, human decisions, eligibility and approval.</p><div class="diagram-links"><a href="assets/framework/governance-v4.png" target="_blank" rel="noopener noreferrer">Open image</a><a href="assets/framework/governance-v4.svg" download>Download SVG</a></div></article>
+                <article class="diagram-card"><a class="diagram-preview" href="assets/framework/information-model-v4.png" target="_blank" rel="noopener noreferrer"><img src="assets/framework/information-model-v4.png" alt="F4 information model connecting evidence, decisions, requirements, documents and baselines" loading="lazy"></a><h3>Information model</h3><p>How sources, decisions, artifacts and revisions relate.</p><div class="diagram-links"><a href="assets/framework/information-model-v4.png" target="_blank" rel="noopener noreferrer">Open image</a><a href="assets/framework/information-model-v4.svg" download>Download SVG</a></div></article>
             </div>
+        </div>
+    </section>
 
-            <div class="grid-2">
-                <div class="box">
-                    <h4><i class="fa-solid fa-list-ol"></i> Elicitation Assistant</h4>
-                    <ul>
-                        <li>Accepts unstructured stakeholder input (verbal notes, rough sketches)</li>
-                        <li>Generates clarification questions using iterative prompts</li>
-                        <li>Synthesizes responses into user stories (INVEST framework) and acceptance criteria</li>
-                        <li>Provides clarity score based on rubric (completeness, specificity, testability)</li>
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <h4><i class="fa-solid fa-scale-balanced"></i> Ethics Checker</h4>
-                    <ul>
-                        <li>Audits generated artifacts for bias-sensitive language</li>
-                        <li>Flags assumptions, hidden dependencies, and stakeholder representation gaps</li>
-                        <li>Generates transparency notes (what was assumed, why, alternatives considered)</li>
-                        <li>Provides bias flag counts and severity ratings</li>
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <h4><i class="fa-solid fa-file-lines"></i> Documentation Generator</h4>
-                    <ul>
-                        <li>Synthesizes refined stories and acceptance criteria into SRS format</li>
-                        <li>Includes traceability matrix (requirement → stakeholder source)</li>
-                        <li>Generates technical and functional constraints documentation</li>
-                        <li>Produces one-page executive summary for quick alignment checks</li>
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <h4><i class="fa-solid fa-user-check"></i> Human Review Loop</h4>
-                    <ul>
-                        <li>BA reviews AI output, approves or requests revisions</li>
-                        <li>Audit trail logs all changes and human decisions</li>
-                        <li>Stakeholder feedback incorporated via feedback loop to Elicitation Agent</li>
-                        <li>Final artifact ready for developer handoff</li>
-                    </ul>
-                </div>
+    <section class="section bg-light" id="evaluation">
+        <div class="container reveal">
+            <h2 class="section-title">How the Research Will Be Evaluated</h2>
+            <div class="grid-3">
+                <div class="card"><h3>Application-based A/B/C</h3><p>The draft protocol compares manual requirements work (A), generic AI work (B) and framework use through BA Mate (C) on comparable fictional cases. The primary planned contrast is C against B.</p></div>
+                <div class="card"><h3>Naturalistic beta</h3><p>Practical use and feedback will inform usability and refinements. Differences in projects, models and experience mean this stream does not by itself establish a controlled effect.</p></div>
+                <div class="card"><h3>Portable skill</h3><p>BA-MATE-SKILL is assessed as a separate portability and formative route. Its outcomes are not automatically pooled with the application study.</p></div>
             </div>
+            <p class="research-note warning" style="margin-top:1.5rem"><strong>Current boundary:</strong> The evaluation design remains a pre-evaluation draft. Study approvals, frozen treatments, qualified releases, participant records and measured findings must be confirmed before results are reported.</p>
         </div>
     </section>
 
     <section class="section">
-        <div class="container reveal">
-            <h2 class="section-title">Evaluation Approach</h2>
-            <p class="text-center text-soft mb-12">Mixed-methods evaluation combining quantitative metrics and qualitative insights from SME participants:</p>
-
-            <div class="grid-2">
-                <div class="card">
-                    <h4><i class="fa-solid fa-chart-bar"></i> Quantitative Metrics</h4>
-                    <ul>
-                        <li><strong>Clarity Score:</strong> 1–5 rubric (completeness, specificity, testability)</li>
-                        <li><strong>Bias Flags Count:</strong> # of detected risks per artifact</li>
-                        <li><strong>Time to Completion:</strong> Baseline vs. AI-assisted workflow</li>
-                        <li><strong>Defect Rate Post-Dev:</strong> Rework incidents due to vague/incorrect specs</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h4><i class="fa-solid fa-comments"></i> Qualitative Evidence</h4>
-                    <ul>
-                        <li><strong>BA Interviews:</strong> Usability, trust, cognitive load, confidence</li>
-                        <li><strong>Developer Feedback:</strong> Spec clarity, completeness, handover friction</li>
-                        <li><strong>Stakeholder Surveys:</strong> Fairness perception, representation, trust</li>
-                        <li><strong>Thematic Analysis:</strong> Emergent patterns in adoption barriers/enablers</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h4><i class="fa-solid fa-flask-vial"></i> A/B Trial Design</h4>
-                    <p>Matched-task studies across 3 SMEs comparing manual BA workflow vs. AI-augmented workflow using the same artifacts and metrics.</p>
-                </div>
-
-                <div class="card">
-                    <h4><i class="fa-solid fa-target"></i> Success Criteria</h4>
-                    <ul>
-                        <li>20–40% improvement in clarity scores</li>
-                        <li>15–30% bias flag reduction after ethics checks</li>
-                        <li>30–50% time savings in specification phase</li>
-                        <li>Positive BA feedback on trust & usability</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section bg-gradient-overlay">
-        <div class="container reveal">
-            <h2 class="section-title">Prototype Implementation Plan</h2>
-            <p class="text-center text-soft mb-12">A lean, open-source toolkit built with Python, Streamlit, and LLM APIs:</p>
-
-            <div class="timeline timeline-centered">
-                <div class="timeline-item" data-step="1">
-                    <div class="timeline-content">
-                        <h4>Phase 1: Elicitation Assistant</h4>
-                        <p><strong>Tools:</strong> Streamlit UI + OpenAI/LLaMA call</p>
-                        <p><strong>Input:</strong> Unstructured stakeholder notes</p>
-                        <p><strong>Output:</strong> User stories (INVEST), acceptance criteria, clarity score</p>
-                    </div>
-                    <div class="timeline-date">Months 1–2</div>
-                </div>
-
-                <div class="timeline-item" data-step="2">
-                    <div class="timeline-content">
-                        <h4>Phase 2: Ethics Checker</h4>
-                        <p><strong>Tools:</strong> Bias-lint library (Python) + custom rubric</p>
-                        <p><strong>Input:</strong> Generated stories, acceptance criteria</p>
-                        <p><strong>Output:</strong> Bias flag list, transparency notes</p>
-                    </div>
-                    <div class="timeline-date">Months 2–3</div>
-                </div>
-
-                <div class="timeline-item" data-step="3">
-                    <div class="timeline-content">
-                        <h4>Phase 3: Documentation Generator</h4>
-                        <p><strong>Tools:</strong> Jinja2 templates + Markdown export</p>
-                        <p><strong>Input:</strong> Refined stories, bias-checked artifacts</p>
-                        <p><strong>Output:</strong> SRS PDF, traceability matrix, summary docs</p>
-                    </div>
-                    <div class="timeline-date">Months 3–4</div>
-                </div>
-
-                <div class="timeline-item" data-step="4">
-                    <div class="timeline-content">
-                        <h4>Phase 4: Integration & Testing</h4>
-                        <p><strong>Tools:</strong> GitHub Actions, pytest, user acceptance testing</p>
-                        <p><strong>Input:</strong> Real SME pilot data</p>
-                        <p><strong>Output:</strong> Refined toolkit, documentation, deployment guide</p>
-                    </div>
-                    <div class="timeline-date">Months 4–5</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container reveal text-center">
-            <h2 class="section-title">Next Steps</h2>
-            <p class="mb-12">See how this methodology is being executed across our research timeline, and explore the hybrid agent architecture in detail.</p>
-            
-            <div class="flex-center flex-wrap section-actions">
-                <a href="progress.html" class="btn btn-primary btn-lg">
-                    <i class="fa-solid fa-chart-line"></i> Timeline & Progress
-                </a>
-                <a href="presentation.html" class="btn btn-secondary btn-lg">
-                    <i class="fa-solid fa-slideshow"></i> Presentation
-                </a>
-            </div>
-        </div>
+        <div class="container reveal text-center"><h2 class="section-title">Explore the Next Stage</h2><p class="section-intro">Read the current project status and find the available skill and beta information.</p><div class="hero-buttons" style="justify-content:center"><a href="progress.html" class="btn btn-primary">Research Progress</a><a href="beta.html" class="btn btn-secondary">Beta Access</a></div></div>
     </section>
 
     <footer>
@@ -333,8 +184,8 @@
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Proposal v1</a></li>
-                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Proposal v2</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Historical Proposal v1</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Historical Proposal v2</a></li>
                         <li><a href="resources.html">Research References</a></li>
                     </ul>
                 </div>

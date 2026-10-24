@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="css/components.css">
     
     <!-- Main Application Script -->
+    <link rel="stylesheet" href="css/research-update.css">
+
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
@@ -52,13 +54,13 @@
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="progress.html">Progress</a></li>
                 <li class="mobile-only">
-                    <a href="beta.html">Apply for Beta</a>
+                    <a href="beta.html">Beta Access</a>
                 </li>
             </ul>
 
             <div class="nav-actions">
                 <a href="beta.html" class="btn btn-primary">
-                    <i class="fa-solid fa-flask-vial"></i> Apply for Beta
+                    <i class="fa-solid fa-flask-vial"></i> Beta Access
                 </a>
             </div>
         </div>
@@ -68,7 +70,7 @@
     <header class="hero hero-short">
         <div class="hero-content container reveal">
             <div class="hero-text">
-                <p class="kicker"><i class="fa-solid fa-fire"></i> Phase 02</p>
+                <p class="kicker"><i class="fa-solid fa-fire"></i> Research problem</p>
                 <h1>Problem Definition & Motivation</h1>
                 <p class="subtitle">Understanding the gaps in Business Analysis support and the constraints of resource-limited SMEs</p>
             </div>
@@ -137,7 +139,7 @@
                 </div>
                 <div class="card">
                     <h3><i class="fa-solid fa-lightbulb"></i> The AI Opportunity</h3>
-                    <p>Generative AI offers powerful capabilities for automating documentation, suggesting clarifications, and surfacing risks. However, most AI tools are developer-centric, lacking BA-specific workflows, ethical safeguards, and transparency mechanisms.</p>
+                    <p>Generative AI can assist with documentation, clarification and risk review. General-purpose tools do not inherently provide BA-specific source review, approval records, revision integrity or workflow governance.</p>
                     <p class="text-soft text-sm">The opportunity: Design AI-enhanced methodologies that augment (not replace) BAs while maintaining human oversight and ethical accountability.</p>
                 </div>
             </div>
@@ -154,7 +156,7 @@
                         <i class="fa-solid fa-circle-question"></i>
                     </div>
                     <h3>Ambiguous Requirements</h3>
-                    <p>Requirements elicitation often results in vague or incomplete specifications. Generic AI tools fail to ask targeted clarification questions specific to BA context—missing critical details about business rules, edge cases, and constraints.</p>
+                    <p>Requirements elicitation often results in vague or incomplete specifications. Generic AI can help ask questions, but consistent BA-specific clarification and confirmation of business rules, edge cases and constraints require a defined workflow.</p>
                 </div>
 
                 <div class="card hover-lift">
@@ -180,7 +182,7 @@
     <section class="section">
         <div class="container reveal">
             <h2 class="section-title">Literature Gaps</h2>
-            <p class="text-center text-soft mb-12">Across 40+ peer-reviewed sources and recent SLRs (2023–2026), we identified three critical gaps:</p>
+            <p class="text-center text-soft mb-12">The design rationale identifies several areas to examine and refine through literature review and evaluation:</p>
             
             <div class="grid-2">
                 <div class="box">
@@ -200,7 +202,7 @@
 
                 <div class="box">
                     <h4><i class="fa-solid fa-arrows-alt"></i> Gap Summary</h4>
-                    <p>There is <strong>no published first hybrid BA agent framework</strong> combining adaptive prompting + ethics + human-in-the-loop workflows validated in SME settings. This research addresses that gap.</p>
+                    <p>This research proposes an integrated, evidence-grounded and human-governed BA workflow. Its distinct contribution and effectiveness require careful comparison with prior work and empirical evaluation.</p>
                 </div>
             </div>
         </div>
@@ -220,19 +222,19 @@
                 <div class="card accent-top-primary">
                     <h4><i class="fa-solid fa-list-ol text-primary"></i> SQ1: Elicitation</h4>
                     <p><strong>How well do adaptive prompt workflows reduce ambiguity and improve clarity and completeness in requirements artifacts?</strong></p>
-                    <p class="text-sm text-soft">Target: 20–40% improvement in clarity rubric scores (measured against manual baseline).</p>
+                    <p class="text-sm text-soft">Evaluation will assess clarity, completeness, support and testability using defined artifact measures.</p>
                 </div>
 
                 <div class="card accent-top-warning">
                     <h4><i class="fa-solid fa-scale-balanced text-warning"></i> SQ2: Ethics</h4>
                     <p><strong>Can ethical prompting plus bias checks improve transparency and stakeholder fairness in BA output?</strong></p>
-                    <p class="text-sm text-soft">Target: 15–30% reduction in bias flags + improved stakeholder satisfaction (via survey).</p>
+                    <p class="text-sm text-soft">Evaluation will inspect explicit assumptions, stakeholder coverage and potential fairness concerns.</p>
                 </div>
 
                 <div class="card accent-top-danger">
                     <h4><i class="fa-solid fa-users-gear text-danger"></i> SQ3: Hybrid Agents</h4>
                     <p><strong>Do human-in-the-loop hybrid agents boost BA efficiency and developer alignment in Agile SME contexts?</strong></p>
-                    <p class="text-sm text-soft">Target: 30–50% efficiency gain + improved BA–developer alignment (measured by task completion time & defect counts).</p>
+                    <p class="text-sm text-soft">The planned comparison examines quality and workflow measures; usability evidence is collected separately.</p>
                 </div>
             </div>
         </div>
@@ -259,7 +261,7 @@
                     <ul>
                         <li>Open-source, reproducible toolkit (low cost, high adoption)</li>
                         <li>Local relevance → potential to pilot and iterate rapidly</li>
-                        <li>Real-world validation → credible for upscaling to regional SMEs</li>
+                        <li>Practical testing → evidence on applicability and limitations</li>
                         <li>Ethical and transparent approach → builds trust in resource-limited settings</li>
                         <li>Practical guidance → empowers BAs without deep AI background</li>
                     </ul>
@@ -272,7 +274,7 @@
     <section class="section bg-gradient-overlay">
         <div class="container reveal text-center">
             <h2 class="section-title">Next Steps</h2>
-            <p class="mb-12">Ready to see how we propose to tackle these challenges? Explore the methodology, implementation plan, and research timeline.</p>
+            <p class="mb-12">Explore the current framework, evaluation design and pre-thesis progress.</p>
             
             <div class="flex-center flex-wrap section-actions">
                 <a href="methodology.html" class="btn btn-primary btn-lg">
@@ -309,8 +311,8 @@
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Proposal v1</a></li>
-                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Proposal v2</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Historical Proposal v1</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Historical Proposal v2</a></li>
                         <li><a href="resources.html">Research References</a></li>
                     </ul>
                 </div>

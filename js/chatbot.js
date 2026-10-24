@@ -543,10 +543,10 @@ function renderSuggestions(questions) {
 
 function getStarterQuestions() {
     return [
-        'What is the main research contribution?',
-        'Why use AI in Business Analysis?',
-        'What information is on the Resources page?',
-        'What is the 8-month research timeline?'
+        'What stage is the research at now?',
+        'What are the framework stages?',
+        'Is BA-MATE-SKILL available?',
+        'Are final results available?'
     ];
 }
 
@@ -567,7 +567,7 @@ function getDirectIntentResponse(query) {
 
     if (isGreetingIntent(normalized)) {
         state.greeted = true;
-        return `${getGreetingReply(normalized)} I am Ask BA, the research assistant for this website. Ask me about the research problem, methodology, ethical prompting, hybrid AI agents, evaluation metrics, documents, pages, or website content.`;
+        return `${getGreetingReply(normalized)} I am Ask BA, the research assistant for this website. Ask me about the F4 framework, BA Mate, BA-MATE-SKILL, evaluation status, diagrams or historical materials.`;
     }
 
     if (/\b(thanks|thank you|thankyou|appreciate)\b/.test(normalized)) {
@@ -578,7 +578,7 @@ function getDirectIntentResponse(query) {
     if (dateTimeResponse) return dateTimeResponse;
 
     if (/\b(where are you|where do you live|your location|where am i|current page)\b/.test(normalized)) {
-        return `I am running inside this research website in your browser. The current page is ${getCurrentPageLabel()}. I can help you navigate to Home, Problem, Methodology, Presentation, Resources, Progress, Knowledge Base, or Apply for Beta.`;
+        return `I am running inside this research website in your browser. The current page is ${getCurrentPageLabel()}. I can help you navigate to Home, Problem, Methodology, Presentation, Resources, Progress, Knowledge Base or Beta Access.`;
     }
 
     if (/\b(who are you|what are you|your name|what can you do|help)\b/.test(normalized)) {
@@ -590,7 +590,7 @@ function getDirectIntentResponse(query) {
     }
 
     if (/\b(general question|outside question|random question|invalid question|anything|everything)\b/.test(normalized)) {
-        return 'Ask BA is best for this research website: Business Analysis, adaptive prompting, ethical safeguards, hybrid AI agents, evaluation metrics, proposal documents, progress, resources, and page navigation. For unrelated general-world questions, I will avoid guessing and ask you to stay within the research knowledge base.';
+        return 'Ask BA is best for this research website: the F4 framework, BA Mate, BA-MATE-SKILL, evaluation plans, progress, diagrams, historical proposals and page navigation. For unrelated questions, I will avoid guessing and ask you to stay within the research knowledge base.';
     }
 
     return null;
@@ -599,10 +599,10 @@ function getDirectIntentResponse(query) {
 function getUnsupportedQuestionResponse(query) {
     const normalized = normalizeText(query);
     if (isOutsideScopeQuestion(normalized)) {
-        return 'That looks outside this research website knowledge base. I can answer accurately about the BA research project, methodology, pages, proposal documents, progress timeline, ethics, hybrid AI agents, and evaluation plan.';
+        return 'That looks outside this research website knowledge base. I can answer about the BA research project, current framework, implementations, progress, diagrams and evaluation plan.';
     }
 
-    return 'I could not find a strong enough match in the research knowledge base. Try asking about the research problem, Business Analysis, methodology, ethical prompting, hybrid AI agents, evaluation metrics, documents, pages, or website navigation.';
+    return 'I could not find a strong enough match in the research knowledge base. Try asking about the framework, BA Mate, BA-MATE-SKILL, current progress, evaluation or website navigation.';
 }
 
 function buildClarificationOptions(query, results, lexicalResults, excludeQuestion = '') {
@@ -724,7 +724,7 @@ function getCurrentPageLabel() {
         'resources.html': 'Resources',
         'progress.html': 'Progress',
         'knowledge-base.html': 'Knowledge Base',
-        'beta.html': 'Apply for Beta'
+        'beta.html': 'Beta Access'
     };
     return labels[page] ? `${labels[page]} (${page})` : page;
 }

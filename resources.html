@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources | AI-Enhanced BA Research</title>
+    <title>Research Resources & Framework Diagrams | AI-Enhanced BA Research</title>
     <link rel="icon" href="data:,">
-    <meta name="description" content="Research proposals and reference documents for AI-enhanced business analysis research. Download PDFs and browse research materials.">
+    <meta name="description" content="Current F4 framework diagrams, historical research proposals and supporting references.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="css/pages/kb-hero.css">
     <link rel="stylesheet" href="css/pages/resources.css">
     <link rel="stylesheet" href="css/chatbot.css">
+
+    <link rel="stylesheet" href="css/research-update.css">
 
     <script type="module" src="js/main.js" defer></script>
 </head>
@@ -49,13 +51,13 @@
                 <li><a href="resources.html" class="active">Resources</a></li>
                 <li><a href="progress.html">Progress</a></li>
                 <li class="mobile-only">
-                    <a href="beta.html">Apply for Beta</a>
+                    <a href="beta.html">Beta Access</a>
                 </li>
             </ul>
 
             <div class="nav-actions">
                 <a href="beta.html" class="btn btn-primary">
-                    <i class="fa-solid fa-flask-vial"></i> Apply for Beta
+                    <i class="fa-solid fa-flask-vial"></i> Beta Access
                 </a>
             </div>
         </div>
@@ -66,7 +68,7 @@
             <div class="hero-text">
                 <p class="kicker"><i class="fa-solid fa-book"></i> Resources</p>
                 <h1>Research Documents & References</h1>
-                <p class="subtitle">Access research proposals, references, and supporting documents</p>
+                <p class="subtitle">Current framework figures alongside historical proposals and research references</p>
             </div>
             
             <div class="hero-graphic">
@@ -113,14 +115,27 @@
         </div>
     </header>
 
+    <section class="section" id="current-framework-materials">
+        <div class="container reveal">
+            <h2 class="section-title">Current Public Framework Figures</h2>
+            <p class="section-intro">F4-draft.1 diagrams show the proposed lifecycle, governance and information relationships. These are research specification figures, not validated results or a claim of complete application conformance.</p>
+            <div class="diagram-grid">
+                <article class="diagram-card"><a class="diagram-preview" href="assets/framework/lifecycle-v4.png" target="_blank" rel="noopener noreferrer"><img src="assets/framework/lifecycle-v4.png" alt="F4 lifecycle diagram" loading="lazy"></a><h3>Lifecycle</h3><p>Stages and feedback loops.</p><div class="diagram-links"><a href="assets/framework/lifecycle-v4.png" target="_blank" rel="noopener noreferrer">Open image</a><a href="assets/framework/lifecycle-v4.svg" download>Download SVG</a></div></article>
+                <article class="diagram-card"><a class="diagram-preview" href="assets/framework/governance-v4.png" target="_blank" rel="noopener noreferrer"><img src="assets/framework/governance-v4.png" alt="F4 governance diagram" loading="lazy"></a><h3>Governance</h3><p>Human review and approval.</p><div class="diagram-links"><a href="assets/framework/governance-v4.png" target="_blank" rel="noopener noreferrer">Open image</a><a href="assets/framework/governance-v4.svg" download>Download SVG</a></div></article>
+                <article class="diagram-card"><a class="diagram-preview" href="assets/framework/information-model-v4.png" target="_blank" rel="noopener noreferrer"><img src="assets/framework/information-model-v4.png" alt="F4 information model diagram" loading="lazy"></a><h3>Information model</h3><p>Evidence, decisions and revisions.</p><div class="diagram-links"><a href="assets/framework/information-model-v4.png" target="_blank" rel="noopener noreferrer">Open image</a><a href="assets/framework/information-model-v4.svg" download>Download SVG</a></div></article>
+            </div>
+            <p class="research-note" style="margin-top:1.5rem">Read the <a href="methodology.html">framework explanation</a> alongside these figures. The public <a href="https://github.com/NimnadaUGC/BA-MATE-SKILL" target="_blank" rel="noopener noreferrer">BA-MATE-SKILL repository</a> provides the portable implementation and installation guidance.</p>
+        </div>
+    </section>
+
     <!-- Research Proposals Section -->
     <section class="pdf-section">
         <div class="container reveal">
             <div class="pdf-section-header">
-                <h3><i class="fa-solid fa-file-contract"></i> Research Proposals</h3>
+                <h3><i class="fa-solid fa-file-contract"></i> Historical Research Proposals</h3>
                 <span class="pdf-section-badge">2 Documents</span>
             </div>
-            <p class="text-soft mb-8">Download the full research proposal (available in two versions) for detailed project documentation and ethical approvals.</p>
+            <p class="text-soft mb-8">These earlier proposals document the project’s starting point. Their dates, toolkit plans and evaluation targets are historical and may differ from the current F4 draft and pre-thesis status.</p>
 
             <div class="resources-grid">
                 <div class="pdf-card">
@@ -128,10 +143,10 @@
                         <i class="fa-solid fa-file-pdf pdf-card-icon"></i>
                     </div>
                     <div class="pdf-card-content">
-                        <div class="pdf-card-title">Proposal v1</div>
+                        <div class="pdf-card-title">Historical proposal v1</div>
                         <div class="pdf-card-meta">Initial submission. February 2026.</div>
                         <div class="pdf-card-actions">
-                            <button onclick="openPDFViewer('assets/Research Proposal/Final Year Research Proposal v1.pdf', 'Proposal v1')">
+                            <button onclick="openPDFViewer('assets/Research Proposal/Final Year Research Proposal v1.pdf', 'Historical proposal v1')">
                                 <i class="fa-solid fa-eye"></i> View
                             </button>
                             <a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" class="pdf-action-link">
@@ -146,10 +161,10 @@
                         <i class="fa-solid fa-file-pdf pdf-card-icon"></i>
                     </div>
                     <div class="pdf-card-content">
-                        <div class="pdf-card-title">Proposal v2</div>
+                        <div class="pdf-card-title">Historical proposal v2</div>
                         <div class="pdf-card-meta">Revised version with feedback. March 2026.</div>
                         <div class="pdf-card-actions">
-                            <button onclick="openPDFViewer('assets/Research Proposal/Final Year Research Proposal v2.pdf', 'Proposal v2')">
+                            <button onclick="openPDFViewer('assets/Research Proposal/Final Year Research Proposal v2.pdf', 'Historical proposal v2')">
                                 <i class="fa-solid fa-eye"></i> View
                             </button>
                             <a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" class="pdf-action-link">
@@ -466,8 +481,8 @@
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Proposal v1</a></li>
-                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Proposal v2</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v1.pdf" target="_blank" rel="noopener noreferrer">Historical Proposal v1</a></li>
+                        <li><a href="assets/Research Proposal/Final Year Research Proposal v2.pdf" target="_blank" rel="noopener noreferrer">Historical Proposal v2</a></li>
                         <li><a href="resources.html">Research References</a></li>
                     </ul>
                 </div>
