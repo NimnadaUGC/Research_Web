@@ -1,6 +1,167 @@
-// Generated from Final Research - Proposal QnAs' Document.md.
-// Keep this file as the hardcoded Knowledge Base content source for the static page.
+// Current F4/P2 research status plus labelled historical proposal Q&A.
 export const knowledgeBaseSections = [
+  {
+    "id": "current-research-status",
+    "number": "0",
+    "title": "CURRENT RESEARCH STATUS · OCTOBER 2026",
+    "counterarguments": false,
+    "primary": [
+      {
+        "id": "current-stage",
+        "number": "0.1",
+        "question": "What stage is the research at now?",
+        "answer": "As of 24 October 2026, the researcher describes the project as approximately 90% on track in its pre-thesis stage. Framework design and implementations have advanced; testing, evidence collection, evaluation analysis and final writing remain in progress. The 90% figure is a project progress estimate, not a participant score or proof of effectiveness.",
+        "groups": [],
+        "actions": [
+          {
+            "label": "View progress",
+            "href": "progress.html",
+            "icon": "fa-chart-line"
+          }
+        ]
+      },
+      {
+        "id": "current-contribution",
+        "number": "0.2",
+        "question": "What is the current research contribution?",
+        "answer": "The proposed contribution is F4-draft.1: an evidence-grounded, human-governed Business Analysis method for working from incomplete or changing stakeholder information to reviewed requirements and related artifacts. It specifies lifecycle activities, decision authority, provenance, uncertainty, revision integrity and faithful documentation. Its distinct contribution and effectiveness remain subject to evaluation.",
+        "groups": [],
+        "actions": [
+          {
+            "label": "Read the framework",
+            "href": "methodology.html",
+            "icon": "fa-diagram-project"
+          }
+        ]
+      },
+      {
+        "id": "current-lifecycle",
+        "number": "0.3",
+        "question": "What are the framework stages?",
+        "answer": "The iterative lifecycle is Scope → evidence → clarification → requirements and criteria → process model → validation → document → approval → change. Stages can be revisited or tailored with rationale. Change happens when triggered; developer handover is an optional export rather than a mandatory stage.",
+        "groups": []
+      },
+      {
+        "id": "current-mechanisms",
+        "number": "0.4",
+        "question": "What makes the framework more than a list of stages?",
+        "answer": "F4-draft.1 defines seven testable mechanisms: M1 evidence selection and provenance; M2 clarification and uncertainty; M3 bounded AI proposals; M4 human adoption; M5 semantic review; M6 approval and change integrity; and M7 faithful documents and optional handover. AI proposes; responsible people verify business meaning and approve exact revisions.",
+        "groups": []
+      },
+      {
+        "id": "current-artifacts",
+        "number": "0.5",
+        "question": "How do the framework, BA Mate and BA-MATE-SKILL differ?",
+        "answer": "The framework is the proposed research method. BA Mate is the standalone reference application under internal evaluation for the planned application-based comparison. BA-MATE-SKILL v1.0.0 is a public portable implementation for supported AI workspaces. The application and skill have different interfaces and evaluation roles.",
+        "groups": [],
+        "actions": [
+          {
+            "label": "Beta access status",
+            "href": "beta.html",
+            "icon": "fa-flask-vial"
+          }
+        ]
+      },
+      {
+        "id": "current-skill",
+        "number": "0.6",
+        "question": "Is BA-MATE-SKILL available?",
+        "answer": "Yes. Package v1.0.0 is public at https://github.com/NimnadaUGC/BA-MATE-SKILL. The repository documents installation for Codex, Claude Code, Gemini CLI and Antigravity. Documented or structurally checked support does not itself establish runtime behavior in every host; practical qualification and feedback continue.",
+        "groups": [],
+        "actions": [
+          {
+            "label": "Open skill repository",
+            "href": "https://github.com/NimnadaUGC/BA-MATE-SKILL",
+            "icon": "fa-code-branch"
+          }
+        ]
+      },
+      {
+        "id": "current-app",
+        "number": "0.7",
+        "question": "Can the public download the standalone BA Mate application now?",
+        "answer": "The standalone BA Mate application is in internal evaluation and release preparation. Wider public access is planned soon after readiness checks. This research website does not currently announce a public installer.",
+        "groups": [],
+        "actions": [
+          {
+            "label": "Application status",
+            "href": "beta.html",
+            "icon": "fa-desktop"
+          }
+        ]
+      },
+      {
+        "id": "current-evaluation",
+        "number": "0.8",
+        "question": "How is the current evaluation planned?",
+        "answer": "The P2-draft.1 protocol defines comparable fictional requirements tasks under A: manual work, B: generic AI, and C: framework use through BA Mate. The main planned comparison is C against B. Realistic beta experience and BA-MATE-SKILL portability/usability are separate formative streams. Participant instructions, approvals, versions and scoring rules must be finalised before measured comparisons.",
+        "groups": [],
+        "actions": [
+          {
+            "label": "Evaluation explanation",
+            "href": "methodology.html#evaluation",
+            "icon": "fa-flask-vial"
+          }
+        ]
+      },
+      {
+        "id": "current-results",
+        "number": "0.9",
+        "question": "Are final results or improvement percentages available?",
+        "answer": "No final comparative effectiveness result is reported on this website as of 24 October 2026. The 90% on-track estimate is about overall project progress. Earlier proposal percentages were targets, not observed gains. Participant outcomes and framework refinements will be reported after evidence collection, scoring and analysis.",
+        "groups": [],
+        "actions": [
+          {
+            "label": "View progress",
+            "href": "progress.html",
+            "icon": "fa-chart-line"
+          }
+        ]
+      },
+      {
+        "id": "current-diagrams",
+        "number": "0.10",
+        "question": "Where can I see the framework diagrams?",
+        "answer": "The public F4-draft.1 lifecycle, governance and information-model diagrams are on the Methodology and Resources pages as image previews with SVG downloads. They describe the proposed method, not a claim that every rule is already implemented or empirically validated.",
+        "groups": [],
+        "actions": [
+          {
+            "label": "View diagrams",
+            "href": "methodology.html#diagrams",
+            "icon": "fa-diagram-project"
+          }
+        ]
+      },
+      {
+        "id": "current-historical",
+        "number": "0.11",
+        "question": "Are the proposal PDFs and presentation slides current?",
+        "answer": "No. The proposal PDFs and original presentation are preserved as historical research materials. Their early dates, prototype plans, projected timeline and expected gains should be read as proposal-stage context. Use the current Framework, Progress and Beta pages for today’s status.",
+        "groups": [],
+        "actions": [
+          {
+            "label": "Browse resources",
+            "href": "resources.html",
+            "icon": "fa-book"
+          }
+        ]
+      },
+      {
+        "id": "current-contact",
+        "number": "0.12",
+        "question": "How do I ask about beta access?",
+        "answer": "Contact the researcher at nimnadakavishwarank.ugc@gmail.com. Selected testers receive participant instructions and consent information directly. Do not send confidential project artifacts or participant records to the public website or repository.",
+        "groups": [],
+        "actions": [
+          {
+            "label": "Beta access",
+            "href": "beta.html",
+            "icon": "fa-envelope"
+          }
+        ]
+      }
+    ]
+  },
   {
     "id": "section-1",
     "number": "1",
@@ -248,13 +409,13 @@ export const knowledgeBaseSections = [
   {
     "id": "section-4",
     "number": "4",
-    "title": "YOUR CORE RESEARCH IDEA",
+    "title": "ORIGINAL CONTRIBUTION FRAMING · HISTORICAL Q&A",
     "primary": [
       {
         "id": "q-4-1",
         "number": "4.1",
         "question": "What exactly is your research contribution?",
-        "answer": "\"The core contribution of this research is a human-governed middleware orchestration framework that operationalizes generative AI for Business Analysis workflows.\"\n\nThe framework combines:\n\n* Adaptive prompting  \n* Requirement refinement workflows  \n* Ethical validation  \n* Traceability support  \n* Human-in-the-loop governance\n\n\"The contribution is not creating another AI model, but designing a structured methodology for reliable AI-assisted requirements engineering.\"",
+        "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"The core contribution of this research is a human-governed middleware orchestration framework that operationalizes generative AI for Business Analysis workflows.\"\n\nThe framework combines:\n\n* Adaptive prompting  \n* Requirement refinement workflows  \n* Ethical validation  \n* Traceability support  \n* Human-in-the-loop governance\n\n\"The contribution is not creating another AI model, but designing a structured methodology for reliable AI-assisted requirements engineering.\"",
         "groups": [
           {
             "id": "q-4-1-group-1",
@@ -263,32 +424,32 @@ export const knowledgeBaseSections = [
               {
                 "id": "q-4-1-group-1-item-1",
                 "question": "Are you creating a new AI model?",
-                "answer": "\"No. I am not training a new foundational AI model.\"\n\nThe research uses existing LLMs such as:\n\n* ChatGPT  \n* Gemini  \n* Claude\n\nThe contribution is:\n\n* Workflow orchestration  \n* Structured BA guidance  \n* Governance mechanisms  \n* Adaptive requirement workflows"
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"No. I am not training a new foundational AI model.\"\n\nThe research uses existing LLMs such as:\n\n* ChatGPT  \n* Gemini  \n* Claude\n\nThe contribution is:\n\n* Workflow orchestration  \n* Structured BA guidance  \n* Governance mechanisms  \n* Adaptive requirement workflows"
               },
               {
                 "id": "q-4-1-group-1-item-2",
                 "question": "Is this just another chatbot/AI wrapper?",
-                "answer": "\"No. A simple wrapper only forwards prompts to an AI model.\"\n\nThis framework additionally provides:\n\n* Workflow orchestration  \n* Requirement refinement  \n* Ethical checks  \n* Traceability handling  \n* Human validation layers\n\n\"The focus is operational governance, not simple AI access.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"No. A simple wrapper only forwards prompts to an AI model.\"\n\nThis framework additionally provides:\n\n* Workflow orchestration  \n* Requirement refinement  \n* Ethical checks  \n* Traceability handling  \n* Human validation layers\n\n\"The focus is operational governance, not simple AI access.\""
               },
               {
                 "id": "q-4-1-group-1-item-3",
                 "question": "Is this simply prompt engineering?",
-                "answer": "\"Prompt engineering is only one component of the framework.\"\n\nThe actual contribution includes:\n\n* Adaptive orchestration  \n* Workflow structuring  \n* Validation pipelines  \n* Human-in-the-loop governance  \n* Agile requirement alignment\n\n\"The novelty lies in how AI is operationalized systematically for BA workflows.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"Prompt engineering is only one component of the framework.\"\n\nThe actual contribution includes:\n\n* Adaptive orchestration  \n* Workflow structuring  \n* Validation pipelines  \n* Human-in-the-loop governance  \n* Agile requirement alignment\n\n\"The novelty lies in how AI is operationalized systematically for BA workflows.\""
               },
               {
                 "id": "q-4-1-group-1-item-4",
                 "question": "What gap/problem are you solving?",
-                "answer": "Current AI usage in BA workflows is often:\n\n* Informal  \n* Inconsistent  \n* Ungoverned  \n* Highly dependent on individual prompting skill\n\nThis creates problems in:\n\n* Requirement consistency  \n* Traceability  \n* Agile coordination  \n* Output reliability\n\n\"The research addresses the lack of structured AI orchestration specifically for Business Analysis workflows.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nCurrent AI usage in BA workflows is often:\n\n* Informal  \n* Inconsistent  \n* Ungoverned  \n* Highly dependent on individual prompting skill\n\nThis creates problems in:\n\n* Requirement consistency  \n* Traceability  \n* Agile coordination  \n* Output reliability\n\n\"The research addresses the lack of structured AI orchestration specifically for Business Analysis workflows.\""
               },
               {
                 "id": "q-4-1-group-1-item-5",
                 "question": "What makes your framework novel?",
-                "answer": "The novelty comes from combining:\n\n* Adaptive elicitation workflows  \n* Ethical validation  \n* Human-in-the-loop governance  \n* Agile-oriented orchestration  \n* BA-specific requirement refinement\n\n\"Existing AI systems are mostly general-purpose or developer-focused, while this framework specifically operationalizes AI for requirements engineering.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe novelty comes from combining:\n\n* Adaptive elicitation workflows  \n* Ethical validation  \n* Human-in-the-loop governance  \n* Agile-oriented orchestration  \n* BA-specific requirement refinement\n\n\"Existing AI systems are mostly general-purpose or developer-focused, while this framework specifically operationalizes AI for requirements engineering.\""
               },
               {
                 "id": "q-4-1-group-1-item-6",
                 "question": "What makes your research important?",
-                "answer": "\"Requirements engineering problems affect the entire SDLC.\"\n\nThis research is important because it aims to:\n\n* Reduce requirement ambiguity  \n* Improve workflow consistency  \n* Support Agile coordination  \n* Reduce operational overhead  \n* Help SMEs adopt AI responsibly\n\n\"The research focuses on improving how AI is used operationally in software engineering environments.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"Requirements engineering problems affect the entire SDLC.\"\n\nThis research is important because it aims to:\n\n* Reduce requirement ambiguity  \n* Improve workflow consistency  \n* Support Agile coordination  \n* Reduce operational overhead  \n* Help SMEs adopt AI responsibly\n\n\"The research focuses on improving how AI is used operationally in software engineering environments.\""
               }
             ]
           },
@@ -299,32 +460,32 @@ export const knowledgeBaseSections = [
               {
                 "id": "q-4-1-group-2-item-1",
                 "question": "What is a middleware orchestration framework?",
-                "answer": "\"A middleware orchestration framework acts as a structured layer between users and raw AI models.\"\n\nInstead of directly prompting the AI:\n\n* The framework manages workflows  \n* Structures interactions  \n* Maintains context  \n* Applies validation rules  \n* Guides output refinement\n\n\"It operationalizes AI behavior for a specific domain.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"A middleware orchestration framework acts as a structured layer between users and raw AI models.\"\n\nInstead of directly prompting the AI:\n\n* The framework manages workflows  \n* Structures interactions  \n* Maintains context  \n* Applies validation rules  \n* Guides output refinement\n\n\"It operationalizes AI behavior for a specific domain.\""
               },
               {
                 "id": "q-4-1-group-2-item-2",
                 "question": "How does the framework guide LLMs?",
-                "answer": "The framework guides LLMs through:\n\n* Structured prompting  \n* Context-aware refinement  \n* Workflow sequencing  \n* Validation checkpoints  \n* Artifact-aware generation\n\nExample:\n\n* Detect ambiguity  \n* Generate clarification prompts  \n* Refine requirements iteratively  \n* Validate outputs before finalization\n\n\"The framework controls how AI participates in the workflow.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe framework guides LLMs through:\n\n* Structured prompting  \n* Context-aware refinement  \n* Workflow sequencing  \n* Validation checkpoints  \n* Artifact-aware generation\n\nExample:\n\n* Detect ambiguity  \n* Generate clarification prompts  \n* Refine requirements iteratively  \n* Validate outputs before finalization\n\n\"The framework controls how AI participates in the workflow.\""
               },
               {
                 "id": "q-4-1-group-2-item-3",
                 "question": "What does \"workflow orchestration\" mean?",
-                "answer": "Workflow orchestration means:\n\n\"Managing how multiple workflow steps interact systematically.\"\n\nIn this research, orchestration includes:\n\n* Requirement elicitation  \n* Ambiguity refinement  \n* Ethical validation  \n* Documentation generation  \n* Human approval\n\nInstead of isolated prompting:\n\n* the framework coordinates the entire workflow process."
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nWorkflow orchestration means:\n\n\"Managing how multiple workflow steps interact systematically.\"\n\nIn this research, orchestration includes:\n\n* Requirement elicitation  \n* Ambiguity refinement  \n* Ethical validation  \n* Documentation generation  \n* Human approval\n\nInstead of isolated prompting:\n\n* the framework coordinates the entire workflow process."
               },
               {
                 "id": "q-4-1-group-2-item-4",
                 "question": "How is this similar to Cursor/Codex/Copilot-like technologies?",
-                "answer": "\"Cursor, Copilot, and Codex are not just raw AI models — they are orchestration systems built around LLMs.\"\n\nThey:\n\n* Manage context  \n* Guide AI behavior  \n* Structure workflows  \n* Improve operational usability\n\nSimilarly:\n\n\"My research applies this orchestration concept to Business Analysis and requirements engineering workflows.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"Cursor, Copilot, and Codex are not just raw AI models — they are orchestration systems built around LLMs.\"\n\nThey:\n\n* Manage context  \n* Guide AI behavior  \n* Structure workflows  \n* Improve operational usability\n\nSimilarly:\n\n\"My research applies this orchestration concept to Business Analysis and requirements engineering workflows.\""
               },
               {
                 "id": "q-4-1-group-2-item-5",
                 "question": "Why are specialized frameworks needed around LLMs?",
-                "answer": "Raw LLMs are:\n\n* General-purpose  \n* Context-sensitive  \n* Non-deterministic\n\nReal-world workflows require:\n\n* Consistency  \n* Governance  \n* Validation  \n* Domain specialization  \n* Workflow control\n\nThat is why systems like:\n\n* Copilot  \n* Cursor  \n* Claude Code  \n  exist.\n\n\"Specialized orchestration frameworks make raw AI operationally usable for domain-specific workflows.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nRaw LLMs are:\n\n* General-purpose  \n* Context-sensitive  \n* Non-deterministic\n\nReal-world workflows require:\n\n* Consistency  \n* Governance  \n* Validation  \n* Domain specialization  \n* Workflow control\n\nThat is why systems like:\n\n* Copilot  \n* Cursor  \n* Claude Code  \n  exist.\n\n\"Specialized orchestration frameworks make raw AI operationally usable for domain-specific workflows.\""
               },
               {
                 "id": "q-4-1-group-2-item-6",
                 "question": "How does this middle framework actually help BAs?",
-                "answer": "The framework helps BAs by:\n\n* Reducing repetitive documentation work  \n* Supporting requirement refinement  \n* Identifying ambiguities  \n* Maintaining traceability  \n* Improving workflow consistency  \n* Supporting Agile coordination\n\nIt also helps standardize:\n\n* Requirement quality  \n* Refinement workflows  \n* Artifact generation\n\n\"The framework augments BA workflows while preserving human governance and decision-making.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe framework helps BAs by:\n\n* Reducing repetitive documentation work  \n* Supporting requirement refinement  \n* Identifying ambiguities  \n* Maintaining traceability  \n* Improving workflow consistency  \n* Supporting Agile coordination\n\nIt also helps standardize:\n\n* Requirement quality  \n* Refinement workflows  \n* Artifact generation\n\n\"The framework augments BA workflows while preserving human governance and decision-making.\""
               }
             ]
           }
@@ -336,13 +497,13 @@ export const knowledgeBaseSections = [
   {
     "id": "section-5",
     "number": "5",
-    "title": "FRAMEWORK ARCHITECTURE",
+    "title": "EARLIER FRAMEWORK CONCEPTS · HISTORICAL Q&A",
     "primary": [
       {
         "id": "q-5-1",
         "number": "5.1",
         "question": "How does your framework work?",
-        "answer": "\"The framework acts as a middleware orchestration layer between the BA and the LLM.\"\n\nWorkflow:\n\n1. Stakeholder input is captured  \n2. Ambiguities are identified  \n3. Clarification prompts are generated  \n4. Requirements are refined iteratively  \n5. Ethical and traceability checks are applied  \n6. BA validates outputs before finalization\n\n\"The framework operationalizes AI systematically for Business Analysis workflows instead of relying on raw prompting.\"",
+        "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"The framework acts as a middleware orchestration layer between the BA and the LLM.\"\n\nWorkflow:\n\n1. Stakeholder input is captured  \n2. Ambiguities are identified  \n3. Clarification prompts are generated  \n4. Requirements are refined iteratively  \n5. Ethical and traceability checks are applied  \n6. BA validates outputs before finalization\n\n\"The framework operationalizes AI systematically for Business Analysis workflows instead of relying on raw prompting.\"",
         "groups": [
           {
             "id": "q-5-1-group-1",
@@ -351,32 +512,32 @@ export const knowledgeBaseSections = [
               {
                 "id": "q-5-1-group-1-item-1",
                 "question": "What are the framework components?",
-                "answer": "Main components include:\n\n* Stakeholder Input Layer  \n* Adaptive Prompt Engine  \n* Ambiguity Detection Layer  \n* Ethical Validation Layer  \n* Documentation Generator  \n* Traceability Manager  \n* Human-in-the-loop Review Layer\n\n\"Each component supports a specific stage of the requirements engineering workflow.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nMain components include:\n\n* Stakeholder Input Layer  \n* Adaptive Prompt Engine  \n* Ambiguity Detection Layer  \n* Ethical Validation Layer  \n* Documentation Generator  \n* Traceability Manager  \n* Human-in-the-loop Review Layer\n\n\"Each component supports a specific stage of the requirements engineering workflow.\""
               },
               {
                 "id": "q-5-1-group-1-item-2",
                 "question": "What happens after stakeholder input?",
-                "answer": "After stakeholder input:\n\n1. The framework analyzes the requirement context  \n2. Detects ambiguities or missing information  \n3. Generates clarification questions  \n4. Refines outputs iteratively  \n5. Produces developer-ready artifacts\n\n\"The system transforms raw stakeholder communication into structured requirement artifacts.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nAfter stakeholder input:\n\n1. The framework analyzes the requirement context  \n2. Detects ambiguities or missing information  \n3. Generates clarification questions  \n4. Refines outputs iteratively  \n5. Produces developer-ready artifacts\n\n\"The system transforms raw stakeholder communication into structured requirement artifacts.\""
               },
               {
                 "id": "q-5-1-group-1-item-3",
                 "question": "How does ambiguity detection work?",
-                "answer": "The framework identifies:\n\n* Vague wording  \n* Missing constraints  \n* Incomplete business logic  \n* Unclear stakeholder intent\n\nExamples:\n\n* \"Fast system\"  \n* \"User-friendly\"  \n* \"Secure platform\"\n\nThe framework then:\n\n* Generates clarification prompts  \n* Requests missing details  \n* Refines requirements iteratively\n\n\"The goal is reducing interpretation uncertainty before development.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe framework identifies:\n\n* Vague wording  \n* Missing constraints  \n* Incomplete business logic  \n* Unclear stakeholder intent\n\nExamples:\n\n* \"Fast system\"  \n* \"User-friendly\"  \n* \"Secure platform\"\n\nThe framework then:\n\n* Generates clarification prompts  \n* Requests missing details  \n* Refines requirements iteratively\n\n\"The goal is reducing interpretation uncertainty before development.\""
               },
               {
                 "id": "q-5-1-group-1-item-4",
                 "question": "How are prompts generated dynamically?",
-                "answer": "Prompts are generated based on:\n\n* Requirement context  \n* Artifact type  \n* Missing information  \n* Ambiguity level  \n* Workflow stage\n\nDifferent situations trigger different prompts:\n\n* Clarification prompts  \n* Refinement prompts  \n* Validation prompts  \n* Ethical review prompts\n\n\"The framework adapts prompting behavior according to workflow needs.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nPrompts are generated based on:\n\n* Requirement context  \n* Artifact type  \n* Missing information  \n* Ambiguity level  \n* Workflow stage\n\nDifferent situations trigger different prompts:\n\n* Clarification prompts  \n* Refinement prompts  \n* Validation prompts  \n* Ethical review prompts\n\n\"The framework adapts prompting behavior according to workflow needs.\""
               },
               {
                 "id": "q-5-1-group-1-item-5",
                 "question": "How does refinement occur?",
-                "answer": "Refinement happens iteratively through:\n\n* Clarification cycles  \n* Context-aware prompting  \n* BA feedback  \n* Validation checks\n\nOutputs gradually evolve from:\n\n* Raw stakeholder statements  \n  to:  \n* Structured developer-ready requirements\n\n\"The framework supports continuous requirement improvement rather than one-time generation.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nRefinement happens iteratively through:\n\n* Clarification cycles  \n* Context-aware prompting  \n* BA feedback  \n* Validation checks\n\nOutputs gradually evolve from:\n\n* Raw stakeholder statements  \n  to:  \n* Structured developer-ready requirements\n\n\"The framework supports continuous requirement improvement rather than one-time generation.\""
               },
               {
                 "id": "q-5-1-group-1-item-6",
                 "question": "How does this AI-enhanced methodology and agents align in the middle framework?",
-                "answer": "The framework coordinates:\n\n* AI assistance  \n* Workflow logic  \n* Human governance  \n* Validation mechanisms\n\nAI agents support:\n\n* Requirement analysis  \n* Refinement  \n* Documentation generation  \n* Ethical checking\n\nThe orchestration layer ensures:\n\n* Structured interaction  \n* Workflow consistency  \n* Controlled AI participation\n\n\"The framework aligns AI capabilities with operational BA processes.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe framework coordinates:\n\n* AI assistance  \n* Workflow logic  \n* Human governance  \n* Validation mechanisms\n\nAI agents support:\n\n* Requirement analysis  \n* Refinement  \n* Documentation generation  \n* Ethical checking\n\nThe orchestration layer ensures:\n\n* Structured interaction  \n* Workflow consistency  \n* Controlled AI participation\n\n\"The framework aligns AI capabilities with operational BA processes.\""
               }
             ]
           },
@@ -387,37 +548,37 @@ export const knowledgeBaseSections = [
               {
                 "id": "q-5-1-group-2-item-1",
                 "question": "What is adaptive prompting?",
-                "answer": "Adaptive prompting means:\n\n\"The framework changes prompting behavior dynamically based on workflow context.\"\n\nThe prompts adapt according to:\n\n* Requirement ambiguity  \n* Artifact type  \n* Missing details  \n* Stakeholder context  \n* Refinement stage\n\n\"Instead of static prompting, the framework continuously adjusts AI interaction during the workflow.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nAdaptive prompting means:\n\n\"The framework changes prompting behavior dynamically based on workflow context.\"\n\nThe prompts adapt according to:\n\n* Requirement ambiguity  \n* Artifact type  \n* Missing details  \n* Stakeholder context  \n* Refinement stage\n\n\"Instead of static prompting, the framework continuously adjusts AI interaction during the workflow.\""
               },
               {
                 "id": "q-5-1-group-2-item-2",
                 "question": "How does the ethics layer function in general and specific SME contexts?",
-                "answer": "The ethics layer checks for:\n\n* Biased wording  \n* Unsafe assumptions  \n* Missing stakeholder coverage  \n* Lack of transparency  \n* Incomplete rationale\n\nIn SME contexts, it also helps:\n\n* Maintain lightweight governance  \n* Improve requirement transparency  \n* Reduce operational misunderstandings\n\n\"The ethics layer introduces responsible AI usage within practical Agile workflows.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe ethics layer checks for:\n\n* Biased wording  \n* Unsafe assumptions  \n* Missing stakeholder coverage  \n* Lack of transparency  \n* Incomplete rationale\n\nIn SME contexts, it also helps:\n\n* Maintain lightweight governance  \n* Improve requirement transparency  \n* Reduce operational misunderstandings\n\n\"The ethics layer introduces responsible AI usage within practical Agile workflows.\""
               },
               {
                 "id": "q-5-1-group-2-item-3",
                 "question": "How is traceability maintained?",
-                "answer": "The framework maintains links between:\n\n* Stakeholder input  \n* Refined requirements  \n* User stories  \n* Acceptance criteria  \n* Generated artifacts\n\nThis supports:\n\n* Change tracking  \n* Impact analysis  \n* Requirement validation  \n* Agile consistency\n\n\"Traceability helps maintain alignment across evolving project requirements.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe framework maintains links between:\n\n* Stakeholder input  \n* Refined requirements  \n* User stories  \n* Acceptance criteria  \n* Generated artifacts\n\nThis supports:\n\n* Change tracking  \n* Impact analysis  \n* Requirement validation  \n* Agile consistency\n\n\"Traceability helps maintain alignment across evolving project requirements.\""
               },
               {
                 "id": "q-5-1-group-2-item-4",
                 "question": "How does the documentation generator work?",
-                "answer": "The documentation generator transforms:\n\n* Refined requirement data  \n  into:  \n* User stories  \n* Acceptance criteria  \n* Requirement summaries  \n* Developer handover artifacts\n\nGeneration is guided through:\n\n* Structured templates  \n* Workflow context  \n* Validation rules\n\n\"The system produces developer-oriented artifacts from refined stakeholder requirements.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe documentation generator transforms:\n\n* Refined requirement data  \n  into:  \n* User stories  \n* Acceptance criteria  \n* Requirement summaries  \n* Developer handover artifacts\n\nGeneration is guided through:\n\n* Structured templates  \n* Workflow context  \n* Validation rules\n\n\"The system produces developer-oriented artifacts from refined stakeholder requirements.\""
               },
               {
                 "id": "q-5-1-group-2-item-5",
                 "question": "How do those generations align with different SMEs with different practices and templates?",
-                "answer": "The framework is designed to be:\n\n* Template-aware  \n* Context-adaptive  \n* Workflow-configurable\n\nDifferent SMEs may use:\n\n* Different Agile styles  \n* Different documentation formats  \n* Different refinement practices\n\nThe orchestration layer adapts generation behavior according to:\n\n* Organizational workflows  \n* Artifact structures  \n* SME-specific practices\n\n\"The framework supports flexibility while maintaining workflow consistency.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe framework is designed to be:\n\n* Template-aware  \n* Context-adaptive  \n* Workflow-configurable\n\nDifferent SMEs may use:\n\n* Different Agile styles  \n* Different documentation formats  \n* Different refinement practices\n\nThe orchestration layer adapts generation behavior according to:\n\n* Organizational workflows  \n* Artifact structures  \n* SME-specific practices\n\n\"The framework supports flexibility while maintaining workflow consistency.\""
               },
               {
                 "id": "q-5-1-group-2-item-6",
                 "question": "How are artifacts validated?",
-                "answer": "Artifacts are validated through:\n\n* Ambiguity checks  \n* Traceability verification  \n* Ethical review  \n* BA approval  \n* Iterative refinement\n\nValidation focuses on:\n\n* Clarity  \n* Completeness  \n* Consistency  \n* Testability\n\n\"Human validation remains a critical governance mechanism within the framework.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nArtifacts are validated through:\n\n* Ambiguity checks  \n* Traceability verification  \n* Ethical review  \n* BA approval  \n* Iterative refinement\n\nValidation focuses on:\n\n* Clarity  \n* Completeness  \n* Consistency  \n* Testability\n\n\"Human validation remains a critical governance mechanism within the framework.\""
               },
               {
                 "id": "q-5-1-group-2-item-7",
                 "question": "How does this framework actually affect BA's workflow?",
-                "answer": "The framework helps BAs by:\n\n* Reducing repetitive documentation work  \n* Supporting faster refinement  \n* Improving consistency  \n* Maintaining traceability  \n* Assisting Agile coordination\n\nIt does not replace BA decision-making.\n\n\"The framework augments operational workflow efficiency while preserving human governance and expertise.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe framework helps BAs by:\n\n* Reducing repetitive documentation work  \n* Supporting faster refinement  \n* Improving consistency  \n* Maintaining traceability  \n* Assisting Agile coordination\n\nIt does not replace BA decision-making.\n\n\"The framework augments operational workflow efficiency while preserving human governance and expertise.\""
               }
             ]
           }
@@ -670,13 +831,13 @@ export const knowledgeBaseSections = [
   {
     "id": "section-8",
     "number": "8",
-    "title": "RESEARCH METHODOLOGY",
+    "title": "METHODOLOGY CONTEXT · SEE CURRENT PLAN ABOVE",
     "primary": [
       {
         "id": "q-8-1",
         "number": "8.1",
         "question": "What research methodology are you using?",
-        "answer": "\"The research uses a mixed-method approach combining Design Science prototype development with empirical evaluation.\"\n\nThe methodology includes:\n\n* Framework design  \n* Prototype implementation  \n* Quantitative evaluation  \n* Qualitative feedback analysis\n\n\"This allows both technical validation and practical workflow evaluation.\"",
+        "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"The research uses a mixed-method approach combining Design Science prototype development with empirical evaluation.\"\n\nThe methodology includes:\n\n* Framework design  \n* Prototype implementation  \n* Quantitative evaluation  \n* Qualitative feedback analysis\n\n\"This allows both technical validation and practical workflow evaluation.\"",
         "groups": [
           {
             "id": "q-8-1-group-1",
@@ -685,22 +846,22 @@ export const knowledgeBaseSections = [
               {
                 "id": "q-8-1-group-1-item-1",
                 "question": "Why use a mixed-method approach?",
-                "answer": "\"The research evaluates both technical performance and human workflow impact.\"\n\nQuantitative methods help measure:\n\n* Efficiency  \n* Clarity  \n* Traceability  \n* Rework reduction\n\nQualitative methods help evaluate:\n\n* User experience  \n* Trust  \n* Workflow usability  \n* Adoption readiness\n\n\"Both technical and human perspectives are important in AI-assisted BA workflows.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"The research evaluates both technical performance and human workflow impact.\"\n\nQuantitative methods help measure:\n\n* Efficiency  \n* Clarity  \n* Traceability  \n* Rework reduction\n\nQualitative methods help evaluate:\n\n* User experience  \n* Trust  \n* Workflow usability  \n* Adoption readiness\n\n\"Both technical and human perspectives are important in AI-assisted BA workflows.\""
               },
               {
                 "id": "q-8-1-group-1-item-2",
                 "question": "Why combine prototype development with empirical evaluation?",
-                "answer": "The prototype demonstrates:\n\n* Technical feasibility  \n* Workflow orchestration  \n* AI-assisted refinement\n\nEmpirical evaluation validates:\n\n* Real-world usefulness  \n* Workflow effectiveness  \n* User acceptance\n\n\"The research evaluates both system functionality and practical operational impact.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe prototype demonstrates:\n\n* Technical feasibility  \n* Workflow orchestration  \n* AI-assisted refinement\n\nEmpirical evaluation validates:\n\n* Real-world usefulness  \n* Workflow effectiveness  \n* User acceptance\n\n\"The research evaluates both system functionality and practical operational impact.\""
               },
               {
                 "id": "q-8-1-group-1-item-3",
                 "question": "Why is Design Science suitable here?",
-                "answer": "\"Design Science is suitable because the research focuses on designing and evaluating a practical artifact.\"\n\nThe artifact includes:\n\n* Middleware orchestration  \n* Adaptive prompting workflows  \n* Human-in-the-loop governance  \n* Requirement refinement mechanisms\n\n\"The goal is not only analysis, but building and validating a solution.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"Design Science is suitable because the research focuses on designing and evaluating a practical artifact.\"\n\nThe artifact includes:\n\n* Middleware orchestration  \n* Adaptive prompting workflows  \n* Human-in-the-loop governance  \n* Requirement refinement mechanisms\n\n\"The goal is not only analysis, but building and validating a solution.\""
               },
               {
                 "id": "q-8-1-group-1-item-4",
                 "question": "Why include qualitative evaluation?",
-                "answer": "Qualitative evaluation helps understand:\n\n* BA perceptions  \n* Workflow usability  \n* Adoption barriers  \n* Trust in AI outputs  \n* Practical Agile integration\n\n\"Human feedback is important because the framework directly affects operational BA workflows.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nQualitative evaluation helps understand:\n\n* BA perceptions  \n* Workflow usability  \n* Adoption barriers  \n* Trust in AI outputs  \n* Practical Agile integration\n\n\"Human feedback is important because the framework directly affects operational BA workflows.\""
               }
             ]
           },
@@ -711,27 +872,27 @@ export const knowledgeBaseSections = [
               {
                 "id": "q-8-1-group-2-item-1",
                 "question": "What are the phases of your methodology?",
-                "answer": "Main phases include:\n\n1. Literature review  \n2. Problem analysis  \n3. Framework design  \n4. Prototype development  \n5. Data collection  \n6. Experimental evaluation  \n7. Quantitative and qualitative analysis\n\n\"The methodology combines iterative development with structured evaluation.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nMain phases include:\n\n1. Literature review  \n2. Problem analysis  \n3. Framework design  \n4. Prototype development  \n5. Data collection  \n6. Experimental evaluation  \n7. Quantitative and qualitative analysis\n\n\"The methodology combines iterative development with structured evaluation.\""
               },
               {
                 "id": "q-8-1-group-2-item-2",
                 "question": "How will data collection happen?",
-                "answer": "Data collection will include:\n\n* BA interviews  \n* Surveys  \n* Requirement artifacts  \n* Controlled evaluation tasks  \n* Beta testing feedback\n\nData may come from:\n\n* SMEs  \n* Simulated projects  \n* Controlled experimental environments"
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nData collection will include:\n\n* BA interviews  \n* Surveys  \n* Requirement artifacts  \n* Controlled evaluation tasks  \n* Beta testing feedback\n\nData may come from:\n\n* SMEs  \n* Simulated projects  \n* Controlled experimental environments"
               },
               {
                 "id": "q-8-1-group-2-item-3",
                 "question": "How will interviews be conducted?",
-                "answer": "Interviews will be:\n\n* Semi-structured  \n* Focused on BA workflows  \n* Focused on Agile requirement challenges  \n* Focused on AI adoption perspectives\n\nThe goal is to understand:\n\n* Real operational problems  \n* Workflow pain points  \n* Practical usability concerns"
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nInterviews will be:\n\n* Semi-structured  \n* Focused on BA workflows  \n* Focused on Agile requirement challenges  \n* Focused on AI adoption perspectives\n\nThe goal is to understand:\n\n* Real operational problems  \n* Workflow pain points  \n* Practical usability concerns"
               },
               {
                 "id": "q-8-1-group-2-item-4",
                 "question": "How will artifacts be collected?",
-                "answer": "Artifacts may include:\n\n* User stories  \n* Acceptance criteria  \n* Requirement summaries  \n* Sprint refinement documents  \n* Change requests\n\nWhere necessary:\n\n* Simulated datasets  \n* Anonymized examples  \n  will be used.\n\n\"Sensitive organizational data will be anonymized and handled ethically.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nArtifacts may include:\n\n* User stories  \n* Acceptance criteria  \n* Requirement summaries  \n* Sprint refinement documents  \n* Change requests\n\nWhere necessary:\n\n* Simulated datasets  \n* Anonymized examples  \n  will be used.\n\n\"Sensitive organizational data will be anonymized and handled ethically.\""
               },
               {
                 "id": "q-8-1-group-2-item-5",
                 "question": "How will the prototype be iteratively refined?",
-                "answer": "The prototype will be refined through:\n\n* Pilot testing  \n* BA feedback  \n* Controlled evaluations  \n* Workflow observations  \n* Experimental findings\n\n\"The framework evolves iteratively based on evaluation feedback and operational testing.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nThe prototype will be refined through:\n\n* Pilot testing  \n* BA feedback  \n* Controlled evaluations  \n* Workflow observations  \n* Experimental findings\n\n\"The framework evolves iteratively based on evaluation feedback and operational testing.\""
               }
             ]
           }
@@ -741,7 +902,7 @@ export const knowledgeBaseSections = [
         "id": "q-8-2",
         "number": "8.2",
         "question": "Why is mixed-method suitable?",
-        "answer": "\"The research evaluates both measurable workflow improvements and human operational experience.\"\n\nAI-assisted BA workflows involve:\n\n* Technical performance  \n* Human interaction  \n* Organizational usability  \n* Workflow adoption\n\n\"A mixed-method approach captures both quantitative and qualitative dimensions.\"",
+        "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\n\"The research evaluates both measurable workflow improvements and human operational experience.\"\n\nAI-assisted BA workflows involve:\n\n* Technical performance  \n* Human interaction  \n* Organizational usability  \n* Workflow adoption\n\n\"A mixed-method approach captures both quantitative and qualitative dimensions.\"",
         "groups": [
           {
             "id": "q-8-2-group-1",
@@ -750,17 +911,17 @@ export const knowledgeBaseSections = [
               {
                 "id": "q-8-2-group-1-item-1",
                 "question": "Why not purely quantitative or experimental?",
-                "answer": "Purely quantitative evaluation may measure:\n\n* Speed  \n* Clarity  \n* Artifact quality\n\nBut it may miss:\n\n* User trust  \n* Workflow usability  \n* Adoption challenges  \n* Human operational experience\n\n\"This research involves both technical systems and human-centered workflows.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nPurely quantitative evaluation may measure:\n\n* Speed  \n* Clarity  \n* Artifact quality\n\nBut it may miss:\n\n* User trust  \n* Workflow usability  \n* Adoption challenges  \n* Human operational experience\n\n\"This research involves both technical systems and human-centered workflows.\""
               },
               {
                 "id": "q-8-2-group-1-item-2",
                 "question": "Why include human feedback?",
-                "answer": "Human feedback helps evaluate:\n\n* Practical usability  \n* Workflow integration  \n* BA acceptance  \n* Real-world operational value\n\n\"The framework is designed for human-AI collaboration, so human evaluation is essential.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nHuman feedback helps evaluate:\n\n* Practical usability  \n* Workflow integration  \n* BA acceptance  \n* Real-world operational value\n\n\"The framework is designed for human-AI collaboration, so human evaluation is essential.\""
               },
               {
                 "id": "q-8-2-group-1-item-3",
                 "question": "Why include BA interviews?",
-                "answer": "BA interviews help identify:\n\n* Real workflow challenges  \n* Requirement engineering pain points  \n* Agile coordination issues  \n* AI adoption barriers\n\n\"The interviews ground the research in real operational BA environments.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nBA interviews help identify:\n\n* Real workflow challenges  \n* Requirement engineering pain points  \n* Agile coordination issues  \n* AI adoption barriers\n\n\"The interviews ground the research in real operational BA environments.\""
               }
             ]
           },
@@ -771,17 +932,17 @@ export const knowledgeBaseSections = [
               {
                 "id": "q-8-2-group-2-item-1",
                 "question": "How does qualitative feedback improve validity?",
-                "answer": "Qualitative feedback helps validate:\n\n* Whether improvements are practically meaningful  \n* Whether workflows are usable  \n* Whether outputs are trusted  \n* Whether the framework fits Agile practices\n\n\"It helps connect technical evaluation with real operational usefulness.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nQualitative feedback helps validate:\n\n* Whether improvements are practically meaningful  \n* Whether workflows are usable  \n* Whether outputs are trusted  \n* Whether the framework fits Agile practices\n\n\"It helps connect technical evaluation with real operational usefulness.\""
               },
               {
                 "id": "q-8-2-group-2-item-2",
                 "question": "How do interviews support evaluation?",
-                "answer": "Interviews support evaluation by:\n\n* Identifying workflow problems  \n* Validating practical relevance  \n* Revealing adoption concerns  \n* Providing contextual understanding\n\n\"They help evaluate how the framework performs in realistic BA environments.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nInterviews support evaluation by:\n\n* Identifying workflow problems  \n* Validating practical relevance  \n* Revealing adoption concerns  \n* Providing contextual understanding\n\n\"They help evaluate how the framework performs in realistic BA environments.\""
               },
               {
                 "id": "q-8-2-group-2-item-3",
                 "question": "Why are SMEs appropriate evaluation environments?",
-                "answer": "SMEs are appropriate because they:\n\n* Operate with limited resources  \n* Use lightweight Agile workflows  \n* Experience higher impact from requirement mistakes  \n* Need practical and cost-effective AI adoption\n\n\"SMEs provide realistic environments for evaluating lightweight AI-assisted workflow systems.\""
+                "answer": "Historical proposal-era explanation; see the current research status section for the F4-draft.1 method.\n\nSMEs are appropriate because they:\n\n* Operate with limited resources  \n* Use lightweight Agile workflows  \n* Experience higher impact from requirement mistakes  \n* Need practical and cost-effective AI adoption\n\n\"SMEs provide realistic environments for evaluating lightweight AI-assisted workflow systems.\""
               }
             ]
           }
@@ -793,122 +954,41 @@ export const knowledgeBaseSections = [
   {
     "id": "section-9",
     "number": "9",
-    "title": "EXPERIMENTAL DESIGN",
+    "title": "CURRENT EVALUATION DESIGN",
     "primary": [
       {
-        "id": "q-9-1",
+        "id": "q-9-current-1",
         "number": "9.1",
-        "question": "How will you test the framework?",
-        "answer": "\"The framework will be tested using a combination of controlled A/B testing and beta testing in realistic BA workflow scenarios.\"\n\nThe evaluation focuses on:\n\n* Requirement quality  \n* Workflow efficiency  \n* Requirement clarity  \n* Traceability  \n* User experience  \n* Operational usability\n\n\"This allows both controlled comparison and practical real-world evaluation.\"",
-        "groups": [
-          {
-            "id": "q-9-1-group-1",
-            "title": "Follow-Up Questions",
-            "questions": [
-              {
-                "id": "q-9-1-group-1-item-1",
-                "question": "What tasks will participants perform?",
-                "answer": "Participants may perform:\n\n* Requirement elicitation  \n* User story generation  \n* Acceptance criteria refinement  \n* Sprint artifact refinement  \n* Requirement clarification tasks\n\nThe tasks simulate:\n\n* Real Agile BA workflows  \n* Stakeholder-driven requirement scenarios"
-              },
-              {
-                "id": "q-9-1-group-1-item-2",
-                "question": "How will comparisons be made?",
-                "answer": "Comparisons will be made between:\n\n* Traditional BA workflows  \n  and  \n* Framework-assisted workflows\n\nEvaluation compares:\n\n* Artifact quality  \n* Requirement clarity  \n* Time efficiency  \n* Consistency  \n* Rework indicators\n\n\"The goal is measuring workflow impact rather than raw AI capability.\""
-              },
-              {
-                "id": "q-9-1-group-1-item-3",
-                "question": "What is your beta testing approach?",
-                "answer": "Beta testing focuses on:\n\n* Realistic workflow usage  \n* BA feedback  \n* Usability evaluation  \n* Practical Agile integration\n\nParticipants use the framework in:\n\n* Controlled project simulations  \n  or  \n* SME-oriented workflow scenarios\n\n\"Beta testing evaluates practical operational usefulness.\""
-              },
-              {
-                "id": "q-9-1-group-1-item-4",
-                "question": "What is your A/B testing approach?",
-                "answer": "The A/B testing compares:\n\n* Traditional workflows  \n  vs  \n* Framework-assisted workflows\n\nGroup A:\n\n* Manual workflows  \n* Generic AI usage if needed  \n* No orchestration support\n\nGroup B:\n\n* Uses the proposed framework  \n* Adaptive prompting  \n* Structured refinement  \n* Governance layers\n\n\"The comparison evaluates whether orchestration improves workflow outcomes.\""
-              },
-              {
-                "id": "q-9-1-group-1-item-5",
-                "question": "How do those approaches affect the evaluation criteria?",
-                "answer": "A/B testing mainly evaluates:\n\n* Measurable workflow improvements  \n* Artifact quality  \n* Efficiency metrics\n\nBeta testing mainly evaluates:\n\n* Practical usability  \n* Adoption readiness  \n* User experience  \n* Workflow integration\n\n\"Together they provide both technical and operational evaluation perspectives.\""
-              }
-            ]
-          },
-          {
-            "id": "q-9-1-group-2",
-            "title": "Deep Clarification Questions",
-            "questions": [
-              {
-                "id": "q-9-1-group-2-item-1",
-                "question": "How will the control group work for A/B testing?",
-                "answer": "The control group will:\n\n* Use traditional BA workflows  \n* Perform manual refinement  \n* Optionally use generic AI tools directly  \n* Operate without orchestration support\n\nThis creates a baseline for comparison."
-              },
-              {
-                "id": "q-9-1-group-2-item-2",
-                "question": "How will the A/B testing groups work with and without this framework?",
-                "answer": "### Group A — Traditional Workflow\n\n* Manual requirement handling  \n* Generic prompting if needed  \n* No orchestration framework\n\n### Group B — Proposed Framework\n\n* Adaptive prompting  \n* Workflow orchestration  \n* Traceability support  \n* Ethical validation  \n* Human-in-the-loop governance\n\n\"The comparison measures the operational impact of structured orchestration.\""
-              },
-              {
-                "id": "q-9-1-group-2-item-3",
-                "question": "What artifacts will be evaluated?",
-                "answer": "Artifacts may include:\n\n* User stories  \n* Acceptance criteria  \n* Requirement summaries  \n* Sprint refinement outputs  \n* Traceability mappings  \n* Clarification artifacts\n\nEvaluation focuses on:\n\n* Clarity  \n* Completeness  \n* Consistency  \n* Testability"
-              },
-              {
-                "id": "q-9-1-group-2-item-4",
-                "question": "How will fairness between groups be ensured?",
-                "answer": "Fairness will be maintained through:\n\n* Similar project scenarios  \n* Comparable task complexity  \n* Controlled evaluation conditions  \n* Standardized instructions\n\n\"Both groups will work under similar workflow constraints.\""
-              },
-              {
-                "id": "q-9-1-group-2-item-5",
-                "question": "How will experimental bias be minimized?",
-                "answer": "Bias will be minimized through:\n\n* Standardized tasks  \n* Controlled datasets  \n* Structured evaluation rubrics  \n* Multiple participant perspectives  \n* Consistent testing environments\n\nWhere possible:\n\n* Evaluators may assess artifacts independently."
-              },
-              {
-                "id": "q-9-1-group-2-item-6",
-                "question": "How will both beta testing and controlled A/B testing be collectively evaluated?",
-                "answer": "A/B testing provides:\n\n* Quantitative workflow comparison\n\nBeta testing provides:\n\n* Qualitative operational feedback\n\nThe combined evaluation helps assess:\n\n* Technical effectiveness  \n* Workflow practicality  \n* User acceptance  \n* Real-world usability\n\n\"The evaluation balances measurable performance with operational relevance.\""
-              }
-            ]
-          }
-        ]
+        "question": "What is the planned controlled comparison?",
+        "answer": "The P2-draft.1 application study defines A: manual BA work, B: generic AI work and C: framework use through BA Mate on comparable fictional requirements cases. The primary planned contrast is C minus B on core artifact quality. Allocation, model profile, case packets and scoring rules need freezing before measured sessions.",
+        "groups": []
       },
       {
-        "id": "q-9-2",
+        "id": "q-9-current-2",
         "number": "9.2",
-        "question": "What is your A/B testing structure?",
-        "answer": "The A/B testing structure compares:\n\n* Traditional BA workflows  \n  with  \n* Framework-assisted workflows\n\nThe goal is evaluating whether structured orchestration improves:\n\n* Requirement quality  \n* Workflow consistency  \n* Refinement efficiency  \n* Agile coordination\n\n\n# Group A — Traditional Workflow\n\n## Structure\n\nParticipants use:\n\n* Manual BA workflows  \n* Traditional refinement methods  \n* Generic AI usage if desired  \n* No orchestration framework\n\nThis represents:\n\n\"Current common workflow practices.\"\n\n\n# Group B — Proposed Framework\n\n## Structure\n\nParticipants use:\n\n* Adaptive prompting  \n* Workflow orchestration  \n* Ethical validation  \n* Traceability support  \n* Human-in-the-loop refinement\n\nThis represents:\n\n\"The proposed AI-assisted orchestration methodology.\"",
-        "groups": [
-          {
-            "id": "q-9-2-group-1",
-            "title": "Follow-Up Questions",
-            "questions": [
-              {
-                "id": "q-9-2-group-1-item-1",
-                "question": "How will participants be selected?",
-                "answer": "Participants may include:\n\n* Business Analysts  \n* Junior analysts  \n* Agile practitioners  \n* Software engineering participants with BA exposure\n\nSelection focuses on:\n\n* Relevant workflow familiarity  \n* Agile requirement experience"
-              },
-              {
-                "id": "q-9-2-group-1-item-2",
-                "question": "How many participants?",
-                "answer": "The exact number depends on:\n\n* Resource availability  \n* Evaluation scope  \n* Time constraints\n\nThe goal is obtaining:\n\n* Sufficient comparative workflow data  \n* Meaningful qualitative feedback\n\n\"The focus is controlled evaluation quality rather than very large-scale sampling.\""
-              },
-              {
-                "id": "q-9-2-group-1-item-3",
-                "question": "How long will testing run?",
-                "answer": "Testing duration depends on:\n\n* Workflow complexity  \n* Number of scenarios  \n* Iterative refinement cycles\n\nThe evaluation will include:\n\n* Multiple workflow iterations  \n* Controlled refinement sessions  \n* Beta feedback phases"
-              },
-              {
-                "id": "q-9-2-group-1-item-4",
-                "question": "What project scenarios will be used?",
-                "answer": "Scenarios may include:\n\n* Agile sprint refinement  \n* Requirement clarification  \n* User story generation  \n* SME-oriented software projects  \n* Changing stakeholder requirements\n\n\"The scenarios aim to simulate realistic BA workflow environments.\""
-              }
-            ]
-          }
-        ]
+        "question": "Why are there three conditions?",
+        "answer": "A provides a manual baseline, B shows what generic AI can do without the framework treatment, and C tests framework use through the BA Mate application. B must be defined clearly; BA Mate’s built-in generic mode does not automatically represent unrestricted generic AI.",
+        "groups": []
       },
       {
-        "id": "q-9-3",
+        "id": "q-9-current-3",
         "number": "9.3",
-        "question": "What is your beta testing structure?",
-        "answer": "The beta testing structure focuses on:\n\n* Realistic operational usage  \n* Practical workflow integration  \n* User-centered evaluation\n\nParticipants interact with the framework in:\n\n* Simulated Agile projects  \n  or  \n* Controlled SME-oriented environments\n\n\n## Beta Testing Focus Areas\n\nThe beta testing evaluates:\n\n* Workflow usability  \n* Requirement refinement experience  \n* Practical efficiency  \n* BA satisfaction  \n* AI trust and acceptance  \n* Agile workflow compatibility\n\n\n## Beta Testing Process\n\nThe beta testing process includes:\n\n1. Framework onboarding  \n2. Task execution  \n3. Requirement refinement activities  \n4. Artifact generation  \n5. User feedback collection  \n6. Workflow observations  \n7. Iterative refinement feedback\n\n\n## Why Beta Testing is Important\n\n\"A technically functional system may still fail operationally if users find it impractical or disruptive.\"\n\nBeta testing helps evaluate:\n\n* Real-world practicality  \n* Human-AI collaboration quality  \n* Adoption readiness  \n* SME workflow compatibility\n\n\"It validates whether the framework is operationally usable beyond controlled experiments.\"",
+        "question": "What are the other evaluation streams?",
+        "answer": "Naturalistic beta use examines practical workflow experience, friction and adaptations. BA-MATE-SKILL use examines portability and usability in other AI workspaces. Their observations are reported separately from the controlled application comparison unless the protocol is prospectively amended.",
+        "groups": []
+      },
+      {
+        "id": "q-9-current-4",
+        "number": "9.4",
+        "question": "How many participants and what is the status?",
+        "answer": "The researcher has described roughly ten willing prospective beta testers. This is planning context, not a verified count of consenting or completing participants. The study record must report actual numbers and missing or incomplete sessions.",
+        "groups": []
+      },
+      {
+        "id": "q-9-current-5",
+        "number": "9.5",
+        "question": "When can measured sessions begin?",
+        "answer": "Measured sessions require confirmed study scope and approvals, participant information and consent, a rehearsed case pack, qualified model and application versions, trained reviewers, and a completed freeze record. The current public protocol is a pre-evaluation draft; the site does not claim these gates are complete.",
         "groups": []
       }
     ],
@@ -917,97 +997,34 @@ export const knowledgeBaseSections = [
   {
     "id": "section-10",
     "number": "10",
-    "title": "EVALUATION METRICS",
+    "title": "CURRENT MEASURES AND ANALYSIS",
     "primary": [
       {
-        "id": "q-10-1",
+        "id": "q-10-current-1",
         "number": "10.1",
-        "question": "How will you evaluate success?",
-        "answer": "\"The framework will be evaluated using both quantitative and qualitative metrics to measure workflow effectiveness, requirement quality, and operational usability.\"\n\nEvaluation focuses on:\n\n* Requirement clarity  \n* Workflow efficiency  \n* Traceability  \n* Rework reduction  \n* BA usability  \n* AI trust and adoption\n\n\"The goal is evaluating both measurable improvements and practical workflow impact.\"",
-        "groups": [
-          {
-            "id": "q-10-1-group-1",
-            "title": "Follow-Up Questions",
-            "questions": [
-              {
-                "id": "q-10-1-group-1-item-1",
-                "question": "What metrics are being measured?",
-                "answer": "Main evaluation metrics include:\n\n* Requirement clarity  \n* Artifact completeness  \n* Time efficiency  \n* Traceability consistency  \n* Rework reduction  \n* Workflow usability  \n* BA satisfaction  \n* AI trust levels"
-              },
-              {
-                "id": "q-10-1-group-1-item-2",
-                "question": "How will clarity be evaluated?",
-                "answer": "Clarity will be evaluated based on:\n\n* Ambiguity reduction  \n* Requirement specificity  \n* Requirement completeness  \n* Developer interpretability\n\nArtifacts may be reviewed using:\n\n* Structured evaluation rubrics  \n* Comparative scoring methods\n\n\"The evaluation focuses on how understandable and implementation-ready the requirements are.\""
-              },
-              {
-                "id": "q-10-1-group-1-item-3",
-                "question": "How will efficiency improvements be measured?",
-                "answer": "Efficiency improvements may be measured through:\n\n* Time-on-task reduction  \n* Faster refinement cycles  \n* Reduced manual documentation effort  \n* Reduced clarification iterations\n\n\"The goal is evaluating operational workflow improvement.\""
-              },
-              {
-                "id": "q-10-1-group-1-item-4",
-                "question": "How will ethical improvements be measured?",
-                "answer": "Ethical evaluation may include:\n\n* Bias identification frequency  \n* Transparency indicators  \n* Assumption detection  \n* Requirement accountability checks\n\nThe framework evaluates whether:\n\n* Outputs remain transparent  \n* Stakeholder intent is preserved  \n* Unsafe assumptions are reduced"
-              }
-            ]
-          },
-          {
-            "id": "q-10-1-group-2",
-            "title": "Deep Clarification Questions",
-            "questions": [
-              {
-                "id": "q-10-1-group-2-item-1",
-                "question": "What is the requirement quality rubric?",
-                "answer": "The requirement quality rubric may evaluate:\n\n* Clarity  \n* Completeness  \n* Consistency  \n* Traceability  \n* Testability  \n* Ambiguity level\n\nArtifacts are assessed against:\n\n* Structured evaluation criteria  \n* Agile requirement quality standards"
-              },
-              {
-                "id": "q-10-1-group-2-item-2",
-                "question": "How will transparency be scored?",
-                "answer": "Transparency evaluation may consider:\n\n* Explicit assumptions  \n* Requirement traceability  \n* Explanation visibility  \n* Clarification coverage\n\n\"The framework encourages visible refinement and explainable requirement generation.\""
-              },
-              {
-                "id": "q-10-1-group-2-item-3",
-                "question": "How will bias reduction be measured?",
-                "answer": "Bias reduction may be measured through:\n\n* Detection of biased wording  \n* Identification of unsafe assumptions  \n* Ethical review observations  \n* Human validation feedback\n\n\"The ethics layer helps identify potentially problematic requirement interpretations.\""
-              },
-              {
-                "id": "q-10-1-group-2-item-4",
-                "question": "How will traceability be evaluated?",
-                "answer": "Traceability evaluation focuses on:\n\n* Requirement linkage consistency  \n* Artifact relationship maintenance  \n* Requirement origin tracking  \n* Change tracking capability\n\n\"The framework aims to maintain consistent requirement relationships across Agile iterations.\""
-              },
-              {
-                "id": "q-10-1-group-2-item-5",
-                "question": "How will rework reduction be measured?",
-                "answer": "Rework reduction may be evaluated through:\n\n* Number of clarification cycles  \n* Requirement correction frequency  \n* Sprint-level modification rates  \n* Artifact revision frequency\n\n\"Improved early-stage requirement quality should reduce downstream corrections.\""
-              },
-              {
-                "id": "q-10-1-group-2-item-6",
-                "question": "How will other aspects of the project be measured?",
-                "answer": "Additional aspects may include:\n\n* Workflow usability  \n* BA trust in outputs  \n* Adoption willingness  \n* Operational practicality  \n* Agile integration quality\n\n\"The evaluation considers both technical and human operational factors.\""
-              }
-            ]
-          }
-        ]
+        "question": "What will be measured?",
+        "answer": "The draft instruments include a requirements quality rubric, observed correctness/support/coverage checks, workflow time and process records, and participant feedback. Quality scores, correctness and approval status are different concepts. The final measures and denominators must follow the frozen protocol.",
+        "groups": []
       },
       {
-        "id": "q-10-2",
+        "id": "q-10-current-2",
         "number": "10.2",
-        "question": "Quantitative Metrics",
-        "answer": "Quantitative metrics focus on measurable workflow improvements.\n\n\n## Likely Metrics\n\n### Time-on-task reduction\n\nMeasures:\n\n* Requirement handling speed  \n* Refinement efficiency  \n* Documentation effort reduction\n\n\n### Requirement clarity score\n\nMeasures:\n\n* Ambiguity reduction  \n* Specificity  \n* Developer interpretability\n\n\n### Acceptance criteria completeness\n\nMeasures:\n\n* Coverage quality  \n* Validation readiness  \n* Requirement completeness\n\n\n### Number of refinement iterations\n\nMeasures:\n\n* Clarification efficiency  \n* Requirement stabilization speed\n\n\n### Traceability completeness\n\nMeasures:\n\n* Requirement linkage quality  \n* Artifact consistency  \n* Change tracking coverage\n\n\n### Bias flag counts\n\nMeasures:\n\n* Ethical issue detection  \n* Unsafe assumption identification\n\n\n### Sprint rework reduction\n\nMeasures:\n\n* Requirement-related corrections  \n* Post-refinement modifications  \n* Sprint-level requirement issues",
+        "question": "How will the main comparison be analysed?",
+        "answer": "The planned primary comparison is each participant’s C-minus-B difference in core artifact quality. The analysis will report individual differences, median, range and uncertainty where estimable, with case/order effects, missingness and deviations disclosed.",
         "groups": []
       },
       {
-        "id": "q-10-3",
+        "id": "q-10-current-3",
         "number": "10.3",
-        "question": "Qualitative Metrics",
-        "answer": "Qualitative metrics evaluate:\n\n* Human experience  \n* Workflow usability  \n* Operational acceptance\n\n\n## Likely Metrics\n\n### BA satisfaction\n\nEvaluates:\n\n* Workflow experience  \n* Practical usefulness  \n* Operational comfort\n\n\n### Trust in AI outputs\n\nEvaluates:\n\n* Confidence in generated artifacts  \n* Perceived reliability  \n* Validation confidence\n\n\n### Adoption willingness\n\nEvaluates:\n\n* Whether BAs would practically use the framework  \n* SME adoption readiness\n\n\n### Perceived usefulness\n\nEvaluates:\n\n* Operational value  \n* Workflow support quality  \n* Requirement assistance effectiveness\n\n\n### Workflow usability\n\nEvaluates:\n\n* Ease of integration  \n* Workflow smoothness  \n* Operational practicality\n\n\n### Interview thematic analysis\n\nEvaluates:\n\n* Common workflow pain points  \n* User concerns  \n* Adoption barriers  \n* AI collaboration perceptions\n\n\"Qualitative analysis helps understand real operational experiences beyond numerical metrics.\"",
+        "question": "How will qualitative feedback be used?",
+        "answer": "Feedback and interviews will describe usability, trust, workflow friction, failures and useful adaptations. Each refinement should be linked to an observation and the framework or software version that changed. These observations do not by themselves establish a controlled effect.",
         "groups": []
       },
       {
-        "id": "q-10-4",
+        "id": "q-10-current-4",
         "number": "10.4",
-        "question": "Explain your entire evaluation metrics process?",
-        "answer": "\"The evaluation combines controlled measurement with practical workflow feedback.\"\n\nThe process includes:\n\n### Step 1 — Controlled A/B Testing\n\nCompare:\n\n* Traditional workflows  \n  vs  \n* Framework-assisted workflows\n\nMeasure:\n\n* Clarity  \n* Efficiency  \n* Traceability  \n* Rework indicators\n\n\n### Step 2 — Artifact Evaluation\n\nEvaluate:\n\n* User stories  \n* Acceptance criteria  \n* Requirement summaries  \n* Sprint artifacts\n\nUsing:\n\n* Structured requirement quality rubrics\n\n\n### Step 3 — Beta Testing\n\nCollect:\n\n* BA feedback  \n* Workflow usability insights  \n* Practical adoption observations\n\n\n### Step 4 — Qualitative Evaluation\n\nConduct:\n\n* Interviews  \n* Surveys  \n* Thematic analysis\n\nEvaluate:\n\n* Trust  \n* Workflow usability  \n* AI adoption perspectives\n\n\n### Step 5 — Comparative Analysis\n\nAnalyze:\n\n* Workflow differences  \n* Improvement patterns  \n* Operational effectiveness  \n* Human-AI collaboration quality\n\n\"The evaluation process measures both technical workflow improvement and practical operational usability.\"",
+        "question": "Have improvement targets been achieved?",
+        "answer": "No achieved improvement percentages are reported here. Earlier proposal targets such as 20–40% or 30–50% were aspirations, not measured findings. Final claims depend on completed data collection, independent scoring, analysis and limitations.",
         "groups": []
       }
     ],
@@ -1016,77 +1033,35 @@ export const knowledgeBaseSections = [
   {
     "id": "section-11",
     "number": "11",
-    "title": "VALIDATION & REAL-WORLD TESTING",
+    "title": "PRACTICAL TESTING AND EVIDENCE BOUNDARIES",
     "primary": [
       {
-        "id": "q-11-1",
+        "id": "q-11-current-1",
         "number": "11.1",
-        "question": "How will you validate real-world applicability?",
-        "answer": "\"The framework will be validated through controlled A/B testing, realistic Agile project scenarios, and beta testing with workflow-oriented participants.\"\n\nThe validation focuses on:\n\n* Practical usability  \n* Workflow integration  \n* Requirement quality  \n* Operational feasibility  \n* SME applicability\n\n\"The goal is evaluating whether the framework works effectively in realistic BA environments, not only in theory.\"",
-        "groups": [
-          {
-            "id": "q-11-1-group-1",
-            "title": "Follow-Up Questions",
-            "questions": [
-              {
-                "id": "q-11-1-group-1-item-1",
-                "question": "Will this be tested in actual projects?",
-                "answer": "\"Where possible, realistic project scenarios and SME-oriented workflows will be used.\"\n\nDue to:\n\n* Time limitations  \n* Confidentiality concerns  \n* Research scope constraints\n\nSome evaluations may use:\n\n* Simulated Agile projects  \n* Controlled workflow environments  \n* Anonymized requirement datasets\n\n\"The focus is maintaining realistic operational conditions while ensuring controlled evaluation.\""
-              },
-              {
-                "id": "q-11-1-group-1-item-2",
-                "question": "How realistic will the test cases be?",
-                "answer": "Test cases will simulate:\n\n* Agile sprint refinement  \n* Requirement clarification  \n* User story generation  \n* Stakeholder-driven requirement changes\n\nThe scenarios are designed to reflect:\n\n* Real BA workflows  \n* SME operational practices  \n* Practical Agile environments"
-              },
-              {
-                "id": "q-11-1-group-1-item-3",
-                "question": "How will beta testing occur?",
-                "answer": "Beta testing will involve:\n\n* Framework usage in realistic workflows  \n* Requirement refinement tasks  \n* Artifact generation activities  \n* Feedback collection sessions\n\nParticipants will evaluate:\n\n* Workflow usability  \n* Practical usefulness  \n* AI-assisted refinement experience\n\n\"Beta testing focuses on operational usability rather than only technical performance.\""
-              },
-              {
-                "id": "q-11-1-group-1-item-4",
-                "question": "Will BAs participate in beta testing?",
-                "answer": "Yes, where possible:\n\n* Business Analysts  \n* Agile practitioners  \n* Participants with BA-related experience  \n  may participate.\n\nTheir feedback helps evaluate:\n\n* Workflow practicality  \n* Requirement usability  \n* Human-AI collaboration quality"
-              },
-              {
-                "id": "q-11-1-group-1-item-5",
-                "question": "Why did A/B testing happen in our own controlled group?",
-                "answer": "\"Controlled A/B testing helps maintain evaluation fairness, consistency, and comparable workflow conditions.\"\n\nA controlled environment allows:\n\n* Standardized tasks  \n* Comparable project complexity  \n* Consistent measurement conditions  \n* Reduced external variability\n\n\"The purpose is obtaining reliable comparative workflow data.\""
-              }
-            ]
-          },
-          {
-            "id": "q-11-1-group-2",
-            "title": "Deep Clarification Questions",
-            "questions": [
-              {
-                "id": "q-11-1-group-2-item-1",
-                "question": "What is the closed-system A/B testing setup?",
-                "answer": "The closed-system setup means:\n\n* Participants work within controlled project scenarios  \n* Workflow conditions are standardized  \n* Tasks are predefined  \n* Evaluation criteria remain consistent\n\nThis helps:\n\n* Reduce uncontrolled external variables  \n* Maintain fair comparisons  \n* Improve evaluation reliability"
-              },
-              {
-                "id": "q-11-1-group-2-item-2",
-                "question": "How will confidentiality be handled?",
-                "answer": "Confidentiality will be maintained through:\n\n* Controlled datasets  \n* Anonymized artifacts  \n* Restricted participant access  \n* Ethical handling of project-related data\n\nWhere necessary:\n\n* Simulated requirement data  \n  will be used instead of sensitive organizational information."
-              },
-              {
-                "id": "q-11-1-group-2-item-3",
-                "question": "How will anonymization occur?",
-                "answer": "Anonymization may include removing:\n\n* Company names  \n* Stakeholder identities  \n* Sensitive business information  \n* Project-specific confidential details\n\n\"The evaluation focuses on workflow behavior rather than organizational identity.\""
-              },
-              {
-                "id": "q-11-1-group-2-item-4",
-                "question": "How will participant bias be controlled?",
-                "answer": "Bias will be minimized through:\n\n* Standardized instructions  \n* Similar task complexity  \n* Structured evaluation rubrics  \n* Controlled workflow environments\n\nWhere possible:\n\n* Multiple evaluators  \n* Comparative scoring  \n  may be used."
-              },
-              {
-                "id": "q-11-1-group-2-item-5",
-                "question": "How will beta testing results be evaluated?",
-                "answer": "Beta testing results will be evaluated using:\n\n* User feedback  \n* Surveys  \n* Workflow observations  \n* Qualitative interviews  \n* Usability assessments\n\nEvaluation focuses on:\n\n* Workflow practicality  \n* BA satisfaction  \n* AI trust  \n* Adoption readiness  \n* Operational usefulness\n\n\"The beta testing evaluates whether the framework is practically usable in realistic BA workflows.\""
-              }
-            ]
-          }
-        ]
+        "question": "How will practical applicability be examined?",
+        "answer": "The planned naturalistic beta asks practitioners to use the workflow in realistic settings and report friction, value, failure and adaptation. Controlled fictional tasks provide comparable artifacts. Results from these streams have different evidential meanings and will be reported separately.",
+        "groups": []
+      },
+      {
+        "id": "q-11-current-2",
+        "number": "11.2",
+        "question": "Can company material be used?",
+        "answer": "Real company work needs appropriate organisational and participant permission. Public examples and controlled scored cases should use fictional or otherwise authorised material. Study transfer of artifacts is separate from ordinary software use and must follow the approved process.",
+        "groups": []
+      },
+      {
+        "id": "q-11-current-3",
+        "number": "11.3",
+        "question": "What does a public skill release prove?",
+        "answer": "The public skill package proves that an implementation is available for inspection and use. It does not prove every host runs it correctly, that practitioners find it usable, or that the framework improves requirements quality. Those questions require recorded tests and participant evidence.",
+        "groups": []
+      },
+      {
+        "id": "q-11-current-4",
+        "number": "11.4",
+        "question": "What will count as a final research result?",
+        "answer": "A final result requires reconciled participant records, scoring checks, reproducible analysis, documented missing data and deviations, limitations, and an evidence-linked refinement history. Null and adverse results remain valid findings.",
+        "groups": []
       }
     ],
     "counterarguments": false
@@ -1328,7 +1303,7 @@ export const knowledgeBaseSections = [
         "id": "q-15-6",
         "number": "15.6",
         "question": "\"Where is the novelty?\"",
-        "answer": "The novelty comes from combining:\n\n* Adaptive orchestration  \n* BA-specific workflow support  \n* Human-in-the-loop governance  \n* Ethical validation  \n* Traceability-aware refinement\n\n\"The research focuses on operationalizing generative AI within requirements engineering rather than generic AI usage.\"",
+        "answer": "The candidate contribution is an integrated method for evidence-grounded, human-governed BA work, with explicit source review, uncertainty, bounded proposals, revision-bound approval and faithful documents. Novelty is a research claim to substantiate against prior work and evaluation; it is not proven by naming the framework.",
         "groups": []
       },
       {
@@ -1349,7 +1324,7 @@ export const knowledgeBaseSections = [
         "id": "q-15-9",
         "number": "15.9",
         "question": "\"How do you prove actual improvement?\"",
-        "answer": "The framework will be evaluated through:\n\n* Controlled A/B testing  \n* Artifact quality analysis  \n* Workflow efficiency metrics  \n* Beta testing  \n* Qualitative BA feedback\n\nMetrics include:\n\n* Requirement clarity  \n* Traceability quality  \n* Rework reduction  \n* Workflow usability\n\n\"The evaluation measures both technical and operational improvements.\"",
+        "answer": "The draft application-based A/B/C comparison will examine artifact quality and workflow measures, while naturalistic beta and skill trials provide separate practical feedback. Improvement is not proven before approved collection, scoring and analysis; null or adverse findings must be reported.",
         "groups": []
       },
       {
@@ -1370,7 +1345,7 @@ export const knowledgeBaseSections = [
         "id": "q-15-12",
         "number": "15.12",
         "question": "\"What makes this publishable research?\"",
-        "answer": "The research contributes to:\n\n* Software Engineering  \n* Human-AI Interaction  \n* AI Governance  \n* Workflow Orchestration  \n* Intelligent Requirement Engineering\n\nIt combines:\n\n* Technical architecture  \n* Human-centered evaluation  \n* Workflow experimentation  \n* AI-assisted operational processes\n\n\"The research explores how generative AI can be systematically integrated into software engineering workflows.\"",
+        "answer": "Potential academic contribution depends on a clear method, relation to prior work, credible evaluation, transparent limitations and reproducible evidence. Publication is a possible future outcome, not a status or guarantee.",
         "groups": []
       },
       {
